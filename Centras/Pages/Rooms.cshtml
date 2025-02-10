@@ -1,0 +1,228 @@
+﻿@page
+@model Centras.Pages.RoomsModel
+@{
+    ViewData["Title"] = "Rooms";
+}
+<div class="image-gallery">
+    <div class="main-image">
+        <img src="Images/Room1.jfif" alt="Room 1">
+        <button class="btn-show-all-photos">Daugiau</button>
+    </div>
+    <div class="side-images">
+        <img src="Images/Room2.jfif" alt="Room 2">
+        <img src="Images/Room3.jfif" alt="Room 3">
+        
+    </div>
+    
+</div>
+
+<div class="reservation-form">
+    <div class="reservation-row d-flex">
+        <div class="reservation-col">
+            <label>Atvykimas</label>
+            <input type="date" id="check-in" name="check-in" class="form-control" />
+        </div>
+        <div class="reservation-col">
+            <label>Išvykimas</label>
+            <input type="date" id="check-out" name="check-out" class="form-control" />
+        </div>
+        <div class="reservation-col">
+            <label>Kambariai</label>
+            <select id="rooms" name="rooms" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="reservation-col">
+            <label>Suauge</label>
+            <select id="adults" name="adults" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <div class="reservation-col">
+            <label>Vaikai</label>
+            <select id="children" name="children" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <div class="reservation-col">
+            <button type="submit" class="btn btn-block">Rasti Kambarį</button>
+        </div>
+    </div>
+</div>
+<h1>Kambarių tipai</h1>
+<!---Septintas kambarys--->
+<div class="room-card">
+    <img src="~/Images/Room 7/Room7_1.jfif" alt="7 kambarys" class="room-thumbnail"
+         data-images="Images/Room 7/Room7.jfif,Images/Room 7/Room7_1.jfif,Images/Room 7/Room7_2.jfif,Images/Room 7/Room7_3.jfif,
+         Images/Room 7/Room7_5.jfif,Images/Room 7/Room7_6.jfif">
+    <div class="room-info">
+        <h3> #7 Kambarys</h3>
+        <ul>
+            <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+            <li>Pusryčiai</li>
+            <li>Nemokama automobilių stovėjimo aikštelė</li>
+            <li>Oro Kondicionierius</li>
+        </ul>
+    </div>
+    <div class="room-actions">
+        <p class="price">€70</p>
+        <button class="btn book-room">Užsisakyti</button>
+    </div>
+</div>
+
+<!---Penktas kambarys--->
+<div class="room-card">
+    <img src="~/Images/Room 5/Room5_1.jfif" alt="5 kambarys" class="room-thumbnail"
+         data-images="Images/Room 5/Room5.jfif,Images/Room 5/Room5_1.jfif,Images/Room 5/Room5_2.jfif,Images/Room 5/Room5_3.jfif,
+         Images/Room 5/Room5_4.jfif,Images/Room 5/Room5_5.jfif">
+    <div class="room-info">
+        <h3> #5 Kambarys</h3>
+        <ul>
+            <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+            <li>Pusryčiai</li>
+            <li>Nemokama automobilių stovėjimo aikštelė</li>
+            <li>Oro Kondicionierius</li>
+        </ul>
+    </div>
+    <div class="room-actions">
+        <p class="price">€70</p>
+        <button class="btn book-room">Užsisakyti</button>
+    </div>
+</div>
+<!---Devintas kambarys--->
+<div class="room-card">
+    <img src="~/Images/Room 9/Room9_1.jfif" alt="9 kambarys" class="room-thumbnail"
+         data-images="Images/Room 9/Room9_1.jfif,Images/Room 9/Room9_2.jfif,Images/Room 9/Room9_3.jfif,
+         Images/Room 9/Room9_4.jfif,Images/Room 9/Room9_5.jfif,Images/Room 9/Room9_6.jfif,Images/Room 9/Room9_7.jfif
+        ,Images/Room 9/Room9_8.jfif,Images/Room 9/Room9_9.jfif,Images/Room 9/Room9_10.jfif">
+    <div class="room-info">
+        <h3> #9 Kambarys</h3>
+        <ul>
+            <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+            <li>Pusryčiai</li>
+            <li>Nemokama automobilių stovėjimo aikštelė</li>
+            <li>Oro Kondicionierius</li>
+        </ul>
+    </div>
+    <div class="room-actions">
+        <p class="price">€70</p>
+        <button class="btn book-room">Užsisakyti</button>
+    </div>
+</div>
+<!---Astuntas kambarys--->
+<div class="room-card">
+    <img src="~/Images/Room 8/Room8_1.jfif" alt="8 kambarys" class="room-thumbnail"
+         data-images="Images/Room 8/Room8.jpg,Images/Room 8/Room8_1.jfif,Images/Room 8/Room8_2.jfif,Images/Room 8/Room8_3.jfif,
+         Images/Room 8/Room8_4.jfif">
+    <div class="room-info">
+        <h3> #8 Kambarys</h3>
+        <ul>
+            <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+            <li>Pusryčiai</li>
+            <li>Nemokama automobilių stovėjimo aikštelė</li>
+            <li>Oro Kondicionierius</li>
+        </ul>
+    </div>
+    <div class="room-actions">
+        <p class="price">€70</p>
+        <button class="btn book-room">Užsisakyti</button>
+    </div>
+</div>
+<!---Sestas kambarys--->
+<div class="room-card">
+    <img src="~/Images/Room 6/Room6_1.jfif" alt="6 kambarys" class="room-thumbnail"
+         data-images="Images/Room 8/Room8.jpg,Images/Room 8/Room8_1.jfif,Images/Room 8/Room8_2.jfif,Images/Room 8/Room8_3.jfif,
+         Images/Room 8/Room8_4.jfif">
+    <div class="room-info">
+        <h3> #8 Kambarys</h3>
+        <ul>
+            <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+            <li>Pusryčiai</li>
+            <li>Nemokama automobilių stovėjimo aikštelė</li>
+            <li>Oro Kondicionierius</li>
+        </ul>
+    </div>
+    <div class="room-actions">
+        <p class="price">€70</p>
+        <button class="btn book-room">Užsisakyti</button>
+    </div>
+</div>
+
+<div class="modal fade" id="roomGalleryModal" tabindex="-1" aria-labelledby="roomGalleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="roomGalleryModalLabel">Kambario nuotraukos</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="roomGallery" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Images will be dynamically inserted here -->
+                    </div>
+                    <a class="carousel-control-prev" href="#roomGallery" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#roomGallery" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const thumbnails = document.querySelectorAll(".room-thumbnail");
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener("click", function () {
+                const images = this.getAttribute("data-images").split(",");
+                const carouselInner = document.querySelector("#roomGallery .carousel-inner");
+                carouselInner.innerHTML = ""; // Clear previous images
+
+                images.forEach((img, index) => {
+                    const isActive = index === 0 ? "active" : "";
+                    carouselInner.innerHTML += `
+                        <div class="carousel-item ${isActive}">
+                            <img src="${img}" class="d-block w-100" alt="Room Image">
+                        </div>`;
+                });
+
+                new bootstrap.Modal(document.getElementById("roomGalleryModal")).show();
+            });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const showAllPhotosBtn = document.querySelector(".btn-show-all-photos");
+
+        if (showAllPhotosBtn) {
+            showAllPhotosBtn.addEventListener("click", function () {
+                const images = ["Images/Room1.jfif", "Images/Room2.jfif"];
+                const carouselInner = document.querySelector("#roomGallery .carousel-inner");
+                carouselInner.innerHTML = "";
+
+                images.forEach((img, index) => { // Fixed arrow function syntax
+                    const isActive = index === 0 ? "active" : "";
+                    carouselInner.innerHTML += `
+                        <div class="carousel-item ${isActive}">
+                            <img src="${img}" class="d-block w-100" alt="Room Image">
+                        </div>`;
+                });
+
+                new bootstrap.Modal(document.getElementById("roomGalleryModal")).show();
+            });
+        }
+    });
+
+</script>

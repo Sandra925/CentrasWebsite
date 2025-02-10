@@ -1,0 +1,481 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: Calibri;
+    margin: 0;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.inside, .hotel, .outside-centras {
+    margin-top: 9vh;
+    width: 50%;
+    height: 80%;
+    margin-right: 20px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.about {
+    width: 36%;
+    text-align: justify;
+    font-size: 22px;
+    align-content: center;
+    margin-right: 20px;
+}
+
+footer {
+    background-color: white;
+}
+
+.navbar {
+    font-size: 20px;
+    height: 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+.login-nav-item {
+    font-size: 25px;
+    text-align: center;
+    margin-left: auto;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-item {
+        padding: 10px 0; /* More spacing between items */
+    }
+
+    .login-nav-item {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+.logo {
+    cursor: pointer;
+    height: 80px;
+}
+.login-form {
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* Optional: for visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.registration-card {
+    width:500px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* Optional: for visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+    .registration-card {
+        width: 85%; /* Makes it smaller on mobile */
+        width: 90%; /* Limits width */
+        max-width: 350px;
+    }
+    .login-form {
+        top: 60%; /* Moves it lower */
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    width: 90%;
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    transition: opacity 0.5s;
+}
+
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    position:relative;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.side-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.side-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 760px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 15px;
+    }
+
+    .main-image, .side-images {
+        height: auto; /* Allow height to adjust dynamically */
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.btn-show-all-photos {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #29160b;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* Slight transparency */
+    pointer-events: auto;
+}
+
+    .btn-show-all-photos:hover {
+        background-color: #1a0d06;
+        opacity: 1;
+    }
+
+.main-image {
+    position: relative; /* Needed for absolute positioning of the button */
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+/*#895129*/
+.reservation-form {
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Soft shadow */
+    height: 100px;
+    color: #333; /* Dark text for contrast */
+    padding: 15px;
+    margin-bottom:25px;
+}
+
+.reservation-row {
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.reservation-col {
+    padding: 5px;
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn-block {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    background-color: #895129; /* New button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .btn-block:hover {
+        background-color: #6d3d20;
+        color: white;
+        transform: scale(1.05);
+    }
+.room-card {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between columns */
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+    .room-card img {
+        width: 35%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+.room-info {
+    flex: 1; /* Takes remaining space */
+    padding: 0 15px;
+    text-align: left;
+}
+
+    .room-info h3 {
+        margin: 0 0 10px 0;
+    }
+
+/* Third Column: Price & Button */
+.room-actions {
+    display: flex;
+    flex-direction: column; /* Stack price & button */
+    align-items: center;
+    height:100%;
+    justify-content:space-between;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    top:100px;
+}
+
+.book-room {
+    padding: 10px 15px;
+    background-color: #895129;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .book-room:hover {
+        background-color: #6d3d20;
+        color:white;
+        transform: scale(1.05);
+    }
+
+
+footer {
+    background-color: white;
+    padding: 1rem 0;
+    margin-top: 20px; /* Adds space between content and footer */
+    position: relative; /* Ensures the footer stays in the flow of the page */
+    text-align: center;
+    clear: both; /* Clears any floats affecting its position */
+    width: 100%; /* Ensures it spans the full width of the page */
+    box-sizing: border-box; /* Prevents any unintended width overflow */
+}
+
+    footer .contact {
+        max-width: 300px;
+        text-align: right;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding-right: 1rem;
+    }
+
+    footer .container {
+        flex-grow: 1;
+        margin-right: 15px;
+    }
+
+.container {
+    padding-left: 0; /* Removes left padding */
+    padding-right: 0; /* Removes right padding */
+}
+
+.slide-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+}
+
+.slides {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    flex: 1;
+    transition: opacity 0.5s;
+}
+
+    .slides.active {
+        display: flex;
+        opacity: 1;
+    }
+
+.arrow-btn {
+    position: fixed;
+    float: right;
+    margin-left: 5vh;
+    right: 10vh;
+    width: 60px;
+    padding: 15px;
+    height: 60px;
+    margin-top: 30vh;
+    border-radius: 50px;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+
+    .arrow-btn::after {
+        content: '>'; /* Unicode right arrow */
+        font-size: 3rem; /* Adjust for a bigger arrow */
+        color: grey; /* Adjust color if needed */
+    }
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 600px;
+}
+
+    .dot.active {
+        background-color: #717171;
+    }
+
+.contact-section {
+    padding: 15px;
+}
+
+.menu-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.menu-content {
+    display: flex;
+    align-items: center; /* Align content in the center */
+    justify-content: center;
+    position: relative;
+    font-size:20px;
+}
+
+    .menu-content::before,
+    .menu-content::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: lightgrey;
+        position: absolute;
+        top: 0;
+    }
+    .menu-content a{
+        color:black;
+        text-decoration:none;
+    }
+
+    .menu-content::before {
+        left: -15px; /* Adjust spacing from the left */
+    }
+
+    .menu-content::after {
+        right: -15px; /* Adjust spacing from the right */
+    }
+.services-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+    .services-list li {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+        width: 30%;
+        flex-wrap:wrap;
+        justify-content:center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .services-list img {
+        width: 200px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }

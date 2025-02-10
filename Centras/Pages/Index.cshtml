@@ -1,0 +1,101 @@
+﻿@page
+@using Centras.Resources
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!--https://localhost:7060/?culture=en-->
+<div class="text-center d-flex">
+    <div class="slide-container d-flex">
+        <!-- First slide (Initially Active) -->
+        <div class="slides d-flex" style="display: block;">
+            <img src="Images\outside.jfif" class="outside-centras"/>
+            <div class="about">
+                <p>@Res.About</p>
+            </div>
+        </div>
+
+        <!-- Second Slide (Initially Hidden) -->
+        <div class="slides d-flex">
+            <img src="Images\Restaurant1.jfif" class="hotel"/>
+            
+            <div class="about">
+                <p>@Res.AboutSlide1</p>
+            </div>
+        </div>
+
+        <!-- Third Slide (Initially Hidden) -->
+        <div class="slides d-flex">
+            <img src="Images/Room2.jfif" class="hotel"/>
+            <div class="about">
+                <p>@Res.AboutSlide2</p>
+            </div>
+        </div>
+
+        <!-- Fourth Slide (Initially Hidden) -->
+        <div class="slides d-flex">
+            <img src="Images/Tea2.jfif" class="hotel" />
+            <div class="about">
+                <p>@Res.AboutSlide3</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="arrow-btn" id="nextButton"></button>
+    
+</div>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+
+<script>
+    let slideIdx = 1;
+
+    window.onload = function () {
+        showSlides(slideIdx);
+    };
+
+    function plusSlides(n) {
+        showSlides(slideIdx += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIdx = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            slideIdx = 1;
+        }
+        if (n < 1) {
+            slideIdx = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[slideIdx - 1].style.display = "flex"; // Make it visible
+        setTimeout(() => { slides[slideIdx - 1].classList.add("active"); }, 10); // Add fade-in effect
+        dots[slideIdx - 1].classList.add("active");
+    }
+
+
+    document.getElementById("nextButton").addEventListener("click", function () {
+        plusSlides(1);
+    });
+</script>
