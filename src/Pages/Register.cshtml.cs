@@ -44,6 +44,7 @@ namespace Centras.Pages
             }
             if(_centrasContext.Users.Any(u => u.Email == User.Email)){
                 ErrorMessage = "The user with this Email already exist";
+                return Page();
             }
             User.Password = _passwordHasher.HashPassword(User, User.Password);
             Console.WriteLine("Saving User: " + User.Email);
