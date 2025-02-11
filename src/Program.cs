@@ -14,7 +14,7 @@ builder.Services.AddSession();
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddDbContext<CentrasContext>(options =>
-    options.UseSqlite("Data Source=C:\\Users\\K203082\\Desktop\\Centras\\Centras\\Centras\\db\\centras.db"));
+    options.UseSqlite("Data Source=./db/centras.db"));
 builder.Services.AddRazorPages()
 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
 /* Enable support for localized DataAnnotations validation 
