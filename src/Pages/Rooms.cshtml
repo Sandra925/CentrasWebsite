@@ -9,8 +9,8 @@
         <button class="btn-show-all-photos">Daugiau</button>
     </div>
     <div class="side-images">
-        <img src="Images/Room2.jfif" alt="Room 2">
-        <img src="Images/Room3.jfif" alt="Room 3">
+        <img src="Images/Room 9/Room9_2.jfif" alt="Room 2">
+        <img src="Images/Room 7/Room7_1.jfif" alt="Room 3">
     </div>
     
 </div>
@@ -26,37 +26,44 @@
             <input type="date" id="check-out" name="check-out" class="form-control" />
         </div>
         <div class="reservation-col">
-            <label>Kambariai</label>
-            <select id="rooms" name="rooms" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-        <div class="reservation-col">
-            <label>Suauge</label>
-            <select id="adults" name="adults" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </div>
-        <div class="reservation-col">
-            <label>Vaikai</label>
-            <select id="children" name="children" class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-        </div>
-        <div class="reservation-col">
-            <button type="submit" class="btn btn-block">Rasti Kambarį</button>
+        <label>Kambarių Sk.</label>
+        <select id="rooms" name="rooms" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
         </div>
     </div>
+  
 </div>
-<h1>Kambarių tipai</h1>
+<div class="reservation-form">
+    <div class="reservation-row d-flex">
+        <div class="people-row" style="flex:2;">
+            <div class="people-col">
+                <label>Suaugusių Sk.</label>
+                <select id="AdultNum" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+            <div class="people-col">
+                <label>Vaikų Sk.</label>
+                <select id="AdultNum" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+        </div>
+   </div>
+</div>
+<button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;">Rasti Kambarį</button>
+
+
+<h1 style="margin-top:10px;">Kambarių tipai</h1>
 
 @foreach (var room in Model.RoomImages)
 {

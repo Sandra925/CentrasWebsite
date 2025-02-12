@@ -1,4 +1,5 @@
 
+using Centras.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,6 +8,24 @@ namespace Centras.Pages
     public class RoomsModel : PageModel
     {
         public Dictionary<string, List<string>> RoomImages { get; set; } = new();
+        [BindProperty]
+        public User User { get; set; }
+        public String? ErrorMessage { get; set; }
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                foreach(var key in ModelState.Keys)
+                {
+                    if (ModelState[key]?.Errors.Count > 0)
+                    {
+                        Console.WriteLine("The validation failed for:"+key);
+                    }
+                }
+                return Page();
+            }
+            return Page();
+        }
 
         public void OnGet()
         {
