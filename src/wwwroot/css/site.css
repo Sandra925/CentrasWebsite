@@ -226,12 +226,11 @@ footer {
 }
 
 /*#895129*/
-.reservation-form{
+.reservation-form-row{
     border-radius: 5px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     background-color: #f9f9f9; /* Light background */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Soft shadow */
-    height: 85px;
     width:100%;
     justify-content:center;
     color: #333; /* Dark text for contrast */
@@ -252,6 +251,7 @@ footer {
     align-content: center;
     justify-content: center;
 }
+
 
 .btn-block {
     width: 100%;

@@ -16,50 +16,56 @@
 </div>
 
 <div class="reservation-form">
-    <div class="reservation-row d-flex">
-        <div class="reservation-col">
-            <label>Atvykimas</label>
-            <input type="date" id="check-in" name="check-in" class="form-control" />
+    <div class="reservation-form-row">
+        <div class="reservation-row d-flex">
+            <div class="reservation-col">
+                <label>Atvykimas</label>
+                <input type="date" id="check-in" name="check-in" class="form-control" />
+            </div>
+            <div class="reservation-col">
+                <label>Išvykimas</label>
+                <input type="date" id="check-out" name="check-out" class="form-control" />
+            </div>
+            <div class="reservation-col">
+                <label>Kambarių Sk.</label>
+                <select id="rooms-count" name="rooms" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
         </div>
-        <div class="reservation-col">
-            <label>Išvykimas</label>
-            <input type="date" id="check-out" name="check-out" class="form-control" />
-        </div>
-        <div class="reservation-col">
-        <label>Kambarių Sk.</label>
-        <select id="rooms" name="rooms" class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
+
+    </div>
+    <div class="reservation-form-row" id="people_info_card">
+        <div class="reservation-row d-flex">
+            <div class="people-row" style="flex:2;">
+                <div class="people-col">
+                    <label>Suaugusių Sk.</label>
+                    <select id="AdultNum" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="people-col">
+                    <label>Vaikų Sk.</label>
+                    <select id="AdultNum" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
-  
+
 </div>
-<div class="reservation-form">
-    <div class="reservation-row d-flex">
-        <div class="people-row" style="flex:2;">
-            <div class="people-col">
-                <label>Suaugusių Sk.</label>
-                <select id="AdultNum" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-            </div>
-            <div class="people-col">
-                <label>Vaikų Sk.</label>
-                <select id="AdultNum" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-            </div>
-        </div>
-   </div>
-</div>
+
 <button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;">Rasti Kambarį</button>
 
 
@@ -112,6 +118,54 @@
     </div>
 </div>
 <script>
+    //Room cards shown
+    document.addEventListener("DOMContentLoaded", function () {
+        const roomsDropdown = document.getElementById("rooms-count");
+        const roomInfoCardContainer = document.getElementById("people_info_card");
+
+        roomsDropdown.addEventListener("change", function () {
+            const roomsCount = parseInt(this.value);
+
+            // Remove old dynamically created rooms
+            document.querySelectorAll(".dynamic-room-row").forEach(room => room.remove());
+
+            // Add new room fields
+            for (let i = 2; i <= roomsCount; i++) {
+                const roomDiv = document.createElement("div");
+                roomDiv.classList.add("reservation-row", "d-flex", "dynamic-room-row");
+                roomDiv.style.marginTop = "10px"; // Ensure proper spacing between room divs
+
+                roomDiv.innerHTML = `
+                    <div class="people-row" style="flex:2;">
+                        <div class="people-col">
+                            <label>Suaugusių Sk.</label>
+                            <select class="form-control" id="AdultNum_${i}">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="people-col">
+                            <label>Vaikų Sk.</label>
+                            <select class="form-control" id="ChildNum_${i}">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+                `;
+
+                // Append to the parent container
+                roomInfoCardContainer.insertAdjacentElement("beforeend", roomDiv);
+            }
+        });
+    });
+
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
         const thumbnails = document.querySelectorAll(".room-thumbnail");
 
