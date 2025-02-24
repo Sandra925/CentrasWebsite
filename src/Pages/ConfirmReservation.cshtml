@@ -1,0 +1,60 @@
+﻿@page
+@model Centras.Pages.ConfirmReservationModel
+@{
+    <form class="confirmReservation">
+
+        <div class="form-row d-flex gap-3">
+            <div class="form-group col-md-6">
+                <label for="inputName">Vardas</label>
+                <input type="name" class="form-control" id="inputName" placeholder="Vardas">
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="inputLastname">Pavardė</label>
+                <input type="lastname" class="form-control" id="inputLastname" placeholder="Pavardė">
+            </div>
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="inputEmail4">E-Paštas</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="E-Paštas">
+        </div>
+        <div class="form-group mb-3">
+            <label for="inputAddress">Adresas</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Kauno g. 8">
+        </div>
+        <div class="form-row d-flex gap-3">
+            <div class="form-group col-md-6">
+                <label for="inputCity">Miestas</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-2 mb-3">
+                <label for="inputZip">Pašto kodas</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <div class="form-group col-md-4 mb-3">
+            <label for="inputState">Šalis</label>
+            <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Užsisakyti</button>
+    </form>
+}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://restcountries.com/v3.1/all")
+            .then(response => response.json())
+            .then(data => {
+                const select = document.getElementById("inputState");
+                data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+                data.forEach(country => {
+                    let option = document.createElement("option");
+                    option.value = country.name.common;
+                    option.textContent = country.name.common;
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => console.error("Error loading countries:", error));
+    });
+</script>

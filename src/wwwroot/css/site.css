@@ -491,3 +491,15 @@ footer {
         object-fit: cover;
         border-radius: 10px;
     }
+.confirmReservation {
+    width:45%;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* Optional: for visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
