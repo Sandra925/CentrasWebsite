@@ -13,8 +13,9 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<CentrasContext>(options =>
-    options.UseSqlite("Data Source=./db/centras.db"));
+    options.UseSqlite(connectionString));
 builder.Services.AddRazorPages()
 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
 /* Enable support for localized DataAnnotations validation 

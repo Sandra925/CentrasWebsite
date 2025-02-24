@@ -13,7 +13,7 @@ namespace Centras.db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured) // Avoid reconfiguring if already set
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite("Data Source=./db/centras.db");
             }
