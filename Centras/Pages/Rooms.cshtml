@@ -26,16 +26,6 @@
                 <label>Išvykimas</label>
                 <input type="date" id="check-out" name="check-out" class="form-control" />
             </div>
-            <div class="reservation-col">
-                <label>Kambarių Sk.</label>
-                <select id="rooms-count" name="rooms" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
         </div>
 
     </div>
@@ -86,8 +76,17 @@
             </ul>
         </div>
         <div class="room-actions">
-            <p class="price">€70</p>
-            <!--<button class="btn book-room">Užsisakyti</button>-->
+            <div class="room-actions">
+                <p class="price">€70</p>
+                <form method="post" asp-page-handler="BookRoom">
+                    <input type="hidden" name="RoomId" value="@room.Key" />
+                    <input type="hidden" id="CheckInDate" name="CheckInDate" />
+                    <input type="hidden" id="CheckOutDate" name="CheckOutDate" />
+                    <input type="hidden" id="AdultsNum" name="AdultsNum" />
+                    <input type="hidden" id="KidsNum" name="KidsNum" />
+                    <button type="submit" class="btn btn-primary">Užsisakyti</button>
+                </form>
+            </div>
         </div>
     </div>
 }
@@ -117,102 +116,4 @@
         </div>
     </div>
 </div>
-<script>
-    //Room cards shown
-    document.addEventListener("DOMContentLoaded", function () {
-        const roomsDropdown = document.getElementById("rooms-count");
-        const roomInfoCardContainer = document.getElementById("people_info_card");
-
-        roomsDropdown.addEventListener("change", function () {
-            const roomsCount = parseInt(this.value);
-
-            // Remove old dynamically created rooms
-            document.querySelectorAll(".dynamic-room-row").forEach(room => room.remove());
-
-            // Add new room fields
-            for (let i = 2; i <= roomsCount; i++) {
-                const roomDiv = document.createElement("div");
-                roomDiv.classList.add("reservation-row", "d-flex", "dynamic-room-row");
-                roomDiv.style.marginTop = "10px";
-
-                roomDiv.innerHTML = `
-                    <div class="people-row" style="flex:2;">
-                        <div class="people-col">
-                            <label>Suaugusių Sk.</label>
-                            <select class="form-control" id="AdultNum_${i}">
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        </div>
-                        <div class="people-col">
-                            <label>Vaikų Sk.</label>
-                            <select class="form-control" id="ChildNum_${i}">
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        </div>
-                    </div>
-                `;
-
-                // Append to the parent container
-                roomInfoCardContainer.insertAdjacentElement("beforeend", roomDiv);
-            }
-        });
-    });
-
-
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const thumbnails = document.querySelectorAll(".room-thumbnail");
-
-        // Room-specific gallery
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener("click", function () {
-                showGallery(this.getAttribute("data-images").split(","));
-            });
-        });
-
-        // Show all photos button
-        const showAllPhotosBtn = document.querySelector(".btn-show-all-photos");
-        if (showAllPhotosBtn) {
-            showAllPhotosBtn.addEventListener("click", function () {
-                const allImages = [...thumbnails]
-                    .map(thumb => thumb.getAttribute("data-images").split(","))
-                    .flat(); // Merge all image arrays
-
-                showGallery(allImages);
-            });
-        }
-
-        function showGallery(images) {
-            const modal = document.getElementById("roomGalleryModal");
-            const carouselInner = modal.querySelector(".carousel-inner");
-            carouselInner.innerHTML = ""; // Clear previous images
-
-            images.forEach((img, index) => {
-                console.log(`Adding image ${index + 1}:`, img); // Log each image
-                const isActive = index === 0 ? "active" : "";
-                carouselInner.innerHTML += `
-                <div class="carousel-item ${isActive}">
-                    <img src="${img}" class="d-block w-100" alt="Room Image">
-                </div>`;
-            });
-
-            const bsModal = new bootstrap.Modal(modal);
-            bsModal.show();
-
-            // Ensure modal closes properly when clicking outside
-            modal.addEventListener("click", function (event) {
-                if (event.target === modal) {
-                    bsModal.hide();
-                }
-            });
-        }
-    });
-
-</script>
+<script src="~/js/room.js" asp-append-version="true"></script>

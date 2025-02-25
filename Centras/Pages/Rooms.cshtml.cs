@@ -1,7 +1,9 @@
-
+using Centras.Models;
+using Centras.db;
 using Centras.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Claims;
 
 namespace Centras.Pages
 {
@@ -9,8 +11,23 @@ namespace Centras.Pages
     {
         public Dictionary<string, List<string>> RoomImages { get; set; } = new();
         [BindProperty]
-        public User User { get; set; }
+        public Models.User User { get; set; }
         public String? ErrorMessage { get; set; }
+        private readonly CentrasContext _context;
+        public RoomsModel(CentrasContext context)
+        {
+            _context = context;
+        }
+        [BindProperty]
+        public int RoomId { get; set; }
+        [BindProperty]
+        public DateTime CheckInDate { get; set; }
+        [BindProperty]
+        public DateTime CheckOutDate { get; set; }
+        [BindProperty]
+        public int AdultsNum { get; set; }
+        [BindProperty]
+        public int KidsNum { get; set; }   
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -64,4 +81,5 @@ namespace Centras.Pages
 
         }
     }
+
 }
