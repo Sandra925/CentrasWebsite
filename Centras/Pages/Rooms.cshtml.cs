@@ -55,12 +55,11 @@ namespace Centras.Pages
 
             if (room == null)
             {
-                Console.WriteLine("Room not found in database!"); // Debugging Log
+                Console.WriteLine("Room not found in database!");
                 ModelState.AddModelError(string.Empty, "Room not found.");
-                return Page(); // Stay on the same page and show the error
+                return Page(); 
             }
 
-            // ✅ Process booking logic here (save to database, etc.)
             Console.WriteLine($"Redirecting to Confirmation Page for Room ID: {RoomId}");
 
             return RedirectToPage("ConfirmReservation", new { roomId = RoomId });
@@ -70,8 +69,6 @@ namespace Centras.Pages
         public void OnGet()
         {
             Rooms = _context.Rooms.Include(r => r.RoomImages).ToList();
-
-            Console.WriteLine($"Rooms fetched: {Rooms.Count}"); // Debugging log
         }
 
     }
