@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Rooms";
 }
+
 <div class="image-gallery">
     <div class="main-image">
         <img src="Images/Room 6/Room6_1.jfif" alt="Room 6">
@@ -12,7 +13,7 @@
         <img src="Images/Room 9/Room9_2.jfif" alt="Room 2">
         <img src="Images/Room 7/Room7_1.jfif" alt="Room 3">
     </div>
-    
+
 </div>
 
 <div class="reservation-form">
@@ -37,7 +38,7 @@
             </div>
             <div class="people-col">
                 <label>Vaikų Sk.</label>
-                <select id="AdultNum" class="form-control">
+                <select id="KidsNum" class="form-control">
                     <option>0</option>
                     <option>1</option>
                     <option>2</option>
@@ -45,23 +46,23 @@
                 </select>
             </div>
         </div>
-
     </div>
-
 </div>
 
 <button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;">Rasti Kambarį</button>
 
-
 <h1 style="margin-top:10px;">Kambarių tipai</h1>
 
-@foreach (var room in Model.RoomImages)
+@foreach (var room in Model.Rooms)
 {
     <div class="room-card">
-        <img src="~/@room.Value[0]" alt="@room.Key" class="room-thumbnail"
-             data-images="@string.Join(',', room.Value)">
+        @if (room.RoomImages.Any())
+        {
+            <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail"
+                 data-images="@string.Join(',', room.RoomImages.Select(i => i.ImagePath))">
+        }
         <div class="room-info">
-            <h3>@room.Key</h3>
+            <h3>@room.Name</h3>
             <ul>
                 <li>Nemokamas bevielis internetas (Wi-Fi)</li>
                 <li>Pusryčiai</li>
@@ -70,17 +71,15 @@
             </ul>
         </div>
         <div class="room-actions">
-            <div class="room-actions">
-                <p class="price">€70</p>
-                <form method="post" asp-page-handler="BookRoom">
-                    <input type="hidden" name="RoomId" value="@room.Key" />
-                    <input type="hidden" id="CheckInDate" name="CheckInDate" />
-                    <input type="hidden" id="CheckOutDate" name="CheckOutDate" />
-                    <input type="hidden" id="AdultsNum" name="AdultsNum" />
-                    <input type="hidden" id="KidsNum" name="KidsNum" />
-                    <button type="submit" class="btn btn-primary">Užsisakyti</button>
-                </form>
-            </div>
+            <p class="price">€70</p>
+            <form method="post" asp-page-handler="BookRoom">
+                <input type="hidden" name="RoomId" value="@room.ID" />
+                <input type="hidden" id="CheckInDate" name="CheckInDate" />
+                <input type="hidden" id="CheckOutDate" name="CheckOutDate" />
+                <input type="hidden" id="AdultsNum" name="AdultsNum" />
+                <input type="hidden" id="KidsNum" name="KidsNum" />
+                <button type="submit" class="btn btn-primary">Užsisakyti</button>
+            </form>
         </div>
     </div>
 }
@@ -97,7 +96,15 @@
             <div class="modal-body">
                 <div id="roomGallery" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        
+                        @foreach (var room in Model.Rooms)
+                        {
+                            foreach (var img in room.RoomImages)
+                            {
+                                <div class="carousel-item">
+                                    <img src="~/@img.ImagePath" class="d-block w-100" alt="@room.Name">
+                                </div>
+                            }
+                        }
                     </div>
                     <a class="carousel-control-prev" href="#roomGallery" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -110,4 +117,5 @@
         </div>
     </div>
 </div>
+
 <script src="~/js/room.js" asp-append-version="true"></script>

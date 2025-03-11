@@ -1,14 +1,17 @@
-using Centras.Models;
+﻿using Centras.Models;
 using Centras.db;
 using Centras.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Centras.Pages
 {
     public class RoomsModel : PageModel
     {
+        public List<Room> Rooms { get; set; }
+        
         public Dictionary<string, List<string>> RoomImages { get; set; } = new();
         [BindProperty]
         public Models.User User { get; set; }
@@ -17,6 +20,7 @@ namespace Centras.Pages
         public RoomsModel(CentrasContext context)
         {
             _context = context;
+            Rooms = new List<Room>();
         }
         [BindProperty]
         public int RoomId { get; set; }
@@ -43,43 +47,33 @@ namespace Centras.Pages
             }
             return Page();
         }
+        public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum)
+        {
+            Console.WriteLine($"Booking Room ID: {RoomId}"); // Debugging Log
+
+            var room = _context.Rooms.FirstOrDefault(r => r.ID == RoomId);
+
+            if (room == null)
+            {
+                Console.WriteLine("Room not found in database!"); // Debugging Log
+                ModelState.AddModelError(string.Empty, "Room not found.");
+                return Page(); // Stay on the same page and show the error
+            }
+
+            // ✅ Process booking logic here (save to database, etc.)
+            Console.WriteLine($"Redirecting to Confirmation Page for Room ID: {RoomId}");
+
+            return RedirectToPage("ConfirmReservation", new { roomId = RoomId });
+        }
+
 
         public void OnGet()
         {
-            RoomImages["Room 5"] = new List<string>
-            {
-                "Images/Room 5/Room5_1.jfif", "Images/Room 5/Room5.jfif", "Images/Room 5/Room5_2.jfif",
-                "Images/Room 5/Room5_3.jfif", "Images/Room 5/Room5_4.jfif", "Images/Room 5/Room5_5.jfif"
-            };
+            Rooms = _context.Rooms.Include(r => r.RoomImages).ToList();
 
-            RoomImages["Room 6"] = new List<string>
-            {
-                "Images/Room 6/Room6_1.jfif", "Images/Room 6/Room6_2.jfif", "Images/Room 6/Room6_3.jfif",
-                "Images/Room 6/Room6_4.jfif", "Images/Room 6/Room6_5.jfif", "Images/Room 6/Room6_9.jfif",
-                "Images/Room 6/Room6_6.jfif", "Images/Room 6/Room6_7.jfif", "Images/Room 6/Room6_8.jfif"
-            };
-
-            RoomImages["Room 7"] = new List<string>
-            {
-                "Images/Room 7/Room7_1.jfif", "Images/Room 7/Room7.jfif", "Images/Room 7/Room7_2.jfif",
-                "Images/Room 7/Room7_3.jfif", "Images/Room 7/Room7_5.jfif", "Images/Room 7/Room7_6.jfif"
-            };
-           
-            RoomImages["Room 8"] = new List<string>
-            {
-                "Images/Room 8/Room8_1.jfif", "Images/Room 8/Room8.jpg", "Images/Room 8/Room8_2.jfif",
-                "Images/Room 8/Room8_3.jfif", "Images/Room 8/Room8_4.jfif"
-            };
-
-            RoomImages["Room 9"] = new List<string>
-            {
-                "Images/Room 9/Room9_1.jfif", "Images/Room 9/Room9_2.jfif", "Images/Room 9/Room9_3.jfif",
-                "Images/Room 9/Room9_4.jfif", "Images/Room 9/Room9_5.jfif", "Images/Room 9/Room9_6.jfif",
-                "Images/Room 9/Room9_7.jfif", "Images/Room 9/Room9_8.jfif", "Images/Room 9/Room9_9.jfif",
-                "Images/Room 9/Room9_10.jfif"
-            };
-
+            Console.WriteLine($"Rooms fetched: {Rooms.Count}"); // Debugging log
         }
+
     }
 
 }
