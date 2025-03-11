@@ -69,7 +69,7 @@ footer {
     text-align: center;
     margin-left: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .navbar {
         flex-direction: column;
         height: auto;
@@ -84,7 +84,7 @@ footer {
     }
 
     .nav-item {
-        padding: 10px 0; /* More spacing between items */
+        padding: 10px 0;
     }
 
     .login-nav-item {
@@ -92,6 +92,12 @@ footer {
         width: 100%;
         text-align: center;
         margin: 10px 0;
+    }
+    .navbar-collapse {
+        position:relative;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 }
 
@@ -173,7 +179,7 @@ footer {
   grid-template-rows: 1fr 1fr;
   gap: 10px;
 }
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
     .image-gallery {
         grid-template-columns: 1fr; /* Single column for smaller screens */
         gap: 15px;
@@ -381,6 +387,30 @@ footer {
         display: flex;
         opacity: 1;
     }
+@media (max-width: 768px) {
+    .slide-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative; /* Ensure normal positioning on smaller screens */
+    }
+
+    .slides {
+        position: relative !important; /* Override absolute for stacking */
+        display: flex; /* Ensure slides appear */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+        .slides img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+}
+
 
 .arrow-btn {
     position: fixed;
@@ -454,11 +484,11 @@ footer {
     }
 
     .menu-content::before {
-        left: -15px; /* Adjust spacing from the left */
+        left: -15px; 
     }
 
     .menu-content::after {
-        right: -15px; /* Adjust spacing from the right */
+        right: -15px; 
     }
 .services-list {
     list-style: none;
