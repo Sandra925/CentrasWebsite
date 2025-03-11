@@ -37,7 +37,7 @@ var supportedCultures = new List<CultureInfo>
 };
 var options = new RequestLocalizationOptions
 {
-    DefaultRequestCulture = new RequestCulture("en"),
+    DefaultRequestCulture = new RequestCulture("lt"),
     
     SupportedCultures = supportedCultures,
     SupportedUICultures = supportedCultures
