@@ -32,15 +32,21 @@ builder.Services.AddRazorPages()
 });
 var supportedCultures = new List<CultureInfo>
 {
-    new CultureInfo( "en" ),
-    new CultureInfo( "lt" )
+    new CultureInfo( "lt" ),
+    new CultureInfo( "en" )
+    
 };
 var options = new RequestLocalizationOptions
 {
     DefaultRequestCulture = new RequestCulture("lt"),
-    
     SupportedCultures = supportedCultures,
-    SupportedUICultures = supportedCultures
+    SupportedUICultures = supportedCultures,
+    RequestCultureProviders = new List<IRequestCultureProvider>
+    {
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider(),      
+        new AcceptLanguageHeaderRequestCultureProvider() 
+    }
 };
 
 var app = builder.Build();
