@@ -8,7 +8,7 @@
         public int Capacity { get; set; }
         public int Price { get; set; }
         public List<RoomImage> RoomImages { get; set; } = new();
-        public List<RoomReservation> RoomReservations { get; set; }
+        public List<RoomReservation> RoomReservations { get; set; } = new();
 
     }
     public class RoomImage

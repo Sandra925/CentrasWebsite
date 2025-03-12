@@ -15,74 +15,49 @@
     </div>
 
 </div>
-
-<div class="reservation-form">
-    <div class="reservation-form-row">
-        <div class="reservation-row d-flex">
-            <div class="reservation-col">
-                <label>Atvykimas</label>
-                <input type="date" id="check-in" name="check-in" class="form-control" />
-            </div>
-            <div class="reservation-col">
-                <label>Išvykimas</label>
-                <input type="date" id="check-out" name="check-out" class="form-control" />
-            </div>
-            <div class="people-col">
-                <label>Suaugusių Sk.</label>
-                <select id="AdultNum" class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-            </div>
-            <div class="people-col">
-                <label>Vaikų Sk.</label>
-                <select id="KidsNum" class="form-control">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+<form method="post">
+    <div class="reservation-form">
+        <div class="reservation-form-row">
+            <div class="reservation-row d-flex">
+                <div class="reservation-col">
+                    <label>Atvykimas</label>
+                    <input type="date" id="check-in" name="check-in" class="form-control" />
+                </div>
+                <div class="reservation-col">
+                    <label>Išvykimas</label>
+                    <input type="date" id="check-out" name="check-out" class="form-control" />
+                </div>
+                <div class="people-col">
+                    <label>Suaugusių Sk.</label>
+                    <select id="AdultNum" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="people-col">
+                    <label>Vaikų Sk.</label>
+                    <select id="KidsNum" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
+
+    <button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>
+</form>
+
+
+
+<div id="roomsContainer">
+    <!-- Available rooms will be inserted here -->
 </div>
-
-<button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;">Rasti Kambarį</button>
-
-<h1 style="margin-top:10px;">Kambarių tipai</h1>
-
-@foreach (var room in Model.Rooms)
-{
-    <div class="room-card">
-        @if (room.RoomImages.Any())
-        {
-            <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail"
-                 data-images="@string.Join(',', room.RoomImages.Select(i => i.ImagePath))">
-        }
-        <div class="room-info">
-            <h3>@room.Name</h3>
-            <ul>
-                <li>Nemokamas bevielis internetas (Wi-Fi)</li>
-                <li>Pusryčiai</li>
-                <li>Nemokama automobilių stovėjimo aikštelė</li>
-                <li>Oro Kondicionierius</li>
-            </ul>
-        </div>
-        <div class="room-actions">
-            <p class="price">€70</p>
-            <form method="post" asp-page-handler="BookRoom">
-                <input type="hidden" name="RoomId" value="@room.ID" />
-                <input type="hidden" id="CheckInDate" name="CheckInDate" />
-                <input type="hidden" id="CheckOutDate" name="CheckOutDate" />
-                <input type="hidden" id="AdultsNum" name="AdultsNum" />
-                <input type="hidden" id="KidsNum" name="KidsNum" />
-                <button type="submit" class="btn btn-primary">Užsisakyti</button>
-            </form>
-        </div>
-    </div>
-}
+<p id="noRoomsMessage" style="display: none;">No available rooms found.</p>
 
 <div class="modal fade" id="roomGalleryModal" tabindex="-1" aria-labelledby="roomGalleryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -1,0 +1,52 @@
+﻿@model List<Centras.Models.Room>
+
+@if (Model != null && Model.Any())
+{
+    <h1 style="margin-top:10px;">Kambarių tipai</h1>
+    <div class="room-list">
+        @foreach (var room in Model)
+        {
+            <div class="room-card">
+                @if (room.RoomImages != null && room.RoomImages.Any())
+                {
+                    <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail">
+                }
+                <div class="room-info">
+                    <h3>@room.Name</h3>
+                    <p>@room.Description</p>
+                    <ul>
+                        <li>Nemokamas bevielis internetas (Wi-Fi)</li>
+                        <li>Pusryčiai</li>
+                        <li>Nemokama automobilių stovėjimo aikštelė</li>
+                        <li>Oro Kondicionierius</li>
+                    </ul>
+                </div>
+                <div class="room-actions">
+                    <p class="price">€@room.Price / night</p>
+
+                    @if (!room.RoomReservations.Any(reservation =>
+                   (Convert.ToDateTime(TempData["CheckInDate"]) < reservation.CheckOut) &&
+                   (Convert.ToDateTime(TempData["CheckOutDate"]) > reservation.CheckIn)))
+                    {
+                        <form method="post" asp-page-handler="BookRoom">
+                            <input type="hidden" name="RoomId" value="@room.ID" />
+                            <input type="hidden" name="CheckInDate" value="@TempData["CheckInDate"]" />
+                            <input type="hidden" name="CheckOutDate" value="@TempData["CheckOutDate"]" />
+                            <input type="hidden" name="AdultsNum" value="@TempData["AdultsNum"]" />
+                            <input type="hidden" name="KidsNum" value="@TempData["KidsNum"]" />
+                            <button type="submit" class="btn btn-primary">Užsisakyti</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary" disabled>Užimta</button>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No available rooms found.</p>
+}

@@ -31,22 +31,47 @@ namespace Centras.Pages
         [BindProperty]
         public int AdultsNum { get; set; }
         [BindProperty]
-        public int KidsNum { get; set; }   
+        public int KidsNum { get; set; }
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
-                foreach(var key in ModelState.Keys)
-                {
-                    if (ModelState[key]?.Errors.Count > 0)
-                    {
-                        Console.WriteLine("The validation failed for:"+key);
-                    }
-                }
                 return Page();
             }
+
+            // Retrieve values from the form
+            CheckInDate = Convert.ToDateTime(Request.Form["CheckInDate"]);
+            CheckOutDate = Convert.ToDateTime(Request.Form["CheckOutDate"]);
+            AdultsNum = int.Parse(Request.Form["AdultsNum"]);
+            KidsNum = int.Parse(Request.Form["KidsNum"]);
+
+            // Store search parameters for persistence
+            TempData["CheckInDate"] = CheckInDate.ToString("yyyy-MM-dd");
+            TempData["CheckOutDate"] = CheckOutDate.ToString("yyyy-MM-dd");
+            TempData["AdultsNum"] = AdultsNum;
+            TempData["KidsNum"] = KidsNum;
+
+            // Fetch all rooms with their reservations
+            var allRooms = _context.Rooms.Include(r => r.RoomImages).Include(r => r.RoomReservations);
+
+            // Filter available rooms
+            Rooms = _context.Rooms
+            .Include(r => r.RoomImages)
+            .Include(r => r.RoomReservations)
+            .Where(r => !r.RoomReservations.Any(reservation =>
+                (CheckInDate < reservation.CheckOut) &&
+                (CheckOutDate > reservation.CheckIn)))
+            .ToList();
+
+            if (!Rooms.Any())
+            {
+                ErrorMessage = "Deja, nėra laisvų kambarių pasirinktam laikotarpiui.";
+            }
+
             return Page();
         }
+
+
         public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum)
         {
             Console.WriteLine($"Booking Room ID: {RoomId}"); // Debugging Log
@@ -68,9 +93,28 @@ namespace Centras.Pages
 
         public void OnGet()
         {
-            Rooms = _context.Rooms.Include(r => r.RoomImages).ToList();
+            Rooms = _context.Rooms
+        .Include(r => r.RoomImages)
+        .Include(r => r.RoomReservations) // Ensure reservations are loaded
+        .ToList();
         }
+        public IActionResult OnGetFindRooms(DateTime checkIn, DateTime checkOut, int adults, int kids)
+        {
+            var availableRooms = _context.Rooms
+                .Include(r => r.RoomImages)
+                .Include(r => r.RoomReservations)
+                .Where(r => !r.RoomReservations.Any(reservation =>
+                    (checkIn < reservation.CheckOut) && (checkOut > reservation.CheckIn)))
+                .ToList();
 
+            if (!availableRooms.Any())
+            {
+                return Content(""); // Return empty content if no rooms are found
+            }
+            Console.WriteLine($"Found {availableRooms.Count} available rooms."); // Debugging
+
+            return Partial("_RoomsPartial", availableRooms);
+        }
     }
 
 }

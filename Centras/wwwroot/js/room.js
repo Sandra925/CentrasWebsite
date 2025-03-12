@@ -64,3 +64,35 @@
             });
         }
     });
+//FIND ROOM BUTTON
+document.getElementById("findRoom").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission if inside a form
+
+    let checkIn = document.getElementById("check-in").value;
+    let checkOut = document.getElementById("check-out").value;
+    let adults = document.getElementById("AdultNum").value;
+    let kids = document.getElementById("KidsNum").value;
+
+    if (!checkIn || !checkOut || (!adults && !kids)) {
+        alert("Užpildykite kambario paieškos stulpelius!");
+        return;
+    }
+
+    fetch(`/Rooms?handler=FindRooms&checkIn=${checkIn}&checkOut=${checkOut}&adults=${adults}&kids=${kids}`)
+        .then(response => response.text())
+        .then(data => {
+            console.log("Received data:", data); // Debugging output
+
+            let roomsContainer = document.getElementById("roomsContainer");
+            let noRoomsMessage = document.getElementById("noRoomsMessage");
+
+            if (data.trim() === "") {
+                noRoomsMessage.style.display = "block";
+                roomsContainer.innerHTML = "";
+            } else {
+                noRoomsMessage.style.display = "none";
+                roomsContainer.innerHTML = data;
+            }
+        })
+        .catch(error => console.error("Error fetching rooms:", error));
+});
