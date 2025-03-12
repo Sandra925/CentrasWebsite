@@ -21,15 +21,15 @@
             <div class="reservation-row d-flex">
                 <div class="reservation-col">
                     <label>Atvykimas</label>
-                    <input type="date" id="check-in" name="check-in" class="form-control" />
+                    <input type="date" id="check-in" name="CheckInDate" class="form-control" />
                 </div>
                 <div class="reservation-col">
                     <label>Išvykimas</label>
-                    <input type="date" id="check-out" name="check-out" class="form-control" />
+                    <input type="date" id="check-out" name="CheckOutDate" class="form-control" />
                 </div>
                 <div class="people-col">
                     <label>Suaugusių Sk.</label>
-                    <select id="AdultNum" class="form-control">
+                    <select name="AdultNum" id="AdultNum" class="form-control">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="people-col">
                     <label>Vaikų Sk.</label>
-                    <select id="KidsNum" class="form-control">
+                    <select name="KidsNum" id="KidsNum" class="form-control">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>
+    <button type="button" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>
 </form>
 
 

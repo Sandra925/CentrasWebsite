@@ -30,6 +30,7 @@
                     {
                         <form method="post" asp-page-handler="BookRoom">
                             <input type="hidden" name="RoomId" value="@room.ID" />
+                            <input type="hidden" name="RoomName" value="@room.Name" />
                             <input type="hidden" name="CheckInDate" value="@TempData["CheckInDate"]" />
                             <input type="hidden" name="CheckOutDate" value="@TempData["CheckOutDate"]" />
                             <input type="hidden" name="AdultsNum" value="@TempData["AdultsNum"]" />

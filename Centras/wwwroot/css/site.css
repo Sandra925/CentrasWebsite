@@ -49,10 +49,10 @@ footer {
 .navbar {
     font-size: 20px;
     height: 80px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .navbar-nav {
@@ -64,11 +64,13 @@ footer {
 .nav-item {
     padding: 0 15px;
 }
+
 .login-nav-item {
     font-size: 25px;
     text-align: center;
     margin-left: auto;
 }
+
 @media (max-width: 992px) {
     .navbar {
         flex-direction: column;
@@ -93,8 +95,9 @@ footer {
         text-align: center;
         margin: 10px 0;
     }
+
     .navbar-collapse {
-        position:relative;
+        position: relative;
         left: 0;
         width: 100%;
         z-index: 1000;
@@ -105,6 +108,7 @@ footer {
     cursor: pointer;
     height: 80px;
 }
+
 .login-form {
     width: 40%;
     text-align: center;
@@ -118,8 +122,9 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 .registration-card {
-    width:500px;
+    width: 500px;
     text-align: center;
     justify-content: center;
     position: absolute;
@@ -131,12 +136,14 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 @media (max-width: 768px) {
     .registration-card {
         width: 85%; /* Makes it smaller on mobile */
         width: 90%; /* Limits width */
         max-width: 350px;
     }
+
     .login-form {
         top: 60%; /* Moves it lower */
         width: 90%;
@@ -161,39 +168,43 @@ footer {
 .main-image img {
     width: 100%;
     height: 100%;
-    position:relative;
+    position: relative;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
+
 .side-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .side-images {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
 }
+
 @media (max-width: 1024px) {
     .image-gallery {
         grid-template-columns: 1fr;
         gap: 15px;
-        margin-bottom:40px;
+        margin-bottom: 40px;
     }
 
     .main-image {
-        height: auto; 
+        height: auto;
         max-height: 100%;
         max-width: 100%;
     }
-    .side-images{
-        display:none;
+
+    .side-images {
+        display: none;
     }
+
     .reservation-form {
         width: 100%;
         position: relative;
@@ -232,16 +243,16 @@ footer {
 }
 
 /*#895129*/
-.reservation-form-row{
+.reservation-form-row {
     border-radius: 5px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     background-color: #f9f9f9; /* Light background */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Soft shadow */
-    width:100%;
-    justify-content:center;
+    width: 100%;
+    justify-content: center;
     color: #333; /* Dark text for contrast */
     padding: 8px;
-    margin-bottom:25px;
+    margin-bottom: 25px;
 }
 
 .reservation-row, .people-row {
@@ -265,7 +276,7 @@ footer {
     height: 100%;
     background-color: #895129; /* New button color */
     /*background: url("https://t3.ftcdn.net/jpg/06/37/13/52/360_F_637135299_FA7PnU3aSUCe6IlzRx6YeL4cjiNRRJ2H.jpg");*/
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     color: white;
     border: none;
     border-radius: 4px;
@@ -278,6 +289,7 @@ footer {
         color: white;
         transform: scale(1.05);
     }
+
 .room-card {
     display: flex;
     align-items: center; /* Align items vertically */
@@ -288,6 +300,7 @@ footer {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
     .room-card img {
         width: 35%;
         height: auto;
@@ -311,15 +324,15 @@ footer {
     display: flex;
     flex-direction: column; /* Stack price & button */
     align-items: center;
-    height:100%;
-    justify-content:space-between;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .price {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
-    top:100px;
+    top: 100px;
 }
 
 .book-room {
@@ -334,7 +347,7 @@ footer {
 
     .book-room:hover {
         background-color: #6d3d20;
-        color:white;
+        color: white;
         transform: scale(1.05);
     }
 
@@ -362,9 +375,10 @@ footer {
         flex-grow: 1;
         margin-right: 15px;
     }
+
 .container {
     padding-left: 0;
-    padding-right: 0; 
+    padding-right: 0;
 }
 
 .slide-container {
@@ -393,23 +407,23 @@ footer {
         align-items: center;
         text-align: center;
         position: relative;
-        width:100%;
-        height:100vh;
-        overflow:hidden;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
     }
+
     .slides {
         position: absolute;
         width: 100%;
         height: 100%;
         flex-direction: column;
         transition: opacity 0.5s ease-in;
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 
         .slides.active {
-           align-content:center;
+            align-content: center;
             opacity: 1;
-            
             width: 100%;
             height: 100%;
         }
@@ -423,14 +437,14 @@ footer {
 
     .about {
         font-size: 17px;
-        width:90%;
-        text-align:center;
-        
+        width: 90%;
+        text-align: center;
     }
 
     .slide-container {
         max-width: 100%;
     }
+
     .dot-div {
         margin: 0;
         padding: 0;
@@ -442,6 +456,7 @@ footer {
         transform: translateX(-50%);
     }
 }
+
 .arrow-btn {
     position: fixed;
     right: 5vw; /* Arrow stays to the right */
@@ -464,6 +479,7 @@ footer {
         font-size: 3rem; /* Adjust for a bigger arrow */
         color: grey; /* Adjust color if needed */
     }
+
 .dot-div {
     margin: 0;
     padding: 0;
@@ -474,105 +490,106 @@ footer {
     left: 50%;
     transform: translateX(-50%);
 }
-    .dot {
-        height: 15px;
-        width: 15px;
-        margin: 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-        cursor: pointer;
-        margin-top: 600px;
-    }
 
-        .dot.active {
-            background-color: #717171;
-        }
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-top: 600px;
+}
+
+    .dot.active {
+        background-color: #717171;
+    }
 
 .contact-section {
     padding: 15px;
 }
 
-    .menu-img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
+.menu-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.menu-content {
+    display: flex;
+    align-items: center; /* Align content in the center */
+    justify-content: center;
+    position: relative;
+    font-size: 20px;
+}
+
+    .menu-content::before,
+    .menu-content::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: lightgrey;
+        position: absolute;
+        top: 0;
     }
 
-    .menu-content {
-        display: flex;
-        align-items: center; /* Align content in the center */
-        justify-content: center;
-        position: relative;
-        font-size: 20px;
+    .menu-content a {
+        color: black;
+        text-decoration: none;
     }
 
-        .menu-content::before,
-        .menu-content::after {
-            content: "";
-            width: 1px;
-            height: 100%;
-            background-color: lightgrey;
-            position: absolute;
-            top: 0;
-        }
+    .menu-content::before {
+        left: -15px;
+    }
 
-        .menu-content a {
-            color: black;
-            text-decoration: none;
-        }
+    .menu-content::after {
+        right: -15px;
+    }
 
-        .menu-content::before {
-            left: -15px;
-        }
+.services-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        .menu-content::after {
-            right: -15px;
-        }
-
-    .services-list {
-        list-style: none;
-        padding: 0;
+    .services-list li {
         display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+        width: 30%;
         flex-wrap: wrap;
-        gap: 20px;
-    }
-
-        .services-list li {
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            text-align: center;
-            align-items: center;
-            text-align: center;
-            width: 30%;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .services-list img {
-            width: 200px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-    .confirmReservation {
-        width: 45%;
         justify-content: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #fff; /* Optional: for visibility */
-        padding: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        background-color: #f9f9f9;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+    .services-list img {
+        width: 200px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+.confirmReservation {
+    width: 45%;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* Optional: for visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}

@@ -20,6 +20,9 @@ namespace Centras.db
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Room>()
+                .Property(r => r.Capacity)
+                .HasDefaultValue(3); // Set default value in the database
             modelBuilder.Entity<Room>().HasData(
                 new Room { ID = 5, Name = "Room 5", Description = "Modern and spacious room with a cozy atmosphere." },
                 new Room { ID = 6, Name = "Room 6", Description = "Elegant suite with a balcony and sea view." },

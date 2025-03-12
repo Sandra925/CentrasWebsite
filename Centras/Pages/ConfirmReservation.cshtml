@@ -1,50 +1,80 @@
 ﻿@page
 @model Centras.Pages.ConfirmReservationModel
 @{
-    <form class="confirmReservation" id="reservationForm" method="post" asp-page="/ConfirmReservation">
+    <h2>Confirm Reservation</h2>
+    <form id="reservationForm" method="post">
+        <!-- Hidden fields for reservation details -->
+        <input type="hidden" asp-for="Reservation.RoomId" />
+        <input type="hidden" asp-for="Reservation.CheckIn" />
+        <input type="hidden" asp-for="Reservation.CheckOut" />
+        <input type="hidden" asp-for="Reservation.AdultsNum" />
+        <input type="hidden" asp-for="Reservation.KidsNum" />
 
+        <!-- Display reservation details -->
+        <div class="form-group">
+            <label>Room Name:</label>
+            <p>@Model.Reservation.Room.Name</p>
+        </div>
+        <div class="form-group">
+            <label>Check-In Date:</label>
+            <p>@Model.Reservation.CheckIn.ToShortDateString()</p>
+        </div>
+        <div class="form-group">
+            <label>Check-Out Date:</label>
+            <p>@Model.Reservation.CheckOut.ToShortDateString()</p>
+        </div>
+        <div class="form-group">
+            <label>Number of Adults:</label>
+            <p>@Model.Reservation.AdultsNum</p>
+        </div>
+        <div class="form-group">
+            <label>Number of Kids:</label>
+            <p>@Model.Reservation.KidsNum</p>
+        </div>
+
+        <!-- User details form -->
         <div class="form-row d-flex gap-3">
             <div class="form-group col-md-6">
                 <label for="inputName">Vardas <span class="text-danger">*</span></label>
-                <input type="name" class="form-control" id="inputName" placeholder="Vardas" required>
+                <input type="text" class="form-control" id="inputName" placeholder="Vardas" asp-for="Reservation.Name" required>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="inputLastname">Pavardė<span class="text-danger">*</span></label>
-                <input type="lastname" class="form-control" id="inputLastname" placeholder="Pavardė" required>
+                <input type="text" class="form-control" id="inputLastname" placeholder="Pavardė" asp-for="Reservation.LastName" required>
             </div>
         </div>
         <div class="form-row d-flex gap-3">
             <div class="form-group col-md-6 mb-3">
                 <label for="inputEmail4">E-Paštas<span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="E-Paštas" required>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="E-Paštas" asp-for="Reservation.Email" required>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="inputPhone">Tel. Nr.<span class="text-danger">*</span></label>
-                <input type="phone" class="form-control" id="inputPhone" placeholder="Telefonas" required>
+                <input type="text" class="form-control" id="inputPhone" placeholder="Telefonas" asp-for="Reservation.Phone" required>
             </div>
         </div>
-       
         <div class="form-group mb-3">
             <label for="inputAddress">Adresas<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Kauno g. 8" required>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Kauno g. 8" asp-for="Reservation.Address" required>
         </div>
         <div class="form-row d-flex gap-3">
             <div class="form-group col-md-6">
                 <label for="inputCity">Miestas</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="inputCity" asp-for="Reservation.City">
             </div>
             <div class="form-group col-md-2 mb-3">
                 <label for="inputZip">Pašto kodas</label>
-                <input type="text" class="form-control" id="inputZip">
+                <input type="text" class="form-control" id="inputZip" asp-for="Reservation.Zip">
             </div>
         </div>
         <div class="form-group col-md-4 mb-3">
             <label for="inputState">Šalis</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" class="form-control" asp-for="Reservation.Country">
                 <option selected>Choose...</option>
             </select>
         </div>
-        <button type="submit" id="confirmReservation" class="btn btn-primary">Užsisakyti</button>
+
+        <button type="submit" class="btn btn-primary">Confirm Reservation</button>
     </form>
 }
 <script src="~/js/confirmReservation.js" asp-append-version="true"></script>

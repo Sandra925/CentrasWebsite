@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250312153333_UpdateRoomsDependencyOnUser")]
+    partial class UpdateRoomsDependencyOnUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -24,11 +27,10 @@ namespace Centras.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Capacity")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasDefaultValue(3);
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -343,9 +345,11 @@ namespace Centras.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -371,6 +375,7 @@ namespace Centras.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Zip")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -2,16 +2,39 @@ using Centras.db;
 using Centras.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
+using System.Linq;
 
 namespace Centras.Pages
 {
-    public class ConfirmReservationModel(CentrasContext context) : PageModel
+    public class ConfirmReservationModel : PageModel
     {
-        private readonly CentrasContext _centrasContext = context;
+        private readonly CentrasContext _context;
+
         [BindProperty]
         public RoomReservation Reservation { get; set; } = new RoomReservation();
+
+        public ConfirmReservationModel(CentrasContext context)
+        {
+            _context = context;
+        }
+
+        public void OnGet(int roomId, string checkInDate, string checkOutDate, int adultsNum, int kidsNum)
+        {
+            var room = _context.Rooms.FirstOrDefault(r => r.ID == roomId);
+            if (room == null)
+            {
+                RedirectToPage("Error");
+                return;
+            }
+            Reservation.RoomId = room.ID;
+            Reservation.Room = room;
+            Reservation.Room.Name = room.Name;
+            Reservation.CheckIn = DateTime.Parse(checkInDate);
+            Reservation.CheckOut = DateTime.Parse(checkOutDate);
+            Reservation.AdultsNum = adultsNum;
+            Reservation.KidsNum = kidsNum;
+        }
+
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -19,35 +42,22 @@ namespace Centras.Pages
                 return Page();
             }
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userId == null)
+            // Check if the room is still available
+            var isRoomAvailable = !_context.RoomReservations.Any(r =>
+                r.Room.ID == Reservation.RoomId &&
+                ((Reservation.CheckIn < r.CheckOut) && (Reservation.CheckOut > r.CheckIn)));
+
+            if (!isRoomAvailable)
             {
-                ModelState.AddModelError("", "User not logged in.");
+                ModelState.AddModelError("", "The room is no longer available for the selected dates.");
                 return Page();
             }
 
-            var user = _centrasContext.Users.FirstOrDefault(u => u.Id == int.Parse(userId));
-            if (user == null)
-            {
-                ModelState.AddModelError("", "User not found.");
-                return Page();
-            }
-
-            var room = _centrasContext.Rooms.FirstOrDefault(r => r.ID == Reservation.Room.ID);
-            if (room == null)
-            {
-                ModelState.AddModelError("", "Selected room does not exist.");
-                return Page();
-            }
-
-            Reservation.Client = user;
-            Reservation.Room = room;
-
-            _centrasContext.RoomReservations.Add(Reservation);
-            _centrasContext.SaveChanges();
+            // Save the reservation
+            _context.RoomReservations.Add(Reservation);
+            _context.SaveChanges();
 
             return RedirectToPage("ReservationSuccess");
         }
-
     }
 }
