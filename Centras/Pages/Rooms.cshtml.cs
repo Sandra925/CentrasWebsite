@@ -11,8 +11,9 @@ namespace Centras.Pages
     public class RoomsModel : PageModel
     {
         public List<Room> Rooms { get; set; }
-        
-        public Dictionary<string, List<string>> RoomImages { get; set; } = new();
+
+        [BindProperty]
+        public List<string> AllRoomImages { get; set; } = new();
         public String? ErrorMessage { get; set; }
         private readonly CentrasContext _context;
         public RoomsModel(CentrasContext context)
@@ -30,12 +31,23 @@ namespace Centras.Pages
         public int AdultsNum { get; set; }
         [BindProperty]
         public int KidsNum { get; set; }
+        public IActionResult OnPostDelete()
+        {
+            var reservations = _context.RoomReservations.ToList();
+            foreach (var res in reservations)
+            {
+                _context.RoomReservations.Remove(res);
+            }
+            _context.SaveChanges();
+
+            return RedirectToPage("/Index"); // Redirect to the same page or another one
+        }
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 ErrorMessage = "Please fill in all required fields.";
-                return Partial("_RoomsPartial", Rooms); // Pass the Rooms list instead of `this`
+                return Partial("_RoomsPartial", Rooms);
             }
 
             // Retrieve values from the form
@@ -88,6 +100,7 @@ namespace Centras.Pages
             {
                 roomId = RoomId,
                 roomName = RoomName,
+                roomImages = room.RoomImages,
                 checkInDate = CheckInDate.ToString("yyyy-MM-dd"),
                 checkOutDate = CheckOutDate.ToString("yyyy-MM-dd"),
                 adultsNum = AdultsNum,
@@ -102,6 +115,7 @@ namespace Centras.Pages
         .Include(r => r.RoomImages)
         .Include(r => r.RoomReservations) 
         .ToList();
+            AllRoomImages =  Rooms.SelectMany(r=>r.RoomImages.Select(i=>i.ImagePath)).ToList();
         }
     }
 

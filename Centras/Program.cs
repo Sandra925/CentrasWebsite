@@ -1,9 +1,10 @@
 using Centras.db;
+using Centras.Models;
 using Centras.Resources;
+using Centras.Services;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Serilog;
 using System;
 using System.Globalization;
@@ -25,10 +26,7 @@ builder.Services.AddDbContext<CentrasContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddRazorPages()
 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-/* Enable support for localized DataAnnotations validation 
-   messages. 
-   NB: this works in .NET 7.0
- */
+
 .AddDataAnnotationsLocalization(options =>
 {
     options.DataAnnotationLocalizerProvider = (_, factory) =>
@@ -37,6 +35,9 @@ builder.Services.AddRazorPages()
         return factory.Create(nameof(Res), assemblyName.Name!);
     };
 });
+
+builder.Services.AddSingleton<SmtpEmailService>();
+
 var supportedCultures = new List<CultureInfo>
 {
     new CultureInfo( "lt" ),

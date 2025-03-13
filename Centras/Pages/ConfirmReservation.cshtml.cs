@@ -1,5 +1,6 @@
 using Centras.db;
 using Centras.Models;
+using Centras.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
@@ -9,13 +10,15 @@ namespace Centras.Pages
     public class ConfirmReservationModel : PageModel
     {
         private readonly CentrasContext _context;
+        private readonly SmtpEmailService _emailService;
 
         [BindProperty]
         public RoomReservation Reservation { get; set; } = new RoomReservation();
 
-        public ConfirmReservationModel(CentrasContext context)
+        public ConfirmReservationModel(CentrasContext context, SmtpEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         public void OnGet(int roomId, string checkInDate, string checkOutDate, int adultsNum, int kidsNum)
@@ -35,7 +38,7 @@ namespace Centras.Pages
             Reservation.KidsNum = kidsNum;
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +58,20 @@ namespace Centras.Pages
 
             // Save the reservation
             _context.RoomReservations.Add(Reservation);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
+            // Send email to the owner
+            var ownerEmail = "mika925d@gmail.com"; // Replace with the owner's email address
+            var subject = "New Reservation Confirmation";
+            var content = $"A new reservation has been made:\n\n" +
+                          $"Guest Name: {Reservation.Name}\n" +
+                          $"Check-In: {Reservation.CheckIn.ToShortDateString()}\n" +
+                          $"Check-Out: {Reservation.CheckOut.ToShortDateString()}\n" +
+                          $"Room: {Reservation.RoomId}\n" +
+                          $"Adults: {Reservation.AdultsNum}\n" +
+                          $"Kids: {Reservation.KidsNum}\n";
+
+            await _emailService.SendEmailAsync(ownerEmail, subject, content);
 
             return RedirectToPage("ReservationSuccess");
         }

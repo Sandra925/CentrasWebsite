@@ -64,9 +64,10 @@
             });
         }
     });
+
 //FIND ROOM BUTTON
 document.getElementById("findRoom").addEventListener("click", function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     let formData = new FormData(document.querySelector("form")); 
 

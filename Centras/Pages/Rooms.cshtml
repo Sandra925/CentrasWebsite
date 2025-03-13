@@ -16,6 +16,7 @@
 
 </div>
 <form method="post">
+    <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Delete All Reservations</button>
     <div class="reservation-form">
         <div class="reservation-form-row">
             <div class="reservation-row d-flex">
@@ -49,12 +50,14 @@
         </div>
     </div>
 
+
     <button type="button" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>
 </form>
 
 
 
 <div id="roomsContainer">
+
     <!-- Available rooms will be inserted here -->
 </div>
 <p id="noRoomsMessage" style="display: none;">No available rooms found.</p>
@@ -71,15 +74,7 @@
             <div class="modal-body">
                 <div id="roomGallery" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        @foreach (var room in Model.Rooms)
-                        {
-                            foreach (var img in room.RoomImages)
-                            {
-                                <div class="carousel-item">
-                                    <img src="~/@img.ImagePath" class="d-block w-100" alt="@room.Name">
-                                </div>
-                            }
-                        }
+                        <!-- Carousel items will be dynamically inserted here -->
                     </div>
                     <a class="carousel-control-prev" href="#roomGallery" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -7,10 +7,12 @@
         @foreach (var room in Model)
         {
             <div class="room-card">
-                @if (room.RoomImages != null && room.RoomImages.Any())
+                @if (room.RoomImages.Any())
                 {
-                    <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail">
+                    <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail"
+                         data-images="@string.Join(',', room.RoomImages.Select(i => i.ImagePath))">
                 }
+                
                 <div class="room-info">
                     <h3>@room.Name</h3>
                     <p>@room.Description</p>
