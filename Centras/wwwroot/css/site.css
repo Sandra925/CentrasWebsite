@@ -26,7 +26,7 @@ body {
 }
 
 .inside, .hotel, .outside-centras {
-    margin-top: 9vh;
+
     width: 50%;
     height: 80%;
     margin-right: 20px;
@@ -149,6 +149,10 @@ footer {
         width: 90%;
         max-width: 350px;
     }
+}
+.btn-success{
+    background:black;
+    color:black;
 }
 
 .image-gallery {
