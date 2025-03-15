@@ -6,8 +6,11 @@
 
 <div class="image-gallery">
     <div class="main-image">
-        <img src="Images/Room 6/Room6_1.jfif" alt="Room 6">
-        <button class="btn-show-all-photos">Daugiau</button>
+        <img src="Images/Room 6/Room6_1.jfif" alt="Room 6"/>
+        <button data-images="@string.Join(",", Model.AllRoomImages.Select(i => i.ImagePath))" class="btn-show-all-photos room-button"
+                onclick="showGallery(this.getAttribute('data-images').split(','))">
+                 Daugiau
+        </button>
     </div>
     <div class="side-images">
         <img src="Images/Room 9/Room9_2.jfif" alt="Room 2">
@@ -66,7 +69,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="roomGalleryModalLabel">Kambario nuotraukos</h5>
+                <h5 class="modal-title" id="roomGalleryModalLabel">Kambariu nuotraukos</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

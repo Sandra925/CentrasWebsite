@@ -13,7 +13,7 @@ namespace Centras.Pages
         public List<Room> Rooms { get; set; }
 
         [BindProperty]
-        public List<string> AllRoomImages { get; set; } = new();
+        public List<RoomImage> AllRoomImages { get; set; }
         public String? ErrorMessage { get; set; }
         private readonly CentrasContext _context;
         public RoomsModel(CentrasContext context)
@@ -113,9 +113,9 @@ namespace Centras.Pages
         {
             Rooms = _context.Rooms
         .Include(r => r.RoomImages)
-        .Include(r => r.RoomReservations) 
+        .Include(r => r.RoomReservations)
         .ToList();
-            AllRoomImages =  Rooms.SelectMany(r=>r.RoomImages.Select(i=>i.ImagePath)).ToList();
+            AllRoomImages = _context.RoomImages.ToList();
         }
     }
 

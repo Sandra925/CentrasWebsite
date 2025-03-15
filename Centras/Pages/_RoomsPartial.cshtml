@@ -9,8 +9,11 @@
             <div class="room-card">
                 @if (room.RoomImages.Any())
                 {
-                    <img src="~/@room.RoomImages[0].ImagePath" alt="@room.Name" class="room-thumbnail"
-                         data-images="@string.Join(',', room.RoomImages.Select(i => i.ImagePath))">
+                    <img src="~/@room.RoomImages[0].ImagePath"
+                         alt="@room.Name"
+                         class="room-thumbnail"
+                         data-images="@string.Join(',', room.RoomImages.Select(i => i.ImagePath))"
+                         onclick="showGallery(this.getAttribute('data-images').split(','))">
                 }
                 
                 <div class="room-info">
@@ -48,8 +51,35 @@
             </div>
         }
     </div>
+    <div class="modal fade" id="roomGalleryModal" tabindex="-1" aria-labelledby="roomGalleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="roomGalleryModalLabel">Kambario nuotraukos</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="roomGallery" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Carousel items will be dynamically inserted here -->
+                        </div>
+                        <a class="carousel-control-prev" href="#roomGallery" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#roomGallery" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 }
 else
 {
-    <p>No available rooms found.</p>
+<p>No available rooms found.</p>
 }
+<script src="~/js/room.js" asp-append-version="true"></script>
