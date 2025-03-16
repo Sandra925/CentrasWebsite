@@ -19,7 +19,11 @@
 
 </div>
 <form method="post">
-    <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Delete All Reservations</button>
+    @if (User.IsInRole("Administratorius"))
+    {
+        <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Delete All Reservations</button>
+    }
+    
     <div class="reservation-form">
         <div class="reservation-form-row">
             <div class="reservation-row d-flex">
@@ -37,7 +41,6 @@
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
-                        <option>3</option>
                     </select>
                 </div>
                 <div class="people-col">
@@ -46,7 +49,6 @@
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
-                        <option>3</option>
                     </select>
                 </div>
             </div>

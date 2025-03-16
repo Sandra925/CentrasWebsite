@@ -31,6 +31,7 @@ namespace Centras.Pages
         public int AdultsNum { get; set; }
         [BindProperty]
         public int KidsNum { get; set; }
+
         public IActionResult OnPostDelete()
         {
             var reservations = _context.RoomReservations.ToList();
@@ -40,7 +41,7 @@ namespace Centras.Pages
             }
             _context.SaveChanges();
 
-            return RedirectToPage("/Index"); // Redirect to the same page or another one
+            return RedirectToPage("/Index");
         }
         public IActionResult OnPost()
         {

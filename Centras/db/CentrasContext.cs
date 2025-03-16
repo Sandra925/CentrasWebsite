@@ -24,11 +24,11 @@ namespace Centras.db
                 .Property(r => r.Capacity)
                 .HasDefaultValue(3); // Set default value in the database
             modelBuilder.Entity<Room>().HasData(
-                new Room { ID = 5, Name = "Room 5", Description = "Modern and spacious room with a cozy atmosphere." },
-                new Room { ID = 6, Name = "Room 6", Description = "Elegant suite with a balcony and sea view." },
-                new Room { ID = 7, Name = "Room 7", Description = "Luxury suite with a king-sized bed and mini-bar." },
-                new Room { ID = 8, Name = "Room 8", Description = "Comfortable double room perfect for couples." },
-                new Room { ID = 9, Name = "Room 9", Description = "Budget-friendly room with all essential amenities." }
+                new Room { ID = 5, Name = "Dvivietis Kambarys", Description = "", Price = 65},
+                new Room { ID = 6, Name = "Liukso Kambarys", Description = "", Price = 80},  //70 vienam asm be pusryciu     pusryciai +10e
+                new Room { ID = 7, Name = "Dvivietis Kambarys (2 lovos)", Description = "" , Price = 65 },
+                new Room { ID = 8, Name = "Liukso Kambarys", Description = "", Price = 80},
+                new Room { ID = 9, Name = "Dvivietis Kambarys", Description = "Vaizdas į ežerą", Price = 65 }  //55 be pusryciu (1asm)         pusryciai +10e
             );
 
             modelBuilder.Entity<RoomImage>().HasData(

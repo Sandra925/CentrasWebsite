@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250316170930_ChangeOfRoomsinfo0")]
+    partial class ChangeOfRoomsinfo0
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -48,40 +51,40 @@ namespace Centras.Migrations
                             ID = 5,
                             Capacity = 0,
                             Description = "",
-                            Name = "Kambarys #5",
-                            Price = 65
+                            Name = "Room 5",
+                            Price = 50
                         },
                         new
                         {
                             ID = 6,
                             Capacity = 0,
                             Description = "",
-                            Name = "Kambarys 6",
-                            Price = 80
+                            Name = "Room 6",
+                            Price = 0
                         },
                         new
                         {
                             ID = 7,
                             Capacity = 0,
                             Description = "",
-                            Name = "Dvivietis Kambarys",
-                            Price = 65
+                            Name = "Room 7",
+                            Price = 0
                         },
                         new
                         {
                             ID = 8,
                             Capacity = 0,
                             Description = "",
-                            Name = "Kambarys 8",
-                            Price = 80
+                            Name = "Room 8",
+                            Price = 0
                         },
                         new
                         {
                             ID = 9,
                             Capacity = 0,
                             Description = "",
-                            Name = "Kambarys 9",
-                            Price = 65
+                            Name = "Room 9",
+                            Price = 0
                         });
                 });
 

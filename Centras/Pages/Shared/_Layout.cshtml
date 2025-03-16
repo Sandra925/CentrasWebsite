@@ -42,12 +42,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Contacts">Kontaktai</a>
                         </li>
                         @{
-                            var userName = HttpContextAccessor.HttpContext.Session.GetString("Name");
+                            var userName = HttpContextAccessor.HttpContext?.User.Identity?.Name;
                         }
                         <li class="login-nav-item ms-auto">
                           
                             @if (!string.IsNullOrEmpty(userName))
                             {
+                                
                             <li class="nav-item text-dark" style="font-size:15px;">Hello, @userName</li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Atsijungti</a>

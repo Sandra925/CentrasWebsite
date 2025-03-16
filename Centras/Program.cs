@@ -2,6 +2,7 @@ using Centras.db;
 using Centras.Models;
 using Centras.Resources;
 using Centras.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File(logPath, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7)
     .CreateLogger();
 
+var secret = Environment.GetEnvironmentVariable("SmtpPass");
 builder.Host.UseSerilog();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -36,7 +38,19 @@ builder.Services.AddRazorPages()
     };
 });
 
-builder.Services.AddSingleton<SmtpEmailService>();
+
+#if Release
+
+
+builder.Services.AddSingleton<SmtpEmailService>(serviceProvider =>
+{
+    var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    return new SmtpEmailService(configuration,secret);
+});
+#else
+    builder.Services.AddSingleton<SmtpEmailService>();
+#endif
+
 
 var supportedCultures = new List<CultureInfo>
 {
@@ -56,6 +70,21 @@ var options = new RequestLocalizationOptions
         new AcceptLanguageHeaderRequestCultureProvider() 
     }
 };
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Name = "CentrasCookie"; // Custom cookie name
+        options.LoginPath = "/Login"; // Redirect to this page if not authenticated
+        options.AccessDeniedPath = "/AccessDenied"; // Redirect here if authorization fails
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // Cookie expiration time
+        options.SlidingExpiration = true; // Reset the expiration time on each request
+        options.Cookie.HttpOnly = true; // Prevent client-side script access to the cookie
+        options.Cookie.SameSite = SameSiteMode.Strict; // Enhance security
+        options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Ensure cookies are only sent over HTTPS
+    });
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireRole("Administratorius"));
+
 
 var app = builder.Build();
 app.UseSession();
@@ -67,7 +96,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
+app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
