@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 
 namespace Centras.Services
@@ -8,25 +9,30 @@ namespace Centras.Services
     public class SmtpEmailService
     {
         private readonly IConfiguration _configuration;
+        private readonly string? _password;
 
+        public SmtpEmailService(IConfiguration configuration,string? password)
+        {
+            _configuration = configuration;
+            _password = password;
+        }
         public SmtpEmailService(IConfiguration configuration)
         {
             _configuration = configuration;
         }
-
         public async Task SendEmailAsync(string toEmail, string subject, string body)
         {
             try
             {
                 var smtpSettings = _configuration.GetSection("SmtpSettings");
-                var password = _configuration["SmtpSettings:Password"];
+                var password = _password ?? smtpSettings["Password"];
                 if (string.IsNullOrEmpty(password))
                 {
                     throw new Exception("SMTP password is missing.");
                 }
                 using (var client = new SmtpClient(smtpSettings["Server"], int.Parse(smtpSettings["Port"])))
                 {
-                    client.Credentials = new NetworkCredential(smtpSettings["Username"], smtpSettings["Password"]);
+                    client.Credentials = new NetworkCredential(smtpSettings["Username"], password);
                     client.EnableSsl = true;
 
                     var mailMessage = new MailMessage
