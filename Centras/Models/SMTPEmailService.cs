@@ -20,7 +20,7 @@ namespace Centras.Services
         {
             _configuration = configuration;
         }
-        public async Task SendEmailAsync(string toEmail, string subject, string body)
+        public async Task SendEmailAsync(string toEmail, string subject, string body, bool isBodyHtml = false)
         {
             try
             {
@@ -30,6 +30,7 @@ namespace Centras.Services
                 {
                     throw new Exception("SMTP password is missing.");
                 }
+
                 using (var client = new SmtpClient(smtpSettings["Server"], int.Parse(smtpSettings["Port"])))
                 {
                     client.Credentials = new NetworkCredential(smtpSettings["Username"], password);
@@ -40,7 +41,7 @@ namespace Centras.Services
                         From = new MailAddress(smtpSettings["Username"]),
                         Subject = subject,
                         Body = body,
-                        IsBodyHtml = false
+                        IsBodyHtml = isBodyHtml // Set to true for HTML emails
                     };
                     mailMessage.To.Add(toEmail);
 
@@ -51,7 +52,6 @@ namespace Centras.Services
             {
                 throw new Exception($"Email sending failed because {ex.Message}", ex);
             }
-           
         }
     }
 }

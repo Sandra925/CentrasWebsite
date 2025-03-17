@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+            .logo img {
+                width: 300px;
+            }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://imgur.com/osOy7pn.png" alt="Centras Logo">
+    </div>
+    <div class="content">
+        <h2>REZERVACIJOS PATVIRTINIMAS</h2>
+        <p>Maloniai informuojame apie Jūsų rezervacijos patvirtinimą viešbutyje "Centras".</p>
+        <p>Užsakymas priimtas pagal šiuos duomenis:</p>
+        <ul>
+            <li><strong>Data:</strong> {{ReservationDate}}</li>
+            <li><strong>Svečias:</strong> {{GuestName}}</li>
+            <li><strong>Atvykimo data ir laikas:</strong> {{CheckIn}}</li>
+            <li><strong>Išvykimo data ir laikas:</strong> {{CheckOut}}</li>
+            <li><strong>Naktų skaičius:</strong> {{Nights}}</li>
+            <li><strong>Kambario tipas:</strong> {{RoomName}}</li>
+            <li><strong>Žmonių skaičius:</strong> {{NumberOfPeople}}</li>
+            <li><strong>Kambario kaina:</strong> {{RoomPrice}} Eur</li>
+        </ul>
+        <p>Jeigu Jūs planuojate atvykti po 21.00, prašome apie tai informuoti.</p>
+        <p><strong>JEIGU ŠIS PATVIRTINIMAS NEATITINKA JŪSŲ PAGEIDAVIMŲ, PRAŠOME MUS APIE TAI INFORMUOTI.</strong></p>
+        <p>Laukiame Jūsų atvykstant į viešbutį „Centras“.</p>
+    </div>
+</body>
+</html>

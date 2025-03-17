@@ -45,6 +45,15 @@ document.getElementById("findRoom").addEventListener("click", function (event) {
     event.preventDefault();
 
     let formData = new FormData(document.querySelector("form")); 
+    let checkIn = document.getElementById("check-in").value;
+    let checkOut = document.getElementById("check-out").value;
+    let adults = document.getElementById("AdultNum").value;
+    let kids = document.getElementById("KidsNum").value;
+
+    if (!checkIn || !checkOut || (adults==0 && !kids==0)) {
+        alert("Užpildykite kambario paieškos stulpelius!");
+        return;
+    }
 
     fetch('/Rooms', { 
         method: 'POST',
