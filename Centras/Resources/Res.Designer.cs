@@ -95,5 +95,176 @@ namespace Centras.Resources {
                 return ResourceManager.GetString("AboutSlide3", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginBtn.
+        /// </summary>
+        public static string LoginBtn {
+            get {
+                return ResourceManager.GetString("LoginBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginEmail.
+        /// </summary>
+        public static string LoginEmail {
+            get {
+                return ResourceManager.GetString("LoginEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginForgotPw.
+        /// </summary>
+        public static string LoginForgotPw {
+            get {
+                return ResourceManager.GetString("LoginForgotPw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginNotMember.
+        /// </summary>
+        public static string LoginNotMember {
+            get {
+                return ResourceManager.GetString("LoginNotMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginPw.
+        /// </summary>
+        public static string LoginPw {
+            get {
+                return ResourceManager.GetString("LoginPw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LoginRegister.
+        /// </summary>
+        public static string LoginRegister {
+            get {
+                return ResourceManager.GetString("LoginRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NavAboutUs.
+        /// </summary>
+        public static string NavAboutUs {
+            get {
+                return ResourceManager.GetString("NavAboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NavContacts.
+        /// </summary>
+        public static string NavContacts {
+            get {
+                return ResourceManager.GetString("NavContacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NavMenu.
+        /// </summary>
+        public static string NavMenu {
+            get {
+                return ResourceManager.GetString("NavMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NavRooms.
+        /// </summary>
+        public static string NavRooms {
+            get {
+                return ResourceManager.GetString("NavRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegBtn.
+        /// </summary>
+        public static string RegBtn {
+            get {
+                return ResourceManager.GetString("RegBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegEmail.
+        /// </summary>
+        public static string RegEmail {
+            get {
+                return ResourceManager.GetString("RegEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegHaveAccount.
+        /// </summary>
+        public static string RegHaveAccount {
+            get {
+                return ResourceManager.GetString("RegHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegLastname.
+        /// </summary>
+        public static string RegLastname {
+            get {
+                return ResourceManager.GetString("RegLastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegLogin.
+        /// </summary>
+        public static string RegLogin {
+            get {
+                return ResourceManager.GetString("RegLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegName.
+        /// </summary>
+        public static string RegName {
+            get {
+                return ResourceManager.GetString("RegName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegPw.
+        /// </summary>
+        public static string RegPw {
+            get {
+                return ResourceManager.GetString("RegPw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegPw2.
+        /// </summary>
+        public static string RegPw2 {
+            get {
+                return ResourceManager.GetString("RegPw2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RegTitle.
+        /// </summary>
+        public static string RegTitle {
+            get {
+                return ResourceManager.GetString("RegTitle", resourceCulture);
+            }
+        }
     }
 }

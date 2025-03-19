@@ -129,4 +129,61 @@
   <data name="AboutSlide3" xml:space="preserve">
     <value>AboutSlide3</value>
   </data>
+  <data name="NavAboutUs" xml:space="preserve">
+    <value>NavAboutUs</value>
+  </data>
+  <data name="NavRooms" xml:space="preserve">
+    <value>NavRooms</value>
+  </data>
+  <data name="NavMenu" xml:space="preserve">
+    <value>NavMenu</value>
+  </data>
+  <data name="NavContacts" xml:space="preserve">
+    <value>NavContacts</value>
+  </data>
+  <data name="LoginEmail" xml:space="preserve">
+    <value>LoginEmail</value>
+  </data>
+  <data name="LoginPw" xml:space="preserve">
+    <value>LoginPw</value>
+  </data>
+  <data name="LoginNotMember" xml:space="preserve">
+    <value>LoginNotMember</value>
+  </data>
+  <data name="LoginRegister" xml:space="preserve">
+    <value>LoginRegister</value>
+  </data>
+  <data name="LoginForgotPw" xml:space="preserve">
+    <value>LoginForgotPw</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>LoginBtn</value>
+  </data>
+  <data name="RegTitle" xml:space="preserve">
+    <value>RegTitle</value>
+  </data>
+  <data name="RegName" xml:space="preserve">
+    <value>RegName</value>
+  </data>
+  <data name="RegLastname" xml:space="preserve">
+    <value>RegLastname</value>
+  </data>
+  <data name="RegEmail" xml:space="preserve">
+    <value>RegEmail</value>
+  </data>
+  <data name="RegPw" xml:space="preserve">
+    <value>RegPw</value>
+  </data>
+  <data name="RegPw2" xml:space="preserve">
+    <value>RegPw2</value>
+  </data>
+  <data name="RegBtn" xml:space="preserve">
+    <value>RegBtn</value>
+  </data>
+  <data name="RegHaveAccount" xml:space="preserve">
+    <value>RegHaveAccount</value>
+  </data>
+  <data name="RegLogin" xml:space="preserve">
+    <value>RegLogin</value>
+  </data>
 </root>

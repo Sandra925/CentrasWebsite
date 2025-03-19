@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 @using Centras.Models
+@using Centras.Resources
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @using Centras.db
 <html lang="en">
@@ -30,17 +31,18 @@
                 <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Apie Mus</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">@Res.NavAboutUs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Rooms">Kambariai</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Rooms">@Res.NavRooms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Menu">Meniu</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Menu">@Res.NavMenu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Contacts">Kontaktai</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contacts">@Res.NavContacts</a>
                         </li>
+                       
                         @{
                             var userName = HttpContextAccessor.HttpContext?.User.Identity?.Name;
                         }
@@ -60,6 +62,29 @@
                                 <i class="bi bi-person-circle"></i>
                             </a>
                             }
+                        </li>
+                        @using Microsoft.AspNetCore.Localization
+                        @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+                        @{
+                            var currentCulture = HttpContextAccessor.HttpContext?.Features.Get<IRequestCultureFeature>()?.RequestCulture.Culture.Name;
+                            var newCulture = currentCulture == "lt" ? "en" : "lt";
+                        }
+
+                        <li class="languageBtn">
+                            <form method="post" asp-page="/ChangeLanguage">
+                                <input type="hidden" name="culture" value="@newCulture" />
+                                <button type="submit" class="btn">
+                                    @if (currentCulture == "lt")
+                                    {
+                                        <span>English</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Lietuvių</span>
+                                    }
+                                </button>
+                            </form>
                         </li>
                      
                     </ul>

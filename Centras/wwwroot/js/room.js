@@ -49,9 +49,15 @@ document.getElementById("findRoom").addEventListener("click", function (event) {
     let checkOut = document.getElementById("check-out").value;
     let adults = document.getElementById("AdultNum").value;
     let kids = document.getElementById("KidsNum").value;
+    const today = new Date();
+    const formatToday = today.toISOString().split('T')[0];
 
     if (!checkIn || !checkOut || (adults==0 && !kids==0)) {
         alert("Užpildykite kambario paieškos stulpelius!");
+        return;
+    }
+    if (checkIn > checkOut || checkOut < checkIn || checkIn < today.toISOString( || checkOut == today) {
+        alert("Netinkamos datos!");
         return;
     }
 

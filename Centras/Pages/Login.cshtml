@@ -1,18 +1,19 @@
 ﻿@page
 @using Centras.Models
+@using Centras.Resources
 @using Centras.db
 @model Centras.Pages.LoginModel
 @{
         <form class="login-form" method="post">
             <!-- Email input -->
             <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form2Example1">Email address</label>
+                <label class="form-label" for="form2Example1">@Res.LoginEmail</label>
                 <input type="email" id="email" class="form-control" asp-for="User.Email" required />
             </div>
 
             <!-- Password input -->
             <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form2Example2">Password</label>
+                <label class="form-label" for="form2Example2">@Res.LoginPw</label>
                 <input type="password" id="password" class="form-control" asp-for="User.Password" required />
             </div>
             
@@ -21,14 +22,14 @@
                 <div class="alert alert-danger">@Model.ErrorMessage</div>
             }
             <!-- Submit button -->
-            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="submit">Sign in</button>
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" id="submit">@Res.LoginBtn</button>
 
             <div class="text-center">
-                <p>Not a member? <a href="/Register">Register</a></p>
+                <p>@Res.LoginNotMember<a href="/Register">@Res.LoginRegister</a></p>
             </div>
         <div class="row mb-4">
             <div class="col">
-                <a href="#!">Forgot password?</a>
+                <a href="#!">@Res.LoginForgotPw</a>
             </div>
         </div>
         </form>

@@ -137,4 +137,61 @@ Our hotel guests can enjoy a hearty and diverse breakfast from 8 to 11 a.m. We o
 
 In addition, we offer exclusive sweets that perfectly complement your favorite tea – from traditional handcrafted delicacies to modern treats.</value>
   </data>
+  <data name="NavAboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="NavRooms" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="NavMenu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="NavContacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="LoginEmail" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="LoginPw" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginNotMember" xml:space="preserve">
+    <value>Not a member?</value>
+  </data>
+  <data name="LoginRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="LoginForgotPw" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="RegTitle" xml:space="preserve">
+    <value>Create an Account</value>
+  </data>
+  <data name="RegName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RegLastname" xml:space="preserve">
+    <value>Lastname</value>
+  </data>
+  <data name="RegEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="RegPw" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="RegPw2" xml:space="preserve">
+    <value>Repeat your password</value>
+  </data>
+  <data name="RegBtn" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegHaveAccount" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="RegLogin" xml:space="preserve">
+    <value>Login here</value>
+  </data>
 </root>

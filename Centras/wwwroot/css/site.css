@@ -65,7 +65,7 @@ footer {
     padding: 0 15px;
 }
 
-.login-nav-item {
+.login-nav-item, languageBtn {
     font-size: 25px;
     text-align: center;
     margin-left: auto;
@@ -89,7 +89,7 @@ footer {
         padding: 10px 0;
     }
 
-    .login-nav-item {
+    .login-nav-item, languageBtn {
         font-size: 20px;
         width: 100%;
         text-align: center;

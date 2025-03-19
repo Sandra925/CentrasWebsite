@@ -136,4 +136,61 @@ Mūsų viešbučio svečiai gali mėgautis sočiais ir įvairiais pusryčiais nu
 
 Be to, siūlome išskirtinius saldainius, puikiai derančius prie jūsų mėgstamos arbatos – nuo tradicinių rankų darbo gardumynų iki šiuolaikinių skanėstų.</value>
   </data>
+  <data name="NavAboutUs" xml:space="preserve">
+    <value>Apie Mus</value>
+  </data>
+  <data name="NavRooms" xml:space="preserve">
+    <value>Kambariai</value>
+  </data>
+  <data name="NavMenu" xml:space="preserve">
+    <value>Meniu</value>
+  </data>
+  <data name="NavContacts" xml:space="preserve">
+    <value>Kontaktai</value>
+  </data>
+  <data name="LoginEmail" xml:space="preserve">
+    <value>El-Paštas</value>
+  </data>
+  <data name="LoginPw" xml:space="preserve">
+    <value>Slaptažodis</value>
+  </data>
+  <data name="LoginNotMember" xml:space="preserve">
+    <value>Neturite paskyros?</value>
+  </data>
+  <data name="LoginRegister" xml:space="preserve">
+    <value>Prisiregistruokite</value>
+  </data>
+  <data name="LoginForgotPw" xml:space="preserve">
+    <value>Pamiršote slaptažodį?</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>Prisijunkite</value>
+  </data>
+  <data name="RegTitle" xml:space="preserve">
+    <value>Susikurkite paskyrą</value>
+  </data>
+  <data name="RegName" xml:space="preserve">
+    <value>Vardas</value>
+  </data>
+  <data name="RegLastname" xml:space="preserve">
+    <value>Pavardė</value>
+  </data>
+  <data name="RegEmail" xml:space="preserve">
+    <value>El. Paštas</value>
+  </data>
+  <data name="RegPw" xml:space="preserve">
+    <value>Slaptažodis</value>
+  </data>
+  <data name="RegPw2" xml:space="preserve">
+    <value>Pakartokite slaptažodį</value>
+  </data>
+  <data name="RegBtn" xml:space="preserve">
+    <value>Registruotis</value>
+  </data>
+  <data name="RegHaveAccount" xml:space="preserve">
+    <value>Jau turite paskyrą?</value>
+  </data>
+  <data name="RegLogin" xml:space="preserve">
+    <value>Prisijunkite</value>
+  </data>
 </root>
