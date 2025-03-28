@@ -18,7 +18,7 @@
     </div>
 
 </div>
-<form method="post">
+<form method="post" id="room-form">
     @if (User.IsInRole("Administratorius"))
     {
         <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Delete All Reservations</button>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="people-col">
                     <label>Suaugusių Sk.</label>
-                    <select name="AdultNum" id="AdultNum" class="form-control">
+                    <select name="AdultsNum" id="AdultsNum" class="form-control">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -92,4 +92,4 @@
     </div>
 </div>
 
-<script src="~/js/room.js" asp-append-version="true"></script>
+<script src="~/js/room.js" defer></script>

@@ -54,7 +54,7 @@ namespace Centras.Pages
             // Retrieve values from the form
             CheckInDate = Convert.ToDateTime(Request.Form["CheckInDate"]);
             CheckOutDate = Convert.ToDateTime(Request.Form["CheckOutDate"]);
-            AdultsNum = int.Parse(Request.Form["AdultNum"]);
+            AdultsNum = int.Parse(Request.Form["AdultsNum"]);
             KidsNum = int.Parse(Request.Form["KidsNum"]);
 
             // Store search parameters for persistence

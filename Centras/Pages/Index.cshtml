@@ -6,95 +6,87 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="text-center d-flex">
-    <div class="slide-container d-flex" style="margin-top:5vh;">
-        <!-- First slide (Initially Active) -->
-        <div class="slides d-flex" style="display: block;">
-            <img src="Images\Skveras1.jfif" class="outside-centras"/>
-            <div class="about">
-                <p>@Res.About</p>
-            </div>
+<div class="text-center">
+
+    <div class="slide-container" style="margin-top:5vh;">
+
+        <div class="slides">
+            <img src="Images\Skveras1.jfif" class="outside-centras" />
         </div>
 
-        <!-- Second Slide (Initially Hidden) -->
-        <div class="slides d-flex">
+        <div class="slides">
+            <img src="Images\outside.jfif" class="outside-centras" />
+            
+        </div>
+        <div class="slides">
             <img src="Images\Restaurant1.jfif" class="hotel"/>
             
-            <div class="about">
-                <p>@Res.AboutSlide1</p>
-            </div>
         </div>
 
-        <!-- Third Slide (Initially Hidden) -->
-        <div class="slides d-flex">
+        <div class="slides">
             <img src="Images/Room 6/Room6_1.jfif" class="hotel"/>
-            <div class="about">
-                <p>@Res.AboutSlide2</p>
-            </div>
+           
         </div>
-
-        <!-- Fourth Slide (Initially Hidden) -->
-        <div class="slides d-flex">
+        <div class="slides">
             <img src="Images/Tea2.jfif" class="hotel" />
-            <div class="about">
-                <p>@Res.AboutSlide3</p>
-            </div>
         </div>
     </div>
-
-    <button class="arrow-btn" id="nextButton"></button>
+    <p class="about">@Res.About</p>
     
 </div>
 
-<div class="dot-div"style="text-align:center;">
+<div class="dot-div" style="text-align:center;">
+    <span class="dot" onclick="currentSlide(0)"></span>
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
     <span class="dot" onclick="currentSlide(4)"></span>
 </div>
-
 <script>
-    let slideIdx = 1;
+    let currentImageIndex = 0;
+    let autoSlideInterval;
+    const slides = document.getElementsByClassName("slides");
+    const dots = document.getElementsByClassName("dot");
 
-    window.onload = function () {
-        showSlides(slideIdx);
-    };
-
-    function plusSlides(n) {
-        showSlides(slideIdx += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIdx = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slides");
-        let dots = document.getElementsByClassName("dot");
-
-        if (n > slides.length) {
-            slideIdx = 1;
-        }
-        if (n < 1) {
-            slideIdx = slides.length;
-        }
-
-        for (i = 0; i < slides.length; i++) {
+    // Show specific slide
+    function showImageSlide(index) {
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
             slides[i].classList.remove("active");
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
             dots[i].classList.remove("active");
         }
 
-        slides[slideIdx - 1].style.display = "flex"; // Make it visible
-        setTimeout(() => { slides[slideIdx - 1].classList.add("active"); }, 10); // Add fade-in effect
-        dots[slideIdx - 1].classList.add("active");
+        // Show selected slide
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+        currentImageIndex = index;
     }
 
+    // Auto-rotate images
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            const nextIndex = (currentImageIndex + 1) % slides.length;
+            showImageSlide(nextIndex);
+        }, 5000);
+    }
 
-    document.getElementById("nextButton").addEventListener("click", function () {
-        plusSlides(1);
-    });
+    // Dot click handler
+    function currentSlide(index) {
+        clearInterval(autoSlideInterval);
+        showImageSlide(index);
+        startAutoSlide();
+    }
+
+    // Initialize slider
+    window.onload = function () {
+        showImageSlide(0);
+        startAutoSlide();
+
+        // Add event listeners to dots
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].addEventListener("click", function () {
+                currentSlide(i);
+            });
+        }
+    };
 </script>

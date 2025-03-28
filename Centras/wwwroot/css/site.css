@@ -17,6 +17,11 @@ html {
     min-height: 100%;
 }
 
+.text-center {
+    text-align: center !important;
+    margin-top: -25px;
+}
+
 body {
     margin-bottom: 60px;
     font-family: Calibri;
@@ -34,13 +39,7 @@ body {
     border-radius: 10px;
 }
 
-.about {
-    width: 36%;
-    text-align: justify;
-    font-size: 22px;
-    align-content: center;
-    margin-right: 20px;
-}
+
 
 footer {
     background-color: white;
@@ -376,136 +375,95 @@ footer {
         margin-right: 15px;
     }
 
-.container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
+/* Main container with proper constraints */
 .slide-container {
     width: 100%;
-    height: auto;
+    max-width: 1200px; /* Added maximum width */
+    height: 70vh;
+    position: relative;
+    margin: 5vh auto 0; /* Centered horizontally */
     overflow: hidden;
-    display: flex;
+    border-radius: 8px;
 }
 
+/* Slide styling with centered content */
 .slides {
     position: absolute;
-    display: none;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    flex: 1;
-    transition: opacity 0.5s;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
     .slides.active {
         display: flex;
-        opacity: 1;
+        opacity:1;
     }
 
-@media (max-width: 768px) {
-    .slide-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .slides {
-        position: absolute;
+    /* Image styling with centered cropping */
+    .slides img {
         width: 100%;
         height: 100%;
-        flex-direction: column;
-        transition: opacity 0.5s ease-in;
-        margin-bottom: 0;
+        object-fit: cover;
+        object-position: center;
     }
 
-        .slides.active {
-            align-content: center;
-            opacity: 1;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Make images larger on small screens */
-        .slides img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-    .about {
-        font-size: 17px;
-        width: 90%;
-        text-align: center;
-    }
-
-    .slide-container {
-        max-width: 100%;
-    }
-
-    .dot-div {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center; /* Centers dots */
-        position: absolute; /* Prevents it from taking space */
-        bottom: 10px; /* Adjust positioning */
-        left: 50%;
-        transform: translateX(-50%);
-    }
+/* About text with proper spacing */
+.about-container {
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 0; /* Reduced space above text */
 }
 
-.arrow-btn {
-    position: fixed;
-    right: 5vw; /* Arrow stays to the right */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%); /* Ensure vertical centering */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    z-index: 1000; /* Ensure the button stays above other elements */
+.about {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 22px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
 }
 
-    .arrow-btn::after {
-        content: '>'; /* Unicode right arrow */
-        font-size: 3rem; /* Adjust for a bigger arrow */
-        color: grey; /* Adjust color if needed */
-    }
-
+/* Dot navigation */
 .dot-div {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centers dots */
-    position: absolute; /* Prevents it from taking space */
-    bottom: 10px; /* Adjust positioning */
+    position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
 }
 
 .dot {
-    height: 15px;
     width: 15px;
-    margin: 5px;
-    background-color: #bbb;
+    height: 15px;
     border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+    background: #bbb;
     cursor: pointer;
-    margin-top: 600px;
+    transition: background-color 0.3s;
 }
 
     .dot.active {
-        background-color: #717171;
+        background: #717171;
     }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .slide-container {
+        height: 50vh;
+    }
+
+    .about {
+        width: 90%;
+        font-size: 18px;
+        padding: 15px;
+    }
+}
 
 .contact-section {
     padding: 15px;

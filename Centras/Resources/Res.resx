@@ -120,15 +120,6 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="AboutSlide1" xml:space="preserve">
-    <value>AboutSlide1</value>
-  </data>
-  <data name="AboutSlide2" xml:space="preserve">
-    <value>AboutSlide2</value>
-  </data>
-  <data name="AboutSlide3" xml:space="preserve">
-    <value>AboutSlide3</value>
-  </data>
   <data name="NavAboutUs" xml:space="preserve">
     <value>NavAboutUs</value>
   </data>
