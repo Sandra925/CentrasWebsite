@@ -1,4 +1,6 @@
-﻿namespace Centras.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Centras.Models
 {
     public class RoomReservation
     {
@@ -6,7 +8,11 @@
         public string Name { get; set; } 
         public string LastName { get; set; } 
         public string Email { get; set; }
-        public string Phone { get; set; } 
+
+        [Required(ErrorMessage = "Phone number is required.")]
+        [RegularExpression(@"^[+]?[\s]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{2,6}[-\s.]?[0-9]{2,6}$",
+        ErrorMessage = "Invalid phone number format.")]
+        public string Phone { get; set; }
         public string Address { get; set; } 
         public string? City { get; set; } 
         public string? Zip { get; set; } 

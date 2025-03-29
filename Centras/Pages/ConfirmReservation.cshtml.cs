@@ -58,6 +58,10 @@ namespace Centras.Pages
         {
             if (!ModelState.IsValid)
             {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
                 return Page();
             }
             var room = _context.Rooms.FirstOrDefault(r => r.ID == Reservation.RoomId);
