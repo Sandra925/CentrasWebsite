@@ -4,6 +4,38 @@
     const adultsInput = document.getElementById("AdultsNum");
     const kidsInput = document.querySelector("select:not(#AdultsNum)");
 
+    adultsInput.addEventListener('change', updateKidsOptions);
+    updateKidsOptions();
+    function updateKidsOptions() {
+        const adults = parseInt(adultsInput.value);
+        const currentKidValue = parseInt(kidsInput.value);
+
+        // Reset kids options
+        kidsInput.innerHTML = `
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        `;
+
+        // Remove invalid options based on adult count
+        if (adults === 2) {
+            // Remove option 2 from kids dropdown
+            const kidOption2 = kidsInput.querySelector('option[value="2"]');
+            if (kidOption2) kidOption2.remove();
+
+            // Reset to max allowed if previous selection was invalid
+            if (currentKidValue > 1) {
+                kidsInput.value = "1";
+            }
+        } else if (adults === 0) {
+            // Remove all options except 0
+            const kidOption1 = kidsInput.querySelector('option[value="1"]');
+            const kidOption2 = kidsInput.querySelector('option[value="2"]');
+            if (kidOption1) kidOption1.remove();
+            if (kidOption2) kidOption2.remove();
+            kidsInput.value = "0";
+        }
+    }
     document.querySelectorAll(".btn-primary").forEach(button => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
