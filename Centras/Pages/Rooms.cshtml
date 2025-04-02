@@ -6,10 +6,10 @@
 
 <div class="image-gallery">
     <div class="main-image">
-        <img src="Images/Room 6/Room6_1.jfif" alt="Room 6"/>
+        <img src="Images/Room 6/Room6_1.jfif" alt="Room 6" />
         <button data-images="@string.Join(",", Model.AllRoomImages.Select(i => i.ImagePath))" class="btn-show-all-photos room-button"
                 onclick="showGallery(this.getAttribute('data-images').split(','))">
-                 Daugiau
+            Daugiau
         </button>
     </div>
     <div class="side-images">
@@ -24,7 +24,7 @@
     {
         <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Delete All Reservations</button>
     }
-    
+
     <div class="reservation-form">
         <div class="reservation-form-row">
             <div class="reservation-row d-flex">
@@ -52,7 +52,7 @@
                         <option value="2">2</option>
                     </select>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
     <button type="button" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>

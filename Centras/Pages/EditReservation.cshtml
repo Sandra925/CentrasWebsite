@@ -1,0 +1,113 @@
+﻿@page
+@model Centras.Pages.EditReservationModel
+@{
+    ViewData["Title"] = "Edit Reservation";
+}
+
+<div class="container mt-4">
+    <h2>Edit Reservation</h2>
+
+    <form method="post">
+        <input type="hidden" asp-for="RoomReservation.Id" />
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.Name" class="form-label"></label>
+                <input asp-for="RoomReservation.Name" class="form-control">
+                <span asp-validation-for="RoomReservation.Name" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.LastName" class="form-label"></label>
+                <input asp-for="RoomReservation.LastName" class="form-control">
+                <span asp-validation-for="RoomReservation.LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.Email" class="form-label"></label>
+                <input asp-for="RoomReservation.Email" class="form-control" type="email">
+                <span asp-validation-for="RoomReservation.Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.Phone" class="form-label"></label>
+                <input asp-for="RoomReservation.Phone" class="form-control">
+                <span asp-validation-for="RoomReservation.Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <label asp-for="RoomReservation.Address" class="form-label"></label>
+                <input asp-for="RoomReservation.Address" class="form-control">
+                <span asp-validation-for="RoomReservation.Address" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.City" class="form-label"></label>
+                <input asp-for="RoomReservation.City" class="form-control">
+                <span asp-validation-for="RoomReservation.City" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.Zip" class="form-label"></label>
+                <input asp-for="RoomReservation.Zip" class="form-control">
+                <span asp-validation-for="RoomReservation.Zip" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.Country" class="form-label"></label>
+                <input asp-for="RoomReservation.Country" class="form-control">
+                <span asp-validation-for="RoomReservation.Country" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.RoomId" class="form-label"></label>
+                <input asp-for="RoomReservation.RoomId" class="form-control" type="number">
+                <span asp-validation-for="RoomReservation.RoomId" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.CheckIn" class="form-label"></label>
+                <input asp-for="RoomReservation.CheckIn" class="form-control" type="date">
+                <span asp-validation-for="RoomReservation.CheckIn" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="RoomReservation.CheckOut" class="form-label"></label>
+                <input asp-for="RoomReservation.CheckOut" class="form-control" type="date">
+                <span asp-validation-for="RoomReservation.CheckOut" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.AdultsNum" class="form-label"></label>
+                <input asp-for="RoomReservation.AdultsNum" class="form-control" type="number" min="1">
+                <span asp-validation-for="RoomReservation.AdultsNum" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.KidsNum" class="form-label"></label>
+                <input asp-for="RoomReservation.KidsNum" class="form-control" type="number" min="0">
+                <span asp-validation-for="RoomReservation.KidsNum" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.TotalPrice" class="form-label"></label>
+                <input asp-for="RoomReservation.TotalPrice" class="form-control" type="number" step="0.01">
+                <span asp-validation-for="RoomReservation.TotalPrice" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a asp-page="/ReservationList" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -10,23 +10,21 @@
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th>Reservation ID</th>
-                <th>Room</th>
-                <th>Guest Name</th>
-                <th>Check-In</th>
-                <th>Check-Out</th>
-                <th>Adults</th>
-                <th>Kids</th>
-                <th>Total Price</th>
-                <th>Actions</th>
+                <th>Kambarys</th>
+                <th>Svečias</th>
+                <th>Atvykimas</th>
+                <th>Išvykimas</th>
+                <th>Suaugusių Skaičius</th>
+                <th>Vaikai</th>
+                <th>Kaina</th>
+                <th>Valdikliai</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var reservation in Model.Reservations)
             {
                 <tr>
-                    <td>@reservation.Id</td>
-                    <td>@reservation.Room?.Name</td>
+                    <td>@reservation.Room?.ID</td>
                     <td>@reservation.Name @reservation.LastName</td>
                     <td>@reservation.CheckIn.ToString("yyyy-MM-dd")</td>
                     <td>@reservation.CheckOut.ToString("yyyy-MM-dd")</td>
@@ -34,12 +32,12 @@
                     <td>@reservation.KidsNum</td>
                     <td>@reservation.TotalPrice.ToString("0.00")€ </td>
                     <td>
-                        <a asp-page="/EditReservation" asp-route-id="@reservation.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-page="/EditReservation" asp-route-id="@reservation.Id" class="btn btn-sm btn-warning">Keisti</a>
                         <form method="post" asp-page-handler="Delete" class="d-inline">
                             <input type="hidden" name="id" value="@reservation.Id" />
                             <button type="submit" class="btn btn-sm btn-danger"
                                     onclick="return confirm('Are you sure you want to delete this reservation?')">
-                                Delete
+                                Ištrinti
                             </button>
                         </form>
                     </td>
