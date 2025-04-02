@@ -18,33 +18,42 @@ namespace Centras.Pages
         [BindProperty]
         public RoomReservation Reservation { get; set; } = new RoomReservation();
 
+
         public ConfirmReservationModel(CentrasContext context, SmtpEmailService emailService, IWebHostEnvironment env)
         {
             _context = context;
             _emailService = emailService;
-            _env = env; // Inject IWebHostEnvironment
+            _env = env;
         }
 
-        public void OnGet(int roomId, string checkInDate, string checkOutDate, int adultsNum, int kidsNum)
+        public IActionResult OnGet(int roomId, string CheckInDate, string CheckOutDate, int AdultsNum, int KidsNum)
         {
-            var room = _context.Rooms.FirstOrDefault(r => r.ID == roomId);
-            if (room == null)
+            try
             {
-                RedirectToPage("Error");
-                return;
+                var room = _context.Rooms.FirstOrDefault(r => r.ID == roomId);
+                if (room == null)
+                {
+                    return RedirectToPage("Error");
+                }
+
+                Reservation.RoomId = room.ID;
+                Reservation.Room = room;
+                Reservation.CheckIn = DateTime.Parse(CheckInDate);
+                Reservation.CheckOut = DateTime.Parse(CheckOutDate);
+                Reservation.AdultsNum = AdultsNum;
+                Reservation.KidsNum = KidsNum;
+                Reservation.TotalPrice = room.CalculateTotalPrice(AdultsNum, KidsNum);
             }
-            Reservation.RoomId = room.ID;
-            Reservation.Room = room;
-            Reservation.Room.Name = room.Name;
-            Reservation.Room.Price = room.Price;
-            Reservation.CheckIn = DateTime.Parse(checkInDate);
-            Reservation.CheckOut = DateTime.Parse(checkOutDate);
-            Reservation.AdultsNum = adultsNum;
-            Reservation.KidsNum = kidsNum;
+            catch (FormatException)
+            {
+                ModelState.AddModelError("", "Invalid date format.");
+                return RedirectToPage("Error");
+            }
+            return Page();
         }
         private string LoadEmailTemplate(string templatePath, Dictionary<string, string> placeholders)
         {
-            var fullPath = Path.Combine(_env.WebRootPath, templatePath); // Combine wwwroot path with template path
+            var fullPath = Path.Combine(_env.WebRootPath, templatePath);
             var template = System.IO.File.ReadAllText(fullPath);
 
             foreach (var placeholder in placeholders)
@@ -58,10 +67,6 @@ namespace Centras.Pages
         {
             if (!ModelState.IsValid)
             {
-                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
-                {
-                    Console.WriteLine(error.ErrorMessage);
-                }
                 return Page();
             }
             var room = _context.Rooms.FirstOrDefault(r => r.ID == Reservation.RoomId);
@@ -83,6 +88,7 @@ namespace Centras.Pages
                 return Page();
             }
 
+
             // Save the reservation
             _context.RoomReservations.Add(Reservation);
             await _context.SaveChangesAsync();
@@ -101,6 +107,7 @@ namespace Centras.Pages
                           $"Vaikø: {Reservation.KidsNum}\n"+
                           $"Paðto Kodas: {Reservation.Zip}\n";
 
+            Reservation.TotalPrice = room.CalculateTotalPrice(Reservation.AdultsNum, Reservation.KidsNum);
             var guestEmailData = new Dictionary<string, string>
             {
                 { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
@@ -109,7 +116,7 @@ namespace Centras.Pages
                 { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
                 { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
                 { "RoomName", $"{room.Name}" },
-                { "RoomPrice", $"{room.Price}" },
+                { "RoomPrice", $"{Reservation.TotalPrice:0.00}" },
                 { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() }
             };
 
@@ -120,7 +127,6 @@ namespace Centras.Pages
 
             // Send email to the owner
             await _emailService.SendEmailAsync(ownerEmail, subject, content);
-
 
             return RedirectToPage("ReservationSuccess");
         }

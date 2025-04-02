@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Centras.Models
 {
@@ -24,5 +25,6 @@ namespace Centras.Models
         public int KidsNum { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
+        public decimal TotalPrice { get; set; }
     }
 }

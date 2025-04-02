@@ -21,14 +21,50 @@ namespace Centras.db
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Room>()
-                .Property(r => r.Capacity)
-                .HasDefaultValue(3); // Set default value in the database
+        .Property(r => r.Capacity)
+        .HasDefaultValue(3);
+
             modelBuilder.Entity<Room>().HasData(
-                new Room { ID = 5, Name = "Dvivietis Kambarys", Description = "", Price = 65},
-                new Room { ID = 6, Name = "Liukso Kambarys", Description = "", Price = 80},  //70 vienam asm be pusryciu     pusryciai +10e
-                new Room { ID = 7, Name = "Dvivietis Kambarys (2 lovos)", Description = "" , Price = 65 },
-                new Room { ID = 8, Name = "Liukso Kambarys", Description = "", Price = 80},
-                new Room { ID = 9, Name = "Dvivietis Kambarys", Description = "Vaizdas į ežerą", Price = 65 }  //55 be pusryciu (1asm)         pusryciai +10e
+                new Room
+                {
+                    ID = 5,
+                    Name = "Dvivietis Kambarys",
+                    Description = "",
+                    BasePrice = 55,
+                    PriceForSecondPerson = 10  // 55 + 10 = 65 for two
+                },
+                new Room
+                {
+                    ID = 6,
+                    Name = "Liukso Kambarys",
+                    Description = "",
+                    BasePrice = 70,            // Price for one
+                    PriceForSecondPerson = 10  // 70 + 10 = 80 for two
+                },
+                new Room
+                {
+                    ID = 7,
+                    Name = "Dvivietis Kambarys (2 lovos)",
+                    Description = "",
+                    BasePrice = 55,
+                    PriceForSecondPerson = 10   // 55 + 10 = 65
+                },
+                new Room
+                {
+                    ID = 8,
+                    Name = "Liukso Kambarys",
+                    Description = "",
+                    BasePrice = 70,
+                    PriceForSecondPerson = 10   // 70 + 10 = 80
+                },
+                new Room
+                {
+                    ID = 9,
+                    Name = "Dvivietis Kambarys",
+                    Description = "Vaizdas į ežerą",
+                    BasePrice = 55,
+                    PriceForSecondPerson = 10   // 55 + 10 = 65
+                }
             );
 
             modelBuilder.Entity<RoomImage>().HasData(

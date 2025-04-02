@@ -31,6 +31,8 @@ namespace Centras.Pages
         public int AdultsNum { get; set; }
         [BindProperty]
         public int KidsNum { get; set; }
+        [BindProperty]
+    public decimal TotalPrice { get; set; }
 
         public IActionResult OnPostDelete()
         {
@@ -51,23 +53,19 @@ namespace Centras.Pages
                 return Partial("_RoomsPartial", Rooms);
             }
 
-            // Retrieve values from the form
             CheckInDate = Convert.ToDateTime(Request.Form["CheckInDate"]);
             CheckOutDate = Convert.ToDateTime(Request.Form["CheckOutDate"]);
-            AdultsNum = int.Parse(Request.Form["AdultsNum"]);
-            KidsNum = int.Parse(Request.Form["KidsNum"]);
+            AdultsNum = int.Parse(Request.Form["AdultsNum"].ToString().Split(',')[0]);
+            KidsNum = int.Parse(Request.Form["KidsNum"].ToString().Split(',')[0]);
 
-            // Store search parameters for persistence
+            // Store search parameters
             TempData["CheckInDate"] = CheckInDate.ToString("yyyy-MM-dd");
             TempData["CheckOutDate"] = CheckOutDate.ToString("yyyy-MM-dd");
             TempData["AdultsNum"] = AdultsNum;
             TempData["KidsNum"] = KidsNum;
             TempData.Keep();
 
-            // Fetch all rooms with their reservations
-            var allRooms = _context.Rooms.Include(r => r.RoomImages).Include(r => r.RoomReservations);
-
-            // Filter available rooms
+            // Get available rooms
             Rooms = _context.Rooms
                 .Include(r => r.RoomImages)
                 .Include(r => r.RoomReservations)
@@ -76,18 +74,25 @@ namespace Centras.Pages
                     (CheckOutDate > reservation.CheckIn)))
                 .ToList();
 
+            foreach (var room in Rooms)
+            {
+                room.CalculatedPrice = room.CalculateTotalPrice(AdultsNum, KidsNum);
+            }
+
             if (!Rooms.Any())
             {
                 ErrorMessage = "Deja, nėra laisvų kambarių pasirinktam laikotarpiui.";
             }
 
-            return Partial("_RoomsPartial", Rooms); // Pass the Rooms list instead of `this`
+            return Partial("_RoomsPartial", Rooms);
         }
-
-
         public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum, string RoomName)
         {
 
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             var room = _context.Rooms.FirstOrDefault(r => r.ID == RoomId);
             var roomName = _context.Rooms.FirstOrDefault(r => r.Name == RoomName);
             if (room == null)
@@ -96,7 +101,7 @@ namespace Centras.Pages
                 ModelState.AddModelError(string.Empty, "Room not found.");
                 return Page();
             }
-
+            decimal finalPrice = room.CalculateTotalPrice(AdultsNum, KidsNum);
             return RedirectToPage("ConfirmReservation", new
             {
                 roomId = RoomId,
@@ -105,13 +110,13 @@ namespace Centras.Pages
                 checkInDate = CheckInDate.ToString("yyyy-MM-dd"),
                 checkOutDate = CheckOutDate.ToString("yyyy-MM-dd"),
                 adultsNum = AdultsNum,
-                kidsNum = KidsNum
+                kidsNum = KidsNum,
+                totalPrice = finalPrice
             });
         }
-
-
         public void OnGet()
         {
+
             Rooms = _context.Rooms
         .Include(r => r.RoomImages)
         .Include(r => r.RoomReservations)

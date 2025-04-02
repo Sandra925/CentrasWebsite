@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250401203242_DeleteRoom5ForTest")]
+    partial class DeleteRoom5ForTest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -46,15 +49,6 @@ namespace Centras.Migrations
                     b.ToTable("Rooms");
 
                     b.HasData(
-                        new
-                        {
-                            ID = 5,
-                            BasePrice = 55m,
-                            Capacity = 0,
-                            Description = "",
-                            Name = "Dvivietis Kambarys",
-                            PriceForSecondPerson = 10m
-                        },
                         new
                         {
                             ID = 6,
@@ -113,42 +107,6 @@ namespace Centras.Migrations
                     b.ToTable("RoomImages");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ImagePath = "Images/Room 5/Room5_1.jfif",
-                            RoomId = 5
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ImagePath = "Images/Room 5/Room5.jfif",
-                            RoomId = 5
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ImagePath = "Images/Room 5/Room5_2.jfif",
-                            RoomId = 5
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ImagePath = "Images/Room 5/Room5_3.jfif",
-                            RoomId = 5
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ImagePath = "Images/Room 5/Room5_4.jfif",
-                            RoomId = 5
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ImagePath = "Images/Room 5/Room5_5.jfif",
-                            RoomId = 5
-                        },
                         new
                         {
                             Id = 7,

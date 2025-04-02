@@ -2,7 +2,7 @@
     const checkInInput = document.getElementById("check-in");
     const checkOutInput = document.getElementById("check-out");
     const adultsInput = document.getElementById("AdultsNum");
-    const kidsInput = document.querySelector("select:not(#AdultsNum)");
+    const kidsInput = document.getElementById("KidsNum");
 
     adultsInput.addEventListener('change', updateKidsOptions);
     updateKidsOptions();
@@ -36,17 +36,6 @@
             kidsInput.value = "0";
         }
     }
-    document.querySelectorAll(".btn-primary").forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-            const form = this.closest("form");
-            form.querySelector("#check-in").value = checkInInput.value;
-            form.querySelector("#check-out").value = checkOutInput.value;
-            form.querySelector("#AdultsNum").value = adultsInput.value;
-            form.querySelector("#KidsNum").value = kidsInput.value;
-            form.submit();
-        });
-    });
 });
 
 function showGallery(images) {
@@ -77,7 +66,6 @@ document.getElementById("findRoom").addEventListener("click", function (event) {
     event.preventDefault();
 
     let formData = new FormData(document.getElementById("room-form")); 
-
 
     let checkIn = document.getElementById("check-in").value;
     let checkOut = document.getElementById("check-out").value;

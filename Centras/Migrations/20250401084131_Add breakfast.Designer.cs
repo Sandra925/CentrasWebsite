@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250401084131_Add breakfast")]
+    partial class Addbreakfast
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -22,9 +25,6 @@ namespace Centras.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("BasePrice")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("Capacity")
                         .ValueGeneratedOnAdd()
@@ -38,8 +38,8 @@ namespace Centras.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("PriceForSecondPerson")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
@@ -49,47 +49,42 @@ namespace Centras.Migrations
                         new
                         {
                             ID = 5,
-                            BasePrice = 55m,
                             Capacity = 0,
                             Description = "",
                             Name = "Dvivietis Kambarys",
-                            PriceForSecondPerson = 10m
+                            Price = 65
                         },
                         new
                         {
                             ID = 6,
-                            BasePrice = 70m,
                             Capacity = 0,
                             Description = "",
                             Name = "Liukso Kambarys",
-                            PriceForSecondPerson = 10m
+                            Price = 80
                         },
                         new
                         {
                             ID = 7,
-                            BasePrice = 55m,
                             Capacity = 0,
                             Description = "",
                             Name = "Dvivietis Kambarys (2 lovos)",
-                            PriceForSecondPerson = 10m
+                            Price = 65
                         },
                         new
                         {
                             ID = 8,
-                            BasePrice = 70m,
                             Capacity = 0,
                             Description = "",
                             Name = "Liukso Kambarys",
-                            PriceForSecondPerson = 10m
+                            Price = 80
                         },
                         new
                         {
                             ID = 9,
-                            BasePrice = 55m,
                             Capacity = 0,
                             Description = "Vaizdas į ežerą",
                             Name = "Dvivietis Kambarys",
-                            PriceForSecondPerson = 10m
+                            Price = 65
                         });
                 });
 
@@ -344,6 +339,9 @@ namespace Centras.Migrations
                     b.Property<int>("AdultsNum")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("BreakfastCount")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("CheckIn")
                         .HasColumnType("TEXT");
 
@@ -377,9 +375,6 @@ namespace Centras.Migrations
 
                     b.Property<int>("RoomId")
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Zip")
                         .HasColumnType("TEXT");

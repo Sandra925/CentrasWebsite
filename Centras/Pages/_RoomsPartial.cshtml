@@ -27,19 +27,20 @@
                     </ul>
                 </div>
                 <div class="room-actions">
-                    <p class="price">€@room.Price / night</p>
-
+                    <p class="price">€@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"]).ToString("0.00") / night</p>
+                    Gregory Walker
                     @if (!room.RoomReservations.Any(reservation =>
                    (Convert.ToDateTime(TempData["CheckInDate"]) < reservation.CheckOut) &&
                    (Convert.ToDateTime(TempData["CheckOutDate"]) > reservation.CheckIn)))
                     {
-                        <form method="post" asp-page-handler="BookRoom">
+                        <form id="@("room-form"+room.ID)" method="post" asp-page-handler="BookRoom">
                             <input type="hidden" name="RoomId" value="@room.ID" />
                             <input type="hidden" name="RoomName" value="@room.Name" />
                             <input type="hidden" name="CheckInDate" value="@TempData["CheckInDate"]" />
                             <input type="hidden" name="CheckOutDate" value="@TempData["CheckOutDate"]" />
                             <input type="hidden" name="AdultsNum" value="@TempData["AdultsNum"]" />
                             <input type="hidden" name="KidsNum" value="@TempData["KidsNum"]" />
+                            <input type="hidden" name="TotalPrice" value="@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"])" />
                             <button type="submit" class="btn btn-primary">Užsisakyti</button>
                         </form>
                     }

@@ -18,6 +18,7 @@
     </div>
 
 </div>
+
 <form method="post" id="room-form">
     @if (User.IsInRole("Administratorius"))
     {
@@ -51,21 +52,17 @@
                         <option value="2">2</option>
                     </select>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
-
-
     <button type="button" class="btn btn-block" style="width:15%; height:10%; right:15px;" id="findRoom">Rasti Kambarį</button>
 </form>
-
-
-
 <div id="roomsContainer">
-
     <!-- Available rooms will be inserted here -->
 </div>
+
 <p id="noRoomsMessage" style="display: none;">No available rooms found.</p>
+
 
 <div class="modal fade" id="roomGalleryModal" tabindex="-1" aria-labelledby="roomGalleryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -93,4 +90,5 @@
     </div>
 </div>
 
-<script src="~/js/room.js" defer></script>
+
+<script src="~/js/room.js" asp-append-version="true"></script>

@@ -41,7 +41,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Contacts">@Res.NavContacts</a>
                         </li>
-                       
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/ReservationList">Reservations</a>
+                        </li>
                         @{
                             var userName = HttpContextAccessor.HttpContext?.User.Identity?.Name;
                         }
