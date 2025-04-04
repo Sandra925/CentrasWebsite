@@ -70,29 +70,11 @@ namespace Centras.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AboutSlide1.
+        ///   Looks up a localized string similar to Hi.
         /// </summary>
-        public static string AboutSlide1 {
+        public static string Hi {
             get {
-                return ResourceManager.GetString("AboutSlide1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AboutSlide2.
-        /// </summary>
-        public static string AboutSlide2 {
-            get {
-                return ResourceManager.GetString("AboutSlide2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AboutSlide3.
-        /// </summary>
-        public static string AboutSlide3 {
-            get {
-                return ResourceManager.GetString("AboutSlide3", resourceCulture);
+                return ResourceManager.GetString("Hi", resourceCulture);
             }
         }
         
@@ -174,6 +156,15 @@ namespace Centras.Resources {
         public static string NavMenu {
             get {
                 return ResourceManager.GetString("NavMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NavReservation.
+        /// </summary>
+        public static string NavReservation {
+            get {
+                return ResourceManager.GetString("NavReservation", resourceCulture);
             }
         }
         
@@ -264,6 +255,188 @@ namespace Centras.Resources {
         public static string RegTitle {
             get {
                 return ResourceManager.GetString("RegTitle", resourceCulture);
+            }
+        }
+        public static string AboutTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        public static string ReservationConfirm
+        {
+            get
+            {
+                return ResourceManager.GetString("ReservationConfirm", resourceCulture);
+            }
+        }
+        public static string ReservationConfirmThanks
+        {
+            get
+            {
+                return ResourceManager.GetString("ReservationConfirmThanks", resourceCulture);
+            }
+        }
+        public static string RestaurantCenter
+        {
+            get
+            {
+                return ResourceManager.GetString("RestaurantCenter", resourceCulture);
+            }
+        }
+        public static string Contacts
+        {
+            get
+            {
+                return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        public static string Hotel
+        {
+            get
+            {
+                return ResourceManager.GetString("Hotel", resourceCulture);
+            }
+        }
+        public static string Address
+        {
+            get
+            {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        public static string Phone
+        {
+            get
+            {
+                return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        public static string Email
+        {
+            get
+            {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        public static string More
+        {
+            get
+            {
+                return ResourceManager.GetString("More", resourceCulture);
+            }
+        }
+        public static string Checkin
+        {
+            get
+            {
+                return ResourceManager.GetString("Checkin", resourceCulture);
+            }
+        }
+        public static string Checkout
+        {
+            get
+            {
+                return ResourceManager.GetString("Checkout", resourceCulture);
+            }
+        }
+        public static string Adults
+        {
+            get
+            {
+                return ResourceManager.GetString("Adults", resourceCulture);
+            }
+        }
+        public static string Children
+        {
+            get
+            {
+                return ResourceManager.GetString("Children", resourceCulture);
+            }
+        }
+        public static string FindRoom
+        {
+            get
+            {
+                return ResourceManager.GetString("FindRoom", resourceCulture);
+            }
+        }
+        public static string MainMenu
+        {
+            get
+            {
+                return ResourceManager.GetString("MainMenu", resourceCulture);
+            }
+        }
+        public static string PizzaMenu
+        {
+            get
+            {
+                return ResourceManager.GetString("PizzaMenu", resourceCulture);
+            }
+        }
+        public static string SushiMenu
+        {
+            get
+            {
+                return ResourceManager.GetString("SushiMenu", resourceCulture);
+            }
+        }
+        public static string DrinkMenu
+        {
+            get
+            {
+                return ResourceManager.GetString("DrinkMenu", resourceCulture);
+            }
+        }
+        public static string Content
+        {
+            get
+            {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        public static string Town
+        {
+            get
+            {
+                return ResourceManager.GetString("Town", resourceCulture);
+            }
+        }
+        public static string Postal
+        {
+            get
+            {
+                return ResourceManager.GetString("Postal", resourceCulture);
+            }
+        }
+        public static string Country
+        {
+            get
+            {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        public static string ConfirmReservation
+        {
+            get
+            {
+                return ResourceManager.GetString("ConfirmReservation", resourceCulture);
+            }
+        }
+        public static string Price
+        {
+            get
+            {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        public static string Room
+        {
+            get
+            {
+                return ResourceManager.GetString("Room", resourceCulture);
             }
         }
     }

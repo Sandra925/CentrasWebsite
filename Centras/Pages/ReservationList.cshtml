@@ -5,8 +5,11 @@
 }
 
 <div class="container mt-4">
-    <h2>All Reservations</h2>
-
+    <h2>Visos rezervacijos</h2>
+    @if (User.IsInRole("Administratorius"))
+    {
+        <button type="submit" asp-page-handler="Delete" class="btn btn-danger">Ištrinti visas rezervacijas</button>
+    }
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>

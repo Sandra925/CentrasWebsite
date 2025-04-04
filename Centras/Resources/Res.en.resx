@@ -193,4 +193,88 @@ Start your day with a hearty breakfast featuring fluffy omelets, fresh fruits, a
   <data name="RegLogin" xml:space="preserve">
     <value>Login here</value>
   </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="NavReservation" xml:space="preserve">
+    <value>Reservations</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Accommodation in the Center of Šakiai!</value>
+  </data>
+  <data name="ReservationConfirmThanks" xml:space="preserve">
+    <value>Thank you for booking with us. Your reservation has been confirmed.</value>
+  </data>
+  <data name="ReservationConfirm" xml:space="preserve">
+    <value>Reservation Succesful!</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="Hotel" xml:space="preserve">
+    <value>Hotel</value>
+  </data>
+  <data name="RestaurantCenter" xml:space="preserve">
+    <value>Restaurant CENTER</value>
+  </data>
+  <data name="Checkin" xml:space="preserve">
+    <value>Check-In</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Check-out</value>
+  </data>
+  <data name="Adults" xml:space="preserve">
+    <value>Adults</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>Children</value>
+  </data>
+  <data name="FindRoom" xml:space="preserve">
+    <value>Find Room</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Main Menu</value>
+  </data>
+  <data name="PizzaMenu" xml:space="preserve">
+    <value>Pizza Menu</value>
+  </data>
+  <data name="SushiMenu" xml:space="preserve">
+    <value>Sushi Menu</value>
+  </data>
+  <data name="DrinkMenu" xml:space="preserve">
+    <value>Drinks Menu</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="ConfirmReservation" xml:space="preserve">
+    <value>Confirm Reservation</value>
+  </data>
+  <data name="Town" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Postal" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
 </root>

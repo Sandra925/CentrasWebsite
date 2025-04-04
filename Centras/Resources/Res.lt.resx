@@ -193,4 +193,88 @@ Pradėkite dieną sotiškais pusryčiais su puriais omletais, šviežiais vaisia
   <data name="RegLogin" xml:space="preserve">
     <value>Prisijunkite</value>
   </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Sveiki</value>
+  </data>
+  <data name="NavReservation" xml:space="preserve">
+    <value>Rezervacijos</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Jaukus apgyvendinimas Šakių centre!</value>
+  </data>
+  <data name="ReservationConfirmThanks" xml:space="preserve">
+    <value>Ačiū, kad rezervavotės pas mus. Jūsų rezervacija yra patvirtinta.</value>
+  </data>
+  <data name="ReservationConfirm" xml:space="preserve">
+    <value>Rezervacija Sėkminga!</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresas</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefonas</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>El. paštas</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Kontaktai</value>
+  </data>
+  <data name="Hotel" xml:space="preserve">
+    <value>Viešbutis</value>
+  </data>
+  <data name="RestaurantCenter" xml:space="preserve">
+    <value>Restoranas CENTRAS</value>
+  </data>
+  <data name="Checkin" xml:space="preserve">
+    <value>Atvykimas</value>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Išvykimas</value>
+  </data>
+  <data name="Adults" xml:space="preserve">
+    <value>Suaugusių Sk.</value>
+  </data>
+  <data name="Children" xml:space="preserve">
+    <value>Vaikų Sk.</value>
+  </data>
+  <data name="FindRoom" xml:space="preserve">
+    <value>Rasti Kambarį</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Daugiau</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Bendras Meniu</value>
+  </data>
+  <data name="PizzaMenu" xml:space="preserve">
+    <value>Picų Meniu</value>
+  </data>
+  <data name="SushiMenu" xml:space="preserve">
+    <value>Sušių Meniu</value>
+  </data>
+  <data name="DrinkMenu" xml:space="preserve">
+    <value>Gėrimų Meniu</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Turinys</value>
+  </data>
+  <data name="ConfirmReservation" xml:space="preserve">
+    <value>Patvirtinti Rezervaciją</value>
+  </data>
+  <data name="Town" xml:space="preserve">
+    <value>Miestas</value>
+  </data>
+  <data name="Postal" xml:space="preserve">
+    <value>Pašto kodas</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Šalis</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Kambarys</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Kaina</value>
+  </data>
 </root>

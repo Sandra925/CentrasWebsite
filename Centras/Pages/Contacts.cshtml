@@ -1,28 +1,31 @@
 ﻿@page
+@using Centras.Resources
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
 @model Centras.Pages.ContactsModel
 @{
     ViewData["Title"] = "Contacts";
 }
-<h1>Kontaktai</h1>
+<h1>@Res.Contacts</h1>
 <hr />
 <div class="contact-info d-flex">
     <div class="contact-section">
-        <h3>Restoranas CENTRAS</h3>
-        <p><strong>Adresas:</strong> V.Kudirkos g-vė. 63 / Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
-        <p><strong>📞 Telefonas:</strong> <a href="tel:+37069918997">+37069918997</a></p>
+        <h3>@Res.RestaurantCenter</h3>
+        <p><strong>@Res.Address:</strong> V.Kudirkos g-vė. 63 / Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
+        <p><strong>📞 @Res.Phone:</strong> <a href="tel:+37069918997">+37069918997</a></p>
     </div>
 
     <div class="contact-section">
-        <h3>Viešbutis</h3>
-        <p><strong>Adresas:</strong> V.Kudirkos g-vė. 63 / Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
-        <p><strong>📞 Telefonas:</strong> <a href="tel:+37065598889">+37065598889</a></p>
-        <p><strong>📧 El. paštas:</strong> <a href="mailto:hotelcentras@gmail.com">hotelcentras@gmail.com</a></p>
+        <h3>@Res.Hotel</h3>
+        <p><strong>@Res.Address:</strong> V.Kudirkos g-vė. 63 / Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
+        <p><strong>📞 @Res.Phone:</strong> <a href="tel:+37065598889">+37065598889</a></p>
+        <p><strong>📧 @Res.Email:</strong> <a href="mailto:hotelcentras@gmail.com">hotelcentras@gmail.com</a></p>
     </div>
 
     <div class="contact-section">
         <h3>„Skonis ir kvapas“</h3>
-        <p><strong>Adresas:</strong> Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
-        <p><strong>📞 Telefonas:</strong> <a href="tel:+37064060002">+37064060002</a></p>
+        <p><strong>@Res.Address:</strong> Aušros g-vė. 1, LT-71127, Šakiai, Lietuva</p>
+        <p><strong>📞 @Res.Phone:</strong> <a href="tel:+37064060002">+37064060002</a></p>
     </div>
 
     <iframe src="https://www.google.com/maps?q=V.Kudirkos+g.+63,+Šakiai,+Lietuva&output=embed"

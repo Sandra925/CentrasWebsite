@@ -1,19 +1,22 @@
 ﻿@page
+@using Centras.Resources
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
 @model Centras.Pages.RestaurantModel
 @{
     ViewData["Title"] = "Restaurant";
 }
-<h1 style="text-align:center;">Turinys:</h1>
+<h1 style="text-align:center;">@Res.Content:</h1>
 <div class="menu-content">
     <ul>
-        <li><a href="#main-menu">Bendras Meniu</a></li>
-        <li><a href="#pizza-menu">Picų Meniu</a></li>
-        <li><a href="#sushi-menu">Sušių Meniu</a></li>
-        <li><a href="#drinks-menu">Gėrimų Meniu</a></li>
+        <li><a href="#main-menu">@Res.MainMenu</a></li>
+        <li><a href="#pizza-menu">@Res.PizzaMenu</a></li>
+        <li><a href="#sushi-menu">@Res.SushiMenu</a></li>
+        <li><a href="#drinks-menu">@Res.DrinkMenu</a></li>
     </ul>
 </div>
 <hr />
-<h1 id="main-menu" style="text-align:center;">Mūsų Meniu</h1>
+<h1 id="main-menu" style="text-align:center;">@Res.MainMenu</h1>
 <hr />
 <img src="/Images/Meniu/MENIU_00001.jpg" alt="Menu 1" class="menu-img">
 <img src="/Images/Meniu/MENIU_00002.jpg" alt="Menu 2" class="menu-img">
@@ -25,19 +28,19 @@
 <img src="/Images/Meniu/MENIU_00008.jpg" alt="Menu 8" class="menu-img">
 <hr />
 
-<h1 id="pizza-menu"style="text-align:center;">Picų Meniu</h1>
+<h1 id="pizza-menu"style="text-align:center;">@Res.PizzaMenu</h1>
 <hr />
 <img src="/Images/Meniu/PICU_00001.jpg" alt="Pizza 1" class="menu-img">
 <img src="/Images/Meniu/PICU_00002.jpg" alt="Pizza 2" class="menu-img">
 
 <hr />
-<h1 id="sushi-menu" style="text-align:center;">Sušių Meniu</h1>
+<h1 id="sushi-menu" style="text-align:center;">@Res.SushiMenu</h1>
 <hr />
 <img src="/Images/Meniu/SUSIU_00001.jpg" alt="Sushi 1" class="menu-img">
 <img src="/Images/Meniu/SUSIU_00002.jpg" alt="Sushi 2" class="menu-img">
 
 <hr />
-<h1 id="drinks-menu" style="text-align:center;">Gėrimų Meniu</h1>
+<h1 id="drinks-menu" style="text-align:center;">@Res.DrinkMenu</h1>
 <hr />
 <img src="/Images/Meniu/GERIMU_00001.jpg" alt="Drink 1" class="menu-img">
 <img src="/Images/Meniu/GERIMU_00002.jpg" alt="Drink 2" class="menu-img">
