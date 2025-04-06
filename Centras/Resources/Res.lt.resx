@@ -277,4 +277,16 @@ Pradėkite dieną sotiškais pusryčiais su puriais omletais, šviežiais vaisia
   <data name="Price" xml:space="preserve">
     <value>Kaina</value>
   </data>
+  <data name="Night" xml:space="preserve">
+    <value>Naktis</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Užsakyti</value>
+  </data>
+  <data name="RoomImages" xml:space="preserve">
+    <value>Kambario nuotraukos</value>
+  </data>
+  <data name="RoomsImages" xml:space="preserve">
+    <value>Kambarių nuotraukos</value>
+  </data>
 </root>

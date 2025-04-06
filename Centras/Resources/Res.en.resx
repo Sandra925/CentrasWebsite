@@ -277,4 +277,16 @@ Start your day with a hearty breakfast featuring fluffy omelets, fresh fruits, a
   <data name="Price" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="Night" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="RoomImages" xml:space="preserve">
+    <value>Room Images</value>
+  </data>
+  <data name="RoomsImages" xml:space="preserve">
+    <value>Images of the rooms</value>
+  </data>
 </root>

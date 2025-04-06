@@ -37,7 +37,11 @@
         </div>
         <div class="form-group">
             <label>@Res.Price:</label>
-            <p>@Model.Reservation.TotalPrice</p>
+            @{
+                var totalDays = (Model.Reservation.CheckOut - Model.Reservation.CheckIn).Days;
+                var price = totalDays * Model.Reservation.TotalPrice;
+            }
+            <p> @price.ToString("0.00")</p>
         </div>
 
         <!-- User details form -->

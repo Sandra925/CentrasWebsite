@@ -70,11 +70,146 @@ namespace Centras.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AboutTitle.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adults.
+        /// </summary>
+        public static string Adults {
+            get {
+                return ResourceManager.GetString("Adults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checkin.
+        /// </summary>
+        public static string Checkin {
+            get {
+                return ResourceManager.GetString("Checkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checkout.
+        /// </summary>
+        public static string Checkout {
+            get {
+                return ResourceManager.GetString("Checkout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Children.
+        /// </summary>
+        public static string Children {
+            get {
+                return ResourceManager.GetString("Children", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConfirmReservation.
+        /// </summary>
+        public static string ConfirmReservation {
+            get {
+                return ResourceManager.GetString("ConfirmReservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string Contacts {
+            get {
+                return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Content.
+        /// </summary>
+        public static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DrinkMenu.
+        /// </summary>
+        public static string DrinkMenu {
+            get {
+                return ResourceManager.GetString("DrinkMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FindRoom.
+        /// </summary>
+        public static string FindRoom {
+            get {
+                return ResourceManager.GetString("FindRoom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hi.
         /// </summary>
         public static string Hi {
             get {
                 return ResourceManager.GetString("Hi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotel.
+        /// </summary>
+        public static string Hotel {
+            get {
+                return ResourceManager.GetString("Hotel", resourceCulture);
             }
         }
         
@@ -133,6 +268,24 @@ namespace Centras.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MainMenu.
+        /// </summary>
+        public static string MainMenu {
+            get {
+                return ResourceManager.GetString("MainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        public static string More {
+            get {
+                return ResourceManager.GetString("More", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to NavAboutUs.
         /// </summary>
         public static string NavAboutUs {
@@ -174,6 +327,51 @@ namespace Centras.Resources {
         public static string NavRooms {
             get {
                 return ResourceManager.GetString("NavRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Night.
+        /// </summary>
+        public static string Night {
+            get {
+                return ResourceManager.GetString("Night", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Phone {
+            get {
+                return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PizzaMenu.
+        /// </summary>
+        public static string PizzaMenu {
+            get {
+                return ResourceManager.GetString("PizzaMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postal.
+        /// </summary>
+        public static string Postal {
+            get {
+                return ResourceManager.GetString("Postal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
             }
         }
         
@@ -257,186 +455,76 @@ namespace Centras.Resources {
                 return ResourceManager.GetString("RegTitle", resourceCulture);
             }
         }
-        public static string AboutTitle
-        {
-            get
-            {
-                return ResourceManager.GetString("AboutTitle", resourceCulture);
-            }
-        }
-        public static string ReservationConfirm
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReservationConfirm.
+        /// </summary>
+        public static string ReservationConfirm {
+            get {
                 return ResourceManager.GetString("ReservationConfirm", resourceCulture);
             }
         }
-        public static string ReservationConfirmThanks
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReservationConfirmThanks.
+        /// </summary>
+        public static string ReservationConfirmThanks {
+            get {
                 return ResourceManager.GetString("ReservationConfirmThanks", resourceCulture);
             }
         }
-        public static string RestaurantCenter
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RestaurantCenter.
+        /// </summary>
+        public static string RestaurantCenter {
+            get {
                 return ResourceManager.GetString("RestaurantCenter", resourceCulture);
             }
         }
-        public static string Contacts
-        {
-            get
-            {
-                return ResourceManager.GetString("Contacts", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Room.
+        /// </summary>
+        public static string Room {
+            get {
+                return ResourceManager.GetString("Room", resourceCulture);
             }
         }
-        public static string Hotel
-        {
-            get
-            {
-                return ResourceManager.GetString("Hotel", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoomImages.
+        /// </summary>
+        public static string RoomImages {
+            get {
+                return ResourceManager.GetString("RoomImages", resourceCulture);
             }
         }
-        public static string Address
-        {
-            get
-            {
-                return ResourceManager.GetString("Address", resourceCulture);
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RoomsImages.
+        /// </summary>
+        public static string RoomsImages {
+            get {
+                return ResourceManager.GetString("RoomsImages", resourceCulture);
             }
         }
-        public static string Phone
-        {
-            get
-            {
-                return ResourceManager.GetString("Phone", resourceCulture);
-            }
-        }
-        public static string Email
-        {
-            get
-            {
-                return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-        public static string More
-        {
-            get
-            {
-                return ResourceManager.GetString("More", resourceCulture);
-            }
-        }
-        public static string Checkin
-        {
-            get
-            {
-                return ResourceManager.GetString("Checkin", resourceCulture);
-            }
-        }
-        public static string Checkout
-        {
-            get
-            {
-                return ResourceManager.GetString("Checkout", resourceCulture);
-            }
-        }
-        public static string Adults
-        {
-            get
-            {
-                return ResourceManager.GetString("Adults", resourceCulture);
-            }
-        }
-        public static string Children
-        {
-            get
-            {
-                return ResourceManager.GetString("Children", resourceCulture);
-            }
-        }
-        public static string FindRoom
-        {
-            get
-            {
-                return ResourceManager.GetString("FindRoom", resourceCulture);
-            }
-        }
-        public static string MainMenu
-        {
-            get
-            {
-                return ResourceManager.GetString("MainMenu", resourceCulture);
-            }
-        }
-        public static string PizzaMenu
-        {
-            get
-            {
-                return ResourceManager.GetString("PizzaMenu", resourceCulture);
-            }
-        }
-        public static string SushiMenu
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SushiMenu.
+        /// </summary>
+        public static string SushiMenu {
+            get {
                 return ResourceManager.GetString("SushiMenu", resourceCulture);
             }
         }
-        public static string DrinkMenu
-        {
-            get
-            {
-                return ResourceManager.GetString("DrinkMenu", resourceCulture);
-            }
-        }
-        public static string Content
-        {
-            get
-            {
-                return ResourceManager.GetString("Content", resourceCulture);
-            }
-        }
-        public static string Town
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Town.
+        /// </summary>
+        public static string Town {
+            get {
                 return ResourceManager.GetString("Town", resourceCulture);
-            }
-        }
-        public static string Postal
-        {
-            get
-            {
-                return ResourceManager.GetString("Postal", resourceCulture);
-            }
-        }
-        public static string Country
-        {
-            get
-            {
-                return ResourceManager.GetString("Country", resourceCulture);
-            }
-        }
-        public static string ConfirmReservation
-        {
-            get
-            {
-                return ResourceManager.GetString("ConfirmReservation", resourceCulture);
-            }
-        }
-        public static string Price
-        {
-            get
-            {
-                return ResourceManager.GetString("Price", resourceCulture);
-            }
-        }
-        public static string Room
-        {
-            get
-            {
-                return ResourceManager.GetString("Room", resourceCulture);
             }
         }
     }

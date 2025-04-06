@@ -52,7 +52,7 @@ namespace Centras.Pages
             _centrasContext.Users.Add(User);
             _centrasContext.SaveChanges();
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Login");
         }
 
 

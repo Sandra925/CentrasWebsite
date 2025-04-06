@@ -1,4 +1,7 @@
-﻿@model List<Centras.Models.Room>
+﻿@using Centras.Resources
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@model List<Centras.Models.Room>
 
 @if (Model != null && Model.Any())
 {
@@ -21,7 +24,7 @@
                     <p>@Html.Raw(room.Description)</p>
                 </div>
                 <div class="room-actions">
-                    <p class="price">€@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"]).ToString("0.00") / night</p>
+                    <p class="price">€@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"]).ToString("0.00") / @Res.Night</p>
                     @if (!room.RoomReservations.Any(reservation =>
                    (Convert.ToDateTime(TempData["CheckInDate"]) < reservation.CheckOut) &&
                    (Convert.ToDateTime(TempData["CheckOutDate"]) > reservation.CheckIn)))
@@ -34,7 +37,7 @@
                             <input type="hidden" name="AdultsNum" value="@TempData["AdultsNum"]" />
                             <input type="hidden" name="KidsNum" value="@TempData["KidsNum"]" />
                             <input type="hidden" name="TotalPrice" value="@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"])" />
-                            <button type="submit" class="btn btn-primary">Užsisakyti</button>
+                            <button type="submit" class="btn btn-primary">@Res.Book</button>
                         </form>
                     }
                     else
@@ -49,10 +52,8 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="roomGalleryModalLabel">Kambario nuotraukos</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="roomGalleryModalLabel">@Res.RoomImages</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="roomGallery" class="carousel slide" data-bs-ride="carousel">

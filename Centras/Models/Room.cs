@@ -21,7 +21,7 @@ namespace Centras.Models
         public decimal CalculateTotalPrice(int adults, int children)
         {
             decimal childPrice = 0;
-            decimal adultPrice = BasePrice + ((adults == 2) ? PriceForSecondPerson : 0);
+            decimal adultPrice = BasePrice + ((adults >= 2) ? PriceForSecondPerson : 0);
             decimal additionalBed = ((adults == 3) ? PriceForAdditionalBed : 0);
             //decimal childPrice = children * (BasePrice * 0.3m); // Assuming 30% of base price per child
             return adultPrice + childPrice + additionalBed;

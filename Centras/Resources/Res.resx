@@ -261,4 +261,16 @@
   <data name="Price" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="Night" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="RoomImages" xml:space="preserve">
+    <value>RoomImages</value>
+  </data>
+  <data name="RoomsImages" xml:space="preserve">
+    <value>RoomsImages</value>
+  </data>
 </root>
