@@ -15,6 +15,9 @@ namespace Centras.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public string Role { get; set; } = "Customer";
-        
+        //[StringLength(256)]
+        //public string? ResetToken { get; set; }
+        //public DateTime? ResetTokenExpiration { get; set; }
+
     }
 }

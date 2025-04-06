@@ -18,17 +18,10 @@
                 
                 <div class="room-info">
                     <h3>@room.Name</h3>
-                    <p>@room.Description</p>
-                    <ul>
-                        <li>Nemokamas bevielis internetas (Wi-Fi)</li>
-                        <li>Pusryčiai</li>
-                        <li>Nemokama automobilių stovėjimo aikštelė</li>
-                        <li>Oro Kondicionierius</li>
-                    </ul>
+                    <p>@Html.Raw(room.Description)</p>
                 </div>
                 <div class="room-actions">
                     <p class="price">€@room.CalculateTotalPrice((int)TempData["AdultsNum"], (int)TempData["KidsNum"]).ToString("0.00") / night</p>
-                    Gregory Walker
                     @if (!room.RoomReservations.Any(reservation =>
                    (Convert.ToDateTime(TempData["CheckInDate"]) < reservation.CheckOut) &&
                    (Convert.ToDateTime(TempData["CheckOutDate"]) > reservation.CheckIn)))

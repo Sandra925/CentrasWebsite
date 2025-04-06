@@ -13,16 +13,18 @@ namespace Centras.Models
 
         public decimal BasePrice { get; set; }
         public decimal PriceForSecondPerson { get; set; }
+        public decimal PriceForAdditionalBed { get; set; }
 
         [NotMapped]
         public decimal CalculatedPrice { get; set; } 
 
         public decimal CalculateTotalPrice(int adults, int children)
         {
-            // Simplified calculation based on your price structure
-            decimal adultPrice = BasePrice + ((adults > 1) ? PriceForSecondPerson : 0);
-            decimal childPrice = children * (BasePrice * 0.3m); // Assuming 30% of base price per child
-            return adultPrice + childPrice;
+            decimal childPrice = 0;
+            decimal adultPrice = BasePrice + ((adults == 2) ? PriceForSecondPerson : 0);
+            decimal additionalBed = ((adults == 3) ? PriceForAdditionalBed : 0);
+            //decimal childPrice = children * (BasePrice * 0.3m); // Assuming 30% of base price per child
+            return adultPrice + childPrice + additionalBed;
         }
 
     }

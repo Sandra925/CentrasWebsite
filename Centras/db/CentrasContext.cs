@@ -29,41 +29,86 @@ namespace Centras.db
                 {
                     ID = 5,
                     Name = "Dvivietis Kambarys",
-                    Description = "",
+                    Description = @"
+Jaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.
+<ul>
+    <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+    <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>
+    <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>
+    <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+    <li><i class='fas fa-tv'></i> Plokščiaekranis televizorius</li>
+</ul>",
                     BasePrice = 55,
-                    PriceForSecondPerson = 10  // 55 + 10 = 65 for two
+                    PriceForSecondPerson = 10,  // 55 + 10 = 65 for two
+                    PriceForAdditionalBed = 15
                 },
                 new Room
                 {
                     ID = 6,
                     Name = "Liukso Kambarys",
-                    Description = "",
+                    Description = @"
+        Erdvus kambarys su moderniu interjeru ir papildomais patogumais prabangiam poilsiui.
+        <ul>
+            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
+            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+            <li><i class='fas fa-spa'></i> Nemokama prieiga prie SPA zonos</li>
+            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>
+            <li><i class='fas fa-tv'></i> Smart televizorius</li>
+        </ul>",
                     BasePrice = 70,            // Price for one
-                    PriceForSecondPerson = 10  // 70 + 10 = 80 for two
+                    PriceForSecondPerson = 10,
+                    PriceForAdditionalBed = 15
                 },
                 new Room
                 {
                     ID = 7,
                     Name = "Dvivietis Kambarys (2 lovos)",
-                    Description = "",
+                    Description = @"
+        Patogus kambarys su dviem viengulėmis lovomis – idealiai tinka draugams ar verslo kelionėms.
+        <ul>
+            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+            <li><i class='fas fa-car'></i> Nemokama stovėjimo aikštelė</li>
+            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+            <li><i class='fas fa-lock'></i> Seifas vertingiems daiktams</li>
+        </ul>",
                     BasePrice = 55,
-                    PriceForSecondPerson = 10   // 55 + 10 = 65
+                    PriceForSecondPerson = 10,
+                    PriceForAdditionalBed = 15
                 },
                 new Room
                 {
                     ID = 8,
                     Name = "Liukso Kambarys",
-                    Description = "",
+                    Description = @"
+        Prabangus kambarys su vaizdu į gamtą ir aukščiausios klasės patogumais.
+        <ul>
+            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
+            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+            <li><i class='fas fa-bath'></i> Prabangus vonios kambarys su vonia</li>
+            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>
+            <li><i class='fas fa-tv'></i> Didelis Smart TV</li>
+        </ul>",
                     BasePrice = 70,
-                    PriceForSecondPerson = 10   // 70 + 10 = 80
+                    PriceForSecondPerson = 10,
+                    PriceForAdditionalBed = 15
                 },
                 new Room
                 {
                     ID = 9,
                     Name = "Dvivietis Kambarys",
-                    Description = "Vaizdas į ežerą",
+                    Description = @"
+        Kambarys su nuostabiu vaizdu į ežerą – puikus pasirinkimas ramiam poilsiui.
+        <ul>
+            <li><i class='fas fa-eye'></i> Vaizdas į ežerą</li>
+            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+            <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>
+            <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>
+            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+        </ul>",
                     BasePrice = 55,
-                    PriceForSecondPerson = 10   // 55 + 10 = 65
+                    PriceForSecondPerson = 10,
+                    PriceForAdditionalBed = 15
                 }
             );
 

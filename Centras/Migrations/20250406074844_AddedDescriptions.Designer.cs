@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250406074844_AddedDescriptions")]
+    partial class AddedDescriptions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -38,9 +41,6 @@ namespace Centras.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("PriceForAdditionalBed")
-                        .HasColumnType("TEXT");
-
                     b.Property<decimal>("PriceForSecondPerson")
                         .HasColumnType("TEXT");
 
@@ -56,7 +56,6 @@ namespace Centras.Migrations
                             Capacity = 0,
                             Description = "\r\nJaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.\r\n<ul>\r\n    <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>\r\n    <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>\r\n    <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>\r\n    <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>\r\n    <li><i class='fas fa-tv'></i> Plokščiaekranis televizorius</li>\r\n</ul>",
                             Name = "Dvivietis Kambarys",
-                            PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m
                         },
                         new
@@ -66,7 +65,6 @@ namespace Centras.Migrations
                             Capacity = 0,
                             Description = "\r\n        Erdvus kambarys su moderniu interjeru ir papildomais patogumais prabangiam poilsiui.\r\n        <ul>\r\n            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>\r\n            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>\r\n            <li><i class='fas fa-spa'></i> Nemokama prieiga prie SPA zonos</li>\r\n            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>\r\n            <li><i class='fas fa-tv'></i> Smart televizorius</li>\r\n        </ul>",
                             Name = "Liukso Kambarys",
-                            PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m
                         },
                         new
@@ -76,7 +74,6 @@ namespace Centras.Migrations
                             Capacity = 0,
                             Description = "\r\n        Patogus kambarys su dviem viengulėmis lovomis – idealiai tinka draugams ar verslo kelionėms.\r\n        <ul>\r\n            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>\r\n            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>\r\n            <li><i class='fas fa-car'></i> Nemokama stovėjimo aikštelė</li>\r\n            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>\r\n            <li><i class='fas fa-lock'></i> Seifas vertingiems daiktams</li>\r\n        </ul>",
                             Name = "Dvivietis Kambarys (2 lovos)",
-                            PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m
                         },
                         new
@@ -86,7 +83,6 @@ namespace Centras.Migrations
                             Capacity = 0,
                             Description = "\r\n        Prabangus kambarys su vaizdu į gamtą ir aukščiausios klasės patogumais.\r\n        <ul>\r\n            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>\r\n            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>\r\n            <li><i class='fas fa-bath'></i> Prabangus vonios kambarys su vonia</li>\r\n            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>\r\n            <li><i class='fas fa-tv'></i> Didelis Smart TV</li>\r\n        </ul>",
                             Name = "Liukso Kambarys",
-                            PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m
                         },
                         new
@@ -96,7 +92,6 @@ namespace Centras.Migrations
                             Capacity = 0,
                             Description = "\r\n        Kambarys su nuostabiu vaizdu į ežerą – puikus pasirinkimas ramiam poilsiui.\r\n        <ul>\r\n            <li><i class='fas fa-eye'></i> Vaizdas į ežerą</li>\r\n            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>\r\n            <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>\r\n            <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>\r\n            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>\r\n        </ul>",
                             Name = "Dvivietis Kambarys",
-                            PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m
                         });
                 });

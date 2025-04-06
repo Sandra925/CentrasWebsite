@@ -17,7 +17,13 @@
             <option value="2">2</option>
         `;
 
-        // Remove invalid options based on adult count
+        if (adults == 3) {
+            const kidOption1 = kidsInput.querySelector('option[value="1"]');
+            const kidOption2 = kidsInput.querySelector('option[value="2"]');
+            if (kidOption1) kidOption1.remove();
+            if (kidOption2) kidOption2.remove();
+            kidsInput.value = "0";
+        }
         if (adults === 2) {
             // Remove option 2 from kids dropdown
             const kidOption2 = kidsInput.querySelector('option[value="2"]');
@@ -35,6 +41,7 @@
             if (kidOption2) kidOption2.remove();
             kidsInput.value = "0";
         }
+        
     }
 });
 
