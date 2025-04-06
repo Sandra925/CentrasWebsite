@@ -93,21 +93,32 @@ namespace Centras.Pages
             _context.RoomReservations.Add(Reservation);
             await _context.SaveChangesAsync();
 
+            Reservation.TotalPrice = room.CalculateTotalPrice(Reservation.AdultsNum, Reservation.KidsNum);
+            var daysStaying = (Reservation.CheckOut - Reservation.CheckIn).Days;
+            var totalCost = daysStaying * Reservation.TotalPrice;
+
             // Send email to the owner
-            var ownerEmail = "mika925d@gmail.com"; // Replace with the owner's email address
+            var ownerEmail = "mika925d@gmail.com"; // Replace with the owner's email address !!!!!!!!!!!!!!!!!!!
             var customerEmail = Reservation.Email;
             var subject = "Rezervacijos patvirtinimas!";
-            var content = $"Nauja rezervacija buvo atlikta:\n\n" +
-                          $"Sveèio vardas: {Reservation.Name}\n" +
-                          $"Sveèio pavardë: {Reservation.LastName}\n" +
-                          $"Atvykimas: {Reservation.CheckIn.ToShortDateString()}\n" +
-                          $"Iðvykimas: {Reservation.CheckOut.ToShortDateString()}\n" +
-                          $"Kambarys: {Reservation.RoomId}\n" +
-                          $"Suaugusiø: {Reservation.AdultsNum}\n" +
-                          $"Vaikø: {Reservation.KidsNum}\n"+
-                          $"Paðto Kodas: {Reservation.Zip}\n";
+            var ownerEmailData = new Dictionary<string, string>
+{
+    { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
+    { "GuestFullName", $"{Reservation.Name} {Reservation.LastName}" },
+    { "GuestEmail", Reservation.Email },
+    { "GuestZip", Reservation.Zip },
+    { "CheckIn", Reservation.CheckIn.ToString("yyyy/MM/dd") },
+    { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
+    { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
+    { "RoomName", room.ID.ToString() },
+    { "Adults", Reservation.AdultsNum.ToString() },
+    { "Kids", Reservation.KidsNum.ToString() },
+    { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() },
+    { "TotalPrice", totalCost.ToString("0.00") }
+};
 
-            Reservation.TotalPrice = room.CalculateTotalPrice(Reservation.AdultsNum, Reservation.KidsNum);
+
+            
             var guestEmailData = new Dictionary<string, string>
             {
                 { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
@@ -116,17 +127,18 @@ namespace Centras.Pages
                 { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
                 { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
                 { "RoomName", $"{room.Name}" },
-                { "RoomPrice", $"{Reservation.TotalPrice:0.00}" },
+                { "RoomPrice", $"{totalCost.ToString("0.00")}" },
                 { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() }
             };
 
             var guestEmailBody = LoadEmailTemplate("Templates/GuestEmailTemplate.html", guestEmailData);
+            var ownerEmailBody = LoadEmailTemplate("Templates/ReceiverEmailTemplate.html", ownerEmailData);
 
             // Send email to the guest
             await _emailService.SendEmailAsync(Reservation.Email, "REZERVACIJOS PATVIRTINIMAS", guestEmailBody, true);
 
             // Send email to the owner
-            await _emailService.SendEmailAsync(ownerEmail, subject, content);
+            await _emailService.SendEmailAsync(ownerEmail, subject, ownerEmailBody, true);
 
             return RedirectToPage("ReservationSuccess");
         }
