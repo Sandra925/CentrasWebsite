@@ -118,23 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Restoranas ir viešbutis „Centras“ Šakiuose – tobulas pasirinkimas gurmanams ir keliautojams.
+    <value>Restoranas ir viešbutis „Centras“ Šakiuose – puikus pasirinkimas gurmanams ir keliautojams.
 
-„Centras“ – tai vieta, kur kokybė, šviežumas ir autentiški skoniai susijungia į neprilygstamą patirtį.
+„Centras“ – tai vieta, kur skanus maistas, jauki atmosfera ir patogus apgyvendinimas susijungia į vieną patirtį. Mūsų restoranas ir viešbutis įsikūręs pačioje Šakių širdyje, todėl esame lengvai pasiekiami tiek vietiniams, tiek miesto svečiams.
 
-Mūsų restoranas, yra įsikūręs pačioje Šakių širdyje, siūlo išskirtinį meniu, kuriame rasite gardžius mėsos ir žuvies patiekalus, picas, naminius padažus ir nepakartojamus desertus. Visi patiekalai ruošiami tik užsakius, kad užtikrintume aukščiausią kokybę ir šviežumą.
+Restorano meniu nėra išskirtinis, tačiau siūlomi patiekalai – sotūs, skanūs ir visada šviežiai paruošti. Mėgaukitės mėsos ir žuvies patiekalais, naminėmis picomis, autentiškais padažais ir desertais, kurie paliks malonų įspūdį kiekvienam.
 
-Jauki atmosfera ir nepriekaištingas aptarnavimas
+Jauki aplinka ir profesionalus aptarnavimas – tai, kuo didžiuojasi mūsų restoranas. Interjeras su medžio akcentais, švelnus apšvietimas ir rami muzika sukuria puikią atmosferą tiek verslo pietums, tiek romantiškai vakarienei ar draugų susitikimui.
 
-Restorano interjeras su šiltais medžio akcentais, švelniu apšvietimu ir raminančia muzika sukuria tobulą aplinką tiek verslo pietums, tiek jaukiems susitikimams ar romantiškoms vakarienėms. Mūsų komanda pasirūpins, kad kiekvienas apsilankymas būtų ypatingas.
+Planuojate šventę ar susitikimą? „Centras“ siūlo galimybę organizuoti įvairius renginius tiek mūsų erdvėje, tiek jūsų pasirinktoje vietoje. Mūsų komanda pasirūpins maistu, aptarnavimu ir jaukia aplinka, kad jūsų šventė būtų sklandi.
 
-Organizuojame šventes ir renginius
+Be to, svečiams siūlome sotus pusryčius, kurie puikiai pradės dieną. Jei ieškote apgyvendinimo Šakiuose, viešbutis „Centras“ – tai patogi, patikima ir svetinga vieta apsistoti.
 
-Planuojate asmeninę šventę ar verslo susitikimą? Restoranas „Centras“ siūlo galimybę rengti pobūvius mūsų erdvėje arba pasirinktame Jūsų vietoje. Mūsų profesionali komanda pasirūpins maistu, aptarnavimu ir jaukia atmosfera.
-
-Gardūs pusryčiai ir kokybiška kava
-
-Pradėkite dieną sotiškais pusryčiais su puriais omletais, šviežiais vaisiais ir mūsų firminiu „City Coffee“. Be to, apsilankę „Skonis ir Kvapas“ parduotuvėje, rasite kruopščiai atrinktų aukščiausios kokybės arbatų bei išskirtinių saldumynų, kurie puikiai tiks tiek dovanoms, tiek savęs palepinimui.</value>
+</value>
   </data>
   <data name="NavAboutUs" xml:space="preserve">
     <value>Apie Mus</value>

@@ -23,14 +23,14 @@ namespace Centras.db
             modelBuilder.Entity<Room>()
         .Property(r => r.Capacity)
         .HasDefaultValue(3);
-
+            //visur arbata kava, visur dusai, dideli vonios kambariai visur. 8 kambaryje yra vonia. kondicionieriai: 5,6,7. stovejimo aikstele visur, televizoriai visur, seifas.
             modelBuilder.Entity<Room>().HasData(
                 new Room
                 {
                     ID = 5,
                     Name = "Dvivietis Kambarys",
                     Description = @"
-Jaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.
+Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
 <ul>
     <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
     <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>
@@ -47,7 +47,7 @@ Jaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.
                     ID = 6,
                     Name = "Liukso Kambarys",
                     Description = @"
-        Erdvus kambarys su moderniu interjeru ir papildomais patogumais prabangiam poilsiui.
+        Erdvus kambarys su klasikiniu interjeru ir vaizdu į miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
         <ul>
             <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
             <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
@@ -64,7 +64,7 @@ Jaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.
                     ID = 7,
                     Name = "Dvivietis Kambarys (2 lovos)",
                     Description = @"
-        Patogus kambarys su dviem viengulėmis lovomis – idealiai tinka draugams ar verslo kelionėms.
+        Patogus ir šviesus kambarys su dviem viengulėmis lovomis (galima dvigulė lova).
         <ul>
             <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
             <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
@@ -81,7 +81,7 @@ Jaukus kambarys su dvigule lova, puikiai tinkantis poroms ar draugams.
                     ID = 8,
                     Name = "Liukso Kambarys",
                     Description = @"
-        Prabangus kambarys su vaizdu į gamtą ir aukščiausios klasės patogumais.
+        Prabangus ir erdvus kambarys ir aukščiausios klasės patogumais.
         <ul>
             <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
             <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>

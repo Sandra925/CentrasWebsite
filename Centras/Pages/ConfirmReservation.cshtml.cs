@@ -101,6 +101,8 @@ namespace Centras.Pages
             var ownerEmail = "mika925d@gmail.com"; // Replace with the owner's email address !!!!!!!!!!!!!!!!!!!
             var customerEmail = Reservation.Email;
             var subject = "Rezervacijos patvirtinimas!";
+            //add comment for breakfast +10e
+            //priesais centrini miesto fontana
             var ownerEmailData = new Dictionary<string, string>
 {
     { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
