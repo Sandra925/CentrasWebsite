@@ -273,4 +273,10 @@
   <data name="RoomsImages" xml:space="preserve">
     <value>RoomsImages</value>
   </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>AdditionalInfo</value>
+  </data>
 </root>

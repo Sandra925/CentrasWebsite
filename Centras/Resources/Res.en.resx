@@ -118,15 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>"Centras" is a place where delicious food, cozy atmosphere, and comfortable accommodation come together in one experience. Our restaurant and hotel are located in the very heart of Šakiai, making us easily accessible to both locals and visitors.
+    <value>Restaurant and Hotel “Centras” in Šakiai – a great choice for gourmets and travelers.
 
-The restaurant menu may not be exclusive, but the dishes we offer are hearty, tasty, and always freshly prepared. Enjoy meat and fish dishes, homemade pizzas, authentic sauces, and desserts that will leave a pleasant impression on every guest.
+“Centras” is a place where delicious food, a cozy atmosphere, and comfortable accommodation come together into one complete experience. Our restaurant and hotel are located in the heart of Šakiai, making us easily accessible to both locals and visitors.
 
-A warm ambiance and professional service are what our restaurant is proud of. The interior, with wooden accents, soft lighting, and calming music, creates the perfect setting for business lunches, romantic dinners, or friendly gatherings.
+The restaurant menu offers hearty, tasty, and always freshly prepared dishes. Enjoy meat and fish specialties, homemade pizzas, authentic sauces, and desserts that will leave a pleasant impression on everyone.
 
-Planning a celebration or a meeting? Centras offers the opportunity to host various events either in our space or at a location of your choice. Our team will take care of the food, service, and a cozy atmosphere to ensure everything goes smoothly.
+A cozy environment and professional service are what our restaurant takes pride in. The interior features wooden accents, soft lighting, and calm music, creating the perfect atmosphere for business lunches, romantic dinners, or friendly gatherings.
 
-Additionally, we offer guests hearty breakfasts to start the day right. If you're looking for accommodation in Šakiai, Hotel Centras is a convenient, reliable, and welcoming place to stay.</value>
+Planning a celebration or a meeting? “Centras” offers the possibility to organize various events both at our venue and at a location of your choice. Our team will take care of the food, service, and cozy setting to ensure your event goes smoothly.
+
+Additionally, we offer hearty breakfasts for our guests – a perfect start to the day. If you’re looking for accommodation in Šakiai, Hotel “Centras” is a convenient, reliable, and welcoming place to stay.</value>
   </data>
   <data name="NavAboutUs" xml:space="preserve">
     <value>About Us</value>
@@ -280,5 +282,11 @@ Additionally, we offer guests hearty breakfasts to start the day right. If you'r
   </data>
   <data name="RoomsImages" xml:space="preserve">
     <value>Images of the rooms</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="AdditionalInfo" xml:space="preserve">
+    <value>Here you can provide additional information about your order.</value>
   </data>
 </root>

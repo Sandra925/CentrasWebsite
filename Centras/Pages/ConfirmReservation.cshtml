@@ -91,6 +91,11 @@
                 <option selected>Choose...</option>
             </select>
         </div>
+        <div class="form-group mb-3">
+            <label for="inputState">@Res.Comment</label>
+            <p>@Res.AdditionalInfo</p>
+            <input type="text" class="form-control" id="inputComment" asp-for="Reservation.Comment">
+        </div>
         <input type="hidden" asp-for="Reservation.TotalPrice" />
         <button type="submit" class="btn btn-primary">@Res.ConfirmReservation</button>
     </form>

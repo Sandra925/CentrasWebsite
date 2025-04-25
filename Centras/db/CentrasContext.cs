@@ -30,14 +30,17 @@ namespace Centras.db
                     ID = 5,
                     Name = "Dvivietis Kambarys",
                     Description = @"
-Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
-<ul>
-    <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-    <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>
-    <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>
-    <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
-    <li><i class='fas fa-tv'></i> Plokščiaekranis televizorius</li>
-</ul>",
+                    Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
+                    <ul>
+                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
+                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
+                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
+                        <li><i class='fas fa-tv'></i> Televizorius</li>
+                    </ul>
+                    <p><i class='fas fa-lock'></i> Seifas vertingiems daiktams prieinamas registratūroje</p>",
                     BasePrice = 55,
                     PriceForSecondPerson = 10,  // 55 + 10 = 65 for two
                     PriceForAdditionalBed = 15
@@ -47,14 +50,17 @@ Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skamba
                     ID = 6,
                     Name = "Liukso Kambarys",
                     Description = @"
-        Erdvus kambarys su klasikiniu interjeru ir vaizdu į miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
-        <ul>
-            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
-            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
-            <li><i class='fas fa-spa'></i> Nemokama prieiga prie SPA zonos</li>
-            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>
-            <li><i class='fas fa-tv'></i> Smart televizorius</li>
-        </ul>",
+                Erdvus kambarys su klasikiniu interjeru ir vaizdu į miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
+                     <ul>
+                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
+                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
+                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
+                        <li><i class='fas fa-tv'></i> Televizorius</li>
+                    </ul>
+                    <p><i class='fas fa-lock'></i> Seifas vertingiems daiktams prieinamas registratūroje</p>",
                     BasePrice = 70,            // Price for one
                     PriceForSecondPerson = 10,
                     PriceForAdditionalBed = 15
@@ -64,14 +70,17 @@ Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skamba
                     ID = 7,
                     Name = "Dvivietis Kambarys (2 lovos)",
                     Description = @"
-        Patogus ir šviesus kambarys su dviem viengulėmis lovomis (galima dvigulė lova).
-        <ul>
-            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
-            <li><i class='fas fa-car'></i> Nemokama stovėjimo aikštelė</li>
-            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
-            <li><i class='fas fa-lock'></i> Seifas vertingiems daiktams</li>
-        </ul>",
+                    Patogus ir šviesus kambarys su dviem viengulėmis lovomis (galima dvigulė lova).
+                    <ul>
+                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+                        <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
+                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
+                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
+                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
+                        <li><i class='fas fa-tv'></i> Televizorius</li>
+                    </ul>
+                    <p><i class='fas fa-lock'></i> Seifas vertingiems daiktams prieinamas registratūroje</p>",
                     BasePrice = 55,
                     PriceForSecondPerson = 10,
                     PriceForAdditionalBed = 15
@@ -81,14 +90,16 @@ Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skamba
                     ID = 8,
                     Name = "Liukso Kambarys",
                     Description = @"
-        Prabangus ir erdvus kambarys ir aukščiausios klasės patogumais.
-        <ul>
-            <li><i class='fas fa-wifi'></i> Greitas Wi-Fi</li>
-            <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
-            <li><i class='fas fa-bath'></i> Prabangus vonios kambarys su vonia</li>
-            <li><i class='fas fa-snowflake'></i> Klimato kontrolė</li>
-            <li><i class='fas fa-tv'></i> Didelis Smart TV</li>
-        </ul>",
+                    Prabangus ir erdvus kambarys ir aukščiausios klasės patogumais.
+                    <ul>
+                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
+                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
+                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su vonia</li>
+                        <li><i class='fas fa-tv'></i> Televizorius</li>
+                    </ul>
+                    <p><i class='fas fa-lock'></i> Seifas vertingiems daiktams prieinamas registratūroje</p>",
                     BasePrice = 70,
                     PriceForSecondPerson = 10,
                     PriceForAdditionalBed = 15
@@ -98,14 +109,16 @@ Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skamba
                     ID = 9,
                     Name = "Dvivietis Kambarys",
                     Description = @"
-        Kambarys su nuostabiu vaizdu į ežerą – puikus pasirinkimas ramiam poilsiui.
-        <ul>
-            <li><i class='fas fa-eye'></i> Vaizdas į ežerą</li>
-            <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-            <li><i class='fas fa-utensils'></i> Pusryčiai įskaičiuoti</li>
-            <li><i class='fas fa-car'></i> Nemokama automobilių stovėjimo aikštelė</li>
-            <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
-        </ul>",
+                    Kambarys su nuostabiu vaizdu į ežerą – puikus pasirinkimas ramiam poilsiui.
+                    <ul>
+                        <li><i class='fas fa-eye'></i> Vaizdas į ežerą</li>
+                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
+                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
+                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
+                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
+                        <li><i class='fas fa-tv'></i> Televizorius</li>
+                    </ul>",
                     BasePrice = 55,
                     PriceForSecondPerson = 10,
                     PriceForAdditionalBed = 15

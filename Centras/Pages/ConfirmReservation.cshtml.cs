@@ -104,20 +104,21 @@ namespace Centras.Pages
             //add comment for breakfast +10e
             //priesais centrini miesto fontana
             var ownerEmailData = new Dictionary<string, string>
-{
-    { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
-    { "GuestFullName", $"{Reservation.Name} {Reservation.LastName}" },
-    { "GuestEmail", Reservation.Email },
-    { "GuestZip", Reservation.Zip },
-    { "CheckIn", Reservation.CheckIn.ToString("yyyy/MM/dd") },
-    { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
-    { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
-    { "RoomName", room.ID.ToString() },
-    { "Adults", Reservation.AdultsNum.ToString() },
-    { "Kids", Reservation.KidsNum.ToString() },
-    { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() },
-    { "TotalPrice", totalCost.ToString("0.00") }
-};
+            {
+                { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
+                { "GuestFullName", $"{Reservation.Name} {Reservation.LastName}" },
+                { "GuestEmail", Reservation.Email },
+                { "GuestZip", Reservation.Zip },
+                { "CheckIn", Reservation.CheckIn.ToString("yyyy/MM/dd") },
+                { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
+                { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
+                { "RoomName", room.ID.ToString() },
+                { "Adults", Reservation.AdultsNum.ToString() },
+                { "Kids", Reservation.KidsNum.ToString() },
+                { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() },
+                { "TotalPrice", totalCost.ToString("0.00") },
+                { "Comment", Reservation.Comment }
+            };
 
 
             
@@ -130,7 +131,8 @@ namespace Centras.Pages
                 { "Nights", (Reservation.CheckOut - Reservation.CheckIn).Days.ToString() },
                 { "RoomName", $"{room.Name}" },
                 { "RoomPrice", $"{totalCost.ToString("0.00")}" },
-                { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() }
+                { "NumberOfPeople", (Reservation.AdultsNum + Reservation.KidsNum).ToString() },
+                { "Comment", Reservation.Comment }
             };
 
             var guestEmailBody = LoadEmailTemplate("Templates/GuestEmailTemplate.html", guestEmailData);

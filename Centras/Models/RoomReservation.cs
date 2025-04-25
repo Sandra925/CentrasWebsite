@@ -18,7 +18,7 @@ namespace Centras.Models
         public string? City { get; set; } 
         public string? Zip { get; set; } 
         public string? Country { get; set; } 
-
+        public string? Comment { get; set; }
         public int RoomId { get; set; }
         public Room? Room { get; set; }
         public int AdultsNum { get; set; }

@@ -99,11 +99,10 @@
                 <input asp-for="RoomReservation.TotalPrice" class="form-control" type="number" step="0.01">
                 <span asp-validation-for="RoomReservation.TotalPrice" class="text-danger"></span>
             </div>
-        </div>
-
-        <div class="mt-4">
-            <button type="submit" class="btn btn-primary">Išsaugoti</button>
-            <a asp-page="/ReservationList" class="btn btn-secondary">Atgal</a>
+            <div class="col-md-6">
+                <label asp-for="RoomReservation.Comment" class="form-label"></label>
+                <input asp-for="RoomReservation.Comment" class="form-control" />
+            </div>
         </div>
     </form>
 </div>

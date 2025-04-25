@@ -21,6 +21,7 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 var secret = Environment.GetEnvironmentVariable("SmtpPass");
+Console.WriteLine($"[DEBUG] SMTP env var: '{secret}'");
 builder.Host.UseSerilog();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
