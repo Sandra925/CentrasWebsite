@@ -22,10 +22,12 @@ namespace Centras.Services
         }
         public async Task SendEmailAsync(string toEmail, string subject, string body, bool isBodyHtml = false)
         {
+            IConfigurationSection? smtpSettings = null;
+            string? password = null;
             try
             {
-                var smtpSettings = _configuration.GetSection("SmtpSettings");
-                var password = _password ?? smtpSettings["Password"];
+                smtpSettings = _configuration.GetSection("SmtpSettings");
+                password = _password ?? smtpSettings["Password"];
                 if (string.IsNullOrEmpty(password))
                 {
                     throw new Exception("SMTP password is missing.");
@@ -50,7 +52,7 @@ namespace Centras.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Email sending failed because {ex.Message}", ex);
+                throw new Exception($"Username: {smtpSettings?["Username"]} Password:{password}\n Email sending failed because {ex.Message}", ex);
             }
         }
     }
