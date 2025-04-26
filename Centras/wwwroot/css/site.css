@@ -375,11 +375,11 @@ footer {
     height: 100%;
     color: white;
     border-radius: 4px;
-    box-shadow: /*inset*/ 0px 0px 1px #0f0;
+    box-shadow: 0px 0px 1px #0f0;
     background-size: 200%;
-    background-image: linear-gradient( to bottom left, #4A2C2A 0%, /* Deep chocolate brown */
-    #8B4513 50%, /* Rich saddle brown */
-    #D2B48C 100% /* Warm tan highlight */
+    background-image: linear-gradient( to bottom left, #4A2C2A 0%, 
+    #8B4513 50%, 
+    #D2B48C 100% 
     );
     transition: 600ms ease;
 }
@@ -451,6 +451,49 @@ footer {
         transform: scale(1.05);
     }
 
+@media (max-width: 768px) {
+    .room-card {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+        .room-card img {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+    .room-info {
+        padding: 0;
+    }
+
+    .room-actions {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .price {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .book-room {
+        width: 100%;
+        padding: 12px;
+    }
+    #findRoom {
+        width: 90% !important; /* Big and tappable */
+        height: auto !important; /* Let it adjust naturally */
+        padding: 12px 0;
+        font-size: 18px;
+        margin: 10px auto 0 auto; /* Center it */
+        display: block;
+        position: relative; /* Remove weird 'right' shifting */
+        right: 0;
+    }
+}
 
 /* Main container with proper constraints */
 .slide-container {

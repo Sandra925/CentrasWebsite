@@ -1,37 +1,86 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="lt">
 <head>
+    <meta charset="UTF-8">
+    <title>Nauja Rezervacija - Centras</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
 
         .logo {
-            text-align: left;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+            .logo img {
+                width: 220px;
+            }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .logo img {
-            width: 300px;
+        p {
+            margin-bottom: 10px;
         }
 
-        .content {
-            margin: 20px 0;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+            ul li {
+                background: #f1f1f1;
+                margin-bottom: 8px;
+                padding: 10px 15px;
+                border-radius: 5px;
+            }
+
+        strong {
+            color: #000;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
         }
 
         .footer {
-            margin-top: 20px;
+            text-align: center;
             font-size: 12px;
+            color: #666;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <img src="https://imgur.com/osOy7pn.png" alt="Centras Logo">
-    </div>
-    <div class="content">
+    <div class="container">
+        <div class="logo">
+            <img src="https://imgur.com/osOy7pn.png" alt="Centras Logo">
+        </div>
+
         <h2>NAUJA REZERVACIJA</h2>
-        <p>Gauta nauja rezervacija viešbutyje "Centras". Žemiau pateikta rezervacijos informacija:</p>
+
+        <p>Gauta nauja rezervacija viešbutyje <strong>„Centras“</strong>. Žemiau pateikta rezervacijos informacija:</p>
+
         <ul>
             <li><strong>Rezervacijos data:</strong> {{ReservationDate}}</li>
             <li><strong>Svečias:</strong> {{GuestFullName}}</li>
@@ -48,7 +97,12 @@
             <li><strong>Bendra kaina:</strong> {{TotalPrice}} Eur</li>
             <li><strong>Komentaras:</strong> {{Comment}}</li>
         </ul>
+
         <p>Prašome patikrinti užsakymą sistemoje ir, jei reikia, susisiekti su svečiu.</p>
+
+        <div class="footer">
+            &copy; 2025 Viešbutis „Centras“. Visos teisės saugomos.
+        </div>
     </div>
 </body>
 </html>

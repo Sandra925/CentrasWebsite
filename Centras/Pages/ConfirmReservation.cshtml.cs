@@ -108,6 +108,7 @@ namespace Centras.Pages
                 { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
                 { "GuestFullName", $"{Reservation.Name} {Reservation.LastName}" },
                 { "GuestEmail", Reservation.Email },
+                { "Phone", Reservation.Phone },
                 { "GuestZip", Reservation.Zip },
                 { "CheckIn", Reservation.CheckIn.ToString("yyyy/MM/dd") },
                 { "CheckOut", Reservation.CheckOut.ToString("yyyy/MM/dd") },
