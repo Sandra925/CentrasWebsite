@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250427195619_localizeDescription")]
+    partial class localizeDescription
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -54,7 +57,7 @@ namespace Centras.Migrations
                             ID = 5,
                             BasePrice = 55m,
                             Capacity = 0,
-                            Description = "\r\n                    Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.\r\n                    <ul>\r\n                        <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>\r\n                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>\r\n                        <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>\r\n                        <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>\r\n                        <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>\r\n                        <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>\r\n                        <li><i class='fas fa-tv'></i> Televizorius</li>\r\n                    </ul>\r\n                    <p><i class='fas fa-lock'></i> Seifas vertingiems daiktams prieinamas registratūroje</p>",
+                            Description = "desc5",
                             Name = "Dvivietis Kambarys",
                             PriceForAdditionalBed = 15m,
                             PriceForSecondPerson = 10m

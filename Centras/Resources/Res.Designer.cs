@@ -187,6 +187,60 @@ namespace Centras.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to desc5.
+        /// </summary>
+        public static string desc5 {
+            get {
+                return ResourceManager.GetString("desc5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descriptionRoom5.
+        /// </summary>
+        public static string descriptionRoom5 {
+            get {
+                return ResourceManager.GetString("descriptionRoom5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descriptionRoom6.
+        /// </summary>
+        public static string descriptionRoom6 {
+            get {
+                return ResourceManager.GetString("descriptionRoom6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descriptionRoom7.
+        /// </summary>
+        public static string descriptionRoom7 {
+            get {
+                return ResourceManager.GetString("descriptionRoom7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descriptionRoom8.
+        /// </summary>
+        public static string descriptionRoom8 {
+            get {
+                return ResourceManager.GetString("descriptionRoom8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descriptionRoom9.
+        /// </summary>
+        public static string descriptionRoom9 {
+            get {
+                return ResourceManager.GetString("descriptionRoom9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DrinkMenu.
         /// </summary>
         public static string DrinkMenu {

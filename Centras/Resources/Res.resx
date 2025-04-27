@@ -279,4 +279,22 @@
   <data name="AdditionalInfo" xml:space="preserve">
     <value>AdditionalInfo</value>
   </data>
+  <data name="descriptionRoom5" xml:space="preserve">
+    <value>descriptionRoom5</value>
+  </data>
+  <data name="descriptionRoom6" xml:space="preserve">
+    <value>descriptionRoom6</value>
+  </data>
+  <data name="descriptionRoom7" xml:space="preserve">
+    <value>descriptionRoom7</value>
+  </data>
+  <data name="descriptionRoom8" xml:space="preserve">
+    <value>descriptionRoom8</value>
+  </data>
+  <data name="descriptionRoom9" xml:space="preserve">
+    <value>descriptionRoom9</value>
+  </data>
+  <data name="desc5" xml:space="preserve">
+    <value>desc5</value>
+  </data>
 </root>

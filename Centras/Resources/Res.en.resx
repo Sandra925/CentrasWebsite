@@ -289,4 +289,22 @@ Additionally, we offer hearty breakfasts for our guests – a perfect start to t
   <data name="AdditionalInfo" xml:space="preserve">
     <value>Here you can provide additional information about your order.</value>
   </data>
+  <data name="descriptionRoom5" xml:space="preserve">
+    <value>A cozy room with a double bed and a view of the central town square with chiming bells and a splashing fountain.</value>
+  </data>
+  <data name="descriptionRoom6" xml:space="preserve">
+    <value>A spacious room with a classic interior and a view of the city square with ringing bells and a splashing fountain.</value>
+  </data>
+  <data name="descriptionRoom7" xml:space="preserve">
+    <value>A comfortable and bright room with two single beds (a double bed is possible).</value>
+  </data>
+  <data name="descriptionRoom8" xml:space="preserve">
+    <value>A luxurious and spacious room with top-class amenities.</value>
+  </data>
+  <data name="descriptionRoom9" xml:space="preserve">
+    <value>A room with a stunning view of the lake – a perfect place to relax.</value>
+  </data>
+  <data name="desc5" xml:space="preserve">
+    <value>comfy</value>
+  </data>
 </root>

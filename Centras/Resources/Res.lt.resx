@@ -128,7 +128,7 @@ Jauki aplinka ir profesionalus aptarnavimas – tai, kuo didžiuojasi mūsų res
 
 Planuojate šventę ar susitikimą? „Centras“ siūlo galimybę organizuoti įvairius renginius tiek mūsų erdvėje, tiek jūsų pasirinktoje vietoje. Mūsų komanda pasirūpins maistu, aptarnavimu ir jaukia aplinka, kad jūsų šventė būtų sklandi.
 
-Be to, svečiams siūlome sotus pusryčius, kurie puikiai pradės dieną. Jei ieškote apgyvendinimo Šakiuose, viešbutis „Centras“ – tai patogi, patikima ir svetinga vieta apsistoti.
+Be to, svečiams siūlome sočius pusryčius, kurie puikiai pradės dieną. Jei ieškote apgyvendinimo Šakiuose, viešbutis „Centras“ – tai patogi, patikima ir svetinga vieta apsistoti.
 
 </value>
   </data>
@@ -290,5 +290,33 @@ Be to, svečiams siūlome sotus pusryčius, kurie puikiai pradės dieną. Jei ie
   </data>
   <data name="AdditionalInfo" xml:space="preserve">
     <value>Čia galite pateikti papildomą informaciją apie Jūsų užsakymą</value>
+  </data>
+  <data name="descriptionRoom5" xml:space="preserve">
+    <value>Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.</value>
+  </data>
+  <data name="descriptionRoom6" xml:space="preserve">
+    <value>Erdvus kambarys su klasikiniu interjeru ir vaizdu į miesto aikštę su skambančiais varpais ir trykštančiu fontanu.</value>
+  </data>
+  <data name="descriptionRoom7" xml:space="preserve">
+    <value>Patogus ir šviesus kambarys su dviem viengulėmis lovomis (galima dvigulė lova).</value>
+  </data>
+  <data name="descriptionRoom8" xml:space="preserve">
+    <value>Prabangus ir erdvus kambarys ir aukščiausios klasės patogumais.</value>
+  </data>
+  <data name="descriptionRoom9" xml:space="preserve">
+    <value>Kambarys su nuostabiu vaizdu į ežerą – puikus pasirinkimas ramiam poilsiui.</value>
+  </data>
+  <data name="desc5" xml:space="preserve">
+    <value>Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
+&lt;ul&gt;
+    &lt;li&gt;&lt;i class='fas fa-wifi'&gt;&lt;/i&gt; Nemokamas Wi-Fi&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-utensils'&gt;&lt;/i&gt; Galimybė užsisakyti pusryčius vietoje&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-snowflake'&gt;&lt;/i&gt; Oro kondicionierius&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-car'&gt;&lt;/i&gt; Nemokama stovėjimo vieta&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-mug-hot'&gt;&lt;/i&gt; Arbata ir kava kambaryje&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-shower'&gt;&lt;/i&gt; Erdvus vonios kambarys su dušu&lt;/li&gt;
+    &lt;li&gt;&lt;i class='fas fa-tv'&gt;&lt;/i&gt; Televizorius&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;i class='fas fa-lock'&gt;&lt;/i&gt; Seifas vertingiems daiktams prieinamas registratūroje&lt;/p&gt;</value>
   </data>
 </root>

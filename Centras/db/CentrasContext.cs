@@ -23,7 +23,6 @@ namespace Centras.db
             modelBuilder.Entity<Room>()
         .Property(r => r.Capacity)
         .HasDefaultValue(3);
-            //visur arbata kava, visur dusai, dideli vonios kambariai visur. 8 kambaryje yra vonia. kondicionieriai: 5,6,7. stovejimo aikstele visur, televizoriai visur, seifas.
             modelBuilder.Entity<Room>().HasData(
                 new Room
                 {
@@ -33,7 +32,7 @@ namespace Centras.db
                     Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
                     <ul>
                         <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>
                         <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
                         <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
                         <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
@@ -53,7 +52,7 @@ namespace Centras.db
                 Erdvus kambarys su klasikiniu interjeru ir vaizdu į miesto aikštę su skambančiais varpais ir trykštančiu fontanu.
                      <ul>
                         <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>
                         <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
                         <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
                         <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
@@ -74,7 +73,7 @@ namespace Centras.db
                     <ul>
                         <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
                         <li><i class='fas fa-snowflake'></i> Oro kondicionierius</li>
-                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>
                         <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
                         <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
                         <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
@@ -93,7 +92,7 @@ namespace Centras.db
                     Prabangus ir erdvus kambarys ir aukščiausios klasės patogumais.
                     <ul>
                         <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>
                         <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
                         <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
                         <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su vonia</li>
@@ -113,7 +112,7 @@ namespace Centras.db
                     <ul>
                         <li><i class='fas fa-eye'></i> Vaizdas į ežerą</li>
                         <li><i class='fas fa-wifi'></i> Nemokamas Wi-Fi</li>
-                        <li><i class='fas fa-utensils'></i> Įskaičiuoti pusryčiai</li>
+                        <li><i class='fas fa-utensils'></i> Galimybė užsisakyti pusryčius vietoje</li>
                         <li><i class='fas fa-car'></i> Nemokama stovėjimo vieta</li>
                         <li><i class='fas fa-mug-hot'></i> Arbata ir kava kambaryje</li>
                         <li><i class='fas fa-shower'></i> Erdvus vonios kambarys su dušu</li>
