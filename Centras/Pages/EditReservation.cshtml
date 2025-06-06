@@ -103,6 +103,11 @@
                 <label asp-for="RoomReservation.Comment" class="form-label"></label>
                 <input asp-for="RoomReservation.Comment" class="form-control" />
             </div>
+            
+        </div>
+        <div class="d-flex w-20 gap-2" style="height:70px;justify-items:end" >
+            <button type="submit" style="width:200px;height:50px;" class="btn btn-primary">Išsaugoti</button>
+            <a asp-page="/ReservationList" style="width:150px;height:50px; background-color:grey;" class="btn btn-primary">Atgal</a>
         </div>
     </form>
 </div>

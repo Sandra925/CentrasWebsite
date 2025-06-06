@@ -118,17 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>Restaurant and Hotel “Centras” in Šakiai – a great choice for gourmets and travelers.
+    <value>At the intersection of V. Kudirka and Aušra streets, near the town lake, you'll find the “Centras” restaurant and hotel. Here, we offer simple yet sincerely prepared dishes – meat, fish, pizzas, salads, and desserts. All meals are made to order, so preparation may take a little time, but we believe freshly made food is worth the wait.
 
-“Centras” is a place where delicious food, a cozy atmosphere, and comfortable accommodation come together into one complete experience. Our restaurant and hotel are located in the heart of Šakiai, making us easily accessible to both locals and visitors.
+The restaurant and hotel are designed in a classic style – with wooden details, soft lighting, and quiet background music that creates a cozy, peaceful atmosphere for lunch, dinner, or a gathering with loved ones.
 
-The restaurant menu offers hearty, tasty, and always freshly prepared dishes. Enjoy meat and fish specialties, homemade pizzas, authentic sauces, and desserts that will leave a pleasant impression on everyone.
+If you're planning a celebration or meeting, we can help you organize it. We prepare food not only on-site but also for takeout or for events at other locations.
 
-A cozy environment and professional service are what our restaurant takes pride in. The interior features wooden accents, soft lighting, and calm music, creating the perfect atmosphere for business lunches, romantic dinners, or friendly gatherings.
+During the warm season, we invite you to relax on our cozy outdoor terrace, which offers views of the town’s bell carillon, fountain, and colorful water displays – an especially inviting and pleasant setting in the evening.
 
-Planning a celebration or a meeting? “Centras” offers the possibility to organize various events both at our venue and at a location of your choice. Our team will take care of the food, service, and cozy setting to ensure your event goes smoothly.
+For those looking for accommodation in Šakiai, we offer our 3-star boutique-style hotel. The rooms come with double or twin beds and can accommodate up to three guests. The hotel features a classic style, providing a simple and reliable place to stay, whether for a short or longer visit.
 
-Additionally, we offer hearty breakfasts for our guests – a perfect start to the day. If you’re looking for accommodation in Šakiai, Hotel “Centras” is a convenient, reliable, and welcoming place to stay.</value>
+Every morning from 8 to 11 AM, guests can enjoy a warm, hearty breakfast made to order. Breakfast can be enjoyed on-site or ordered for takeout.
+
+“Hotel-Restaurant Centras” – when you seek simplicity, coziness, and warmth.
+</value>
   </data>
   <data name="NavAboutUs" xml:space="preserve">
     <value>About Us</value>
@@ -194,7 +197,7 @@ Additionally, we offer hearty breakfasts for our guests – a perfect start to t
     <value>Reservations</value>
   </data>
   <data name="AboutTitle" xml:space="preserve">
-    <value>Accommodation in the Center of Šakiai!</value>
+    <value>"Centras" Restaurant and Hotel – a cozy spot in the heart of Šakiai</value>
   </data>
   <data name="ReservationConfirmThanks" xml:space="preserve">
     <value>Thank you for booking with us. Your reservation has been confirmed.</value>

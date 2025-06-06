@@ -3,6 +3,7 @@ using System;
 using Centras.db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Centras.Migrations
 {
     [DbContext(typeof(CentrasContext))]
-    partial class CentrasContextModelSnapshot : ModelSnapshot
+    [Migration("20250503091713_changed about")]
+    partial class changedabout
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -46,7 +49,7 @@ namespace Centras.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Rooms", (string)null);
+                    b.ToTable("Rooms");
 
                     b.HasData(
                         new
@@ -118,7 +121,7 @@ namespace Centras.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("RoomImages", (string)null);
+                    b.ToTable("RoomImages");
 
                     b.HasData(
                         new
@@ -399,7 +402,7 @@ namespace Centras.Migrations
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("RoomReservations", (string)null);
+                    b.ToTable("RoomReservations");
                 });
 
             modelBuilder.Entity("Centras.Models.User", b =>
@@ -430,7 +433,7 @@ namespace Centras.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Centras.Models.RoomImage", b =>
