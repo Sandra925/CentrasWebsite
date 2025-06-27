@@ -86,21 +86,22 @@ namespace Centras.Pages
 
             return Partial("_RoomsPartial", Rooms);
         }
-        public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum, string RoomName)
+        public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum)
         {
 
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+
             var room = _context.Rooms.FirstOrDefault(r => r.ID == RoomId);
-            var roomName = _context.Rooms.FirstOrDefault(r => r.Name == RoomName);
             if (room == null)
             {
                 Console.WriteLine("Room not found in database!");
                 ModelState.AddModelError(string.Empty, "Room not found.");
                 return Page();
             }
+            string RoomName = room.Name;
             decimal finalPrice = room.CalculateTotalPrice(AdultsNum, KidsNum);
             return RedirectToPage("ConfirmReservation", new
             {
@@ -122,6 +123,13 @@ namespace Centras.Pages
         .Include(r => r.RoomReservations)
         .ToList();
             AllRoomImages = _context.RoomImages.ToList();
+        }
+        public static class LocalizationHelper
+        {
+            public static string GetLocalizationContent(string culture, string contentLT, string contentEng)
+            {
+                return culture.StartsWith("lt") ? contentLT : contentEng;
+            }
         }
     }
 

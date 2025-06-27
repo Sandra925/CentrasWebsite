@@ -326,4 +326,7 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
 &lt;/ul&gt;
 &lt;p&gt;&lt;i class='fas fa-lock'&gt;&lt;/i&gt; Seifas vertingiems daiktams prieinamas registratūroje&lt;/p&gt;</value>
   </data>
+  <data name="Available" xml:space="preserve">
+    <value>Laisvi Kambariai</value>
+  </data>
 </root>

@@ -297,4 +297,7 @@
   <data name="desc5" xml:space="preserve">
     <value>desc5</value>
   </data>
+  <data name="Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
 </root>

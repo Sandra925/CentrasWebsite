@@ -1,12 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Centras.Models
 {
     public class Room
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public string? Description { get; set; }
+        public string NameLT { get; set; }
+        public string NameEng { get; set; }
+        public string? DescriptionLT { get; set; }
+        public string? DescriptionEng { get; set; }
         public int Capacity { get; set; }  
         public List<RoomImage> RoomImages { get; set; } = new();
         public List<RoomReservation> RoomReservations { get; set; } = new();
@@ -16,7 +19,11 @@ namespace Centras.Models
         public decimal PriceForAdditionalBed { get; set; }
 
         [NotMapped]
-        public decimal CalculatedPrice { get; set; } 
+        public decimal CalculatedPrice { get; set; }
+        [NotMapped]
+        public string Name => CultureInfo.CurrentCulture.Name.StartsWith("lt") ? NameLT : NameEng;
+        [NotMapped]
+        public string Description => CultureInfo.CurrentCulture.Name.StartsWith("lt") ? DescriptionLT : DescriptionEng;
 
         public decimal CalculateTotalPrice(int adults, int children)
         {

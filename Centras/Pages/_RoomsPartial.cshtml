@@ -5,7 +5,7 @@
 
 @if (Model != null && Model.Any())
 {
-    <h1 style="margin-top:10px;">Kambarių tipai</h1>
+    <h1 style="margin-top:10px;">@Res.Available</h1>
     <div class="room-list">
         @foreach (var room in Model)
         {
