@@ -5,19 +5,19 @@
 }
 
 <div class="container mt-4">
-    <h2>Edit Reservation</h2>
+    <h2>Rezervacijos Koregavimas</h2>
 
     <form method="post">
         <input type="hidden" asp-for="RoomReservation.Id" />
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label asp-for="RoomReservation.Name" class="form-label"></label>
+                <label asp-for="RoomReservation.Name" class="form-label">Vardas</label>
                 <input asp-for="RoomReservation.Name" class="form-control">
                 <span asp-validation-for="RoomReservation.Name" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="RoomReservation.LastName" class="form-label"></label>
+                <label asp-for="RoomReservation.LastName" class="form-label">Pavardė</label>
                 <input asp-for="RoomReservation.LastName" class="form-control">
                 <span asp-validation-for="RoomReservation.LastName" class="text-danger"></span>
             </div>
@@ -25,12 +25,12 @@
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label asp-for="RoomReservation.Email" class="form-label"></label>
+                <label asp-for="RoomReservation.Email" class="form-label">El. Paštas</label>
                 <input asp-for="RoomReservation.Email" class="form-control" type="email">
                 <span asp-validation-for="RoomReservation.Email" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="RoomReservation.Phone" class="form-label"></label>
+                <label asp-for="RoomReservation.Phone" class="form-label">Tel. Nr.</label>
                 <input asp-for="RoomReservation.Phone" class="form-control">
                 <span asp-validation-for="RoomReservation.Phone" class="text-danger"></span>
             </div>
@@ -38,7 +38,7 @@
 
         <div class="row mb-3">
             <div class="col-12">
-                <label asp-for="RoomReservation.Address" class="form-label"></label>
+                <label asp-for="RoomReservation.Address" class="form-label">Adresas</label>
                 <input asp-for="RoomReservation.Address" class="form-control">
                 <span asp-validation-for="RoomReservation.Address" class="text-danger"></span>
             </div>
@@ -46,17 +46,17 @@
 
         <div class="row mb-3">
             <div class="col-md-4">
-                <label asp-for="RoomReservation.City" class="form-label"></label>
+                <label asp-for="RoomReservation.City" class="form-label">Miestas</label>
                 <input asp-for="RoomReservation.City" class="form-control">
                 <span asp-validation-for="RoomReservation.City" class="text-danger"></span>
             </div>
             <div class="col-md-4">
-                <label asp-for="RoomReservation.Zip" class="form-label"></label>
+                <label asp-for="RoomReservation.Zip" class="form-label">Pašto Kodas</label>
                 <input asp-for="RoomReservation.Zip" class="form-control">
                 <span asp-validation-for="RoomReservation.Zip" class="text-danger"></span>
             </div>
             <div class="col-md-4">
-                <label asp-for="RoomReservation.Country" class="form-label"></label>
+                <label asp-for="RoomReservation.Country" class="form-label">Šalis</label>
                 <input asp-for="RoomReservation.Country" class="form-control">
                 <span asp-validation-for="RoomReservation.Country" class="text-danger"></span>
             </div>
@@ -64,17 +64,17 @@
 
         <div class="row mb-3">
             <div class="col-md-4">
-                <label asp-for="RoomReservation.RoomId" class="form-label"></label>
+                <label asp-for="RoomReservation.RoomId" class="form-label">Kambario Numeris</label>
                 <input asp-for="RoomReservation.RoomId" class="form-control" type="number">
                 <span asp-validation-for="RoomReservation.RoomId" class="text-danger"></span>
             </div>
             <div class="col-md-4">
-                <label asp-for="RoomReservation.CheckIn" class="form-label"></label>
+                <label asp-for="RoomReservation.CheckIn" class="form-label">Atvykimas</label>
                 <input asp-for="RoomReservation.CheckIn" class="form-control" type="date">
                 <span asp-validation-for="RoomReservation.CheckIn" class="text-danger"></span>
             </div>
             <div class="col-md-4">
-                <label asp-for="RoomReservation.CheckOut" class="form-label"></label>
+                <label asp-for="RoomReservation.CheckOut" class="form-label">Išvykimas</label>
                 <input asp-for="RoomReservation.CheckOut" class="form-control" type="date">
                 <span asp-validation-for="RoomReservation.CheckOut" class="text-danger"></span>
             </div>
@@ -82,12 +82,12 @@
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label asp-for="RoomReservation.AdultsNum" class="form-label"></label>
+                <label asp-for="RoomReservation.AdultsNum" class="form-label">Suaugusių Sk.</label>
                 <input asp-for="RoomReservation.AdultsNum" class="form-control" type="number" min="1">
                 <span asp-validation-for="RoomReservation.AdultsNum" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="RoomReservation.KidsNum" class="form-label"></label>
+                <label asp-for="RoomReservation.KidsNum" class="form-label">Vaikų Sk.</label>
                 <input asp-for="RoomReservation.KidsNum" class="form-control" type="number" min="0">
                 <span asp-validation-for="RoomReservation.KidsNum" class="text-danger"></span>
             </div>
@@ -95,12 +95,12 @@
 
         <div class="row mb-4">
             <div class="col-md-6">
-                <label asp-for="RoomReservation.TotalPrice" class="form-label"></label>
+                <label asp-for="RoomReservation.TotalPrice" class="form-label">Nakties Kaina</label>
                 <input asp-for="RoomReservation.TotalPrice" class="form-control" type="number" step="0.01">
                 <span asp-validation-for="RoomReservation.TotalPrice" class="text-danger"></span>
             </div>
             <div class="col-md-6">
-                <label asp-for="RoomReservation.Comment" class="form-label"></label>
+                <label asp-for="RoomReservation.Comment" class="form-label">Komentaras</label>
                 <input asp-for="RoomReservation.Comment" class="form-control" />
             </div>
             
