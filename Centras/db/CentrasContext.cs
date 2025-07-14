@@ -86,7 +86,7 @@ namespace Centras.db
                         <li><i class='fas fa-tv'></i> Television</li>
                     </ul>
                     <p><i class='fas fa-lock'></i> Safe for valuables available at the reception</p>",
-                    BasePrice = 70,            // Price for one
+                    BasePrice = 70,            // no breakfast
                     PriceForSecondPerson = 10,
                     PriceForAdditionalBed = 15
                 },

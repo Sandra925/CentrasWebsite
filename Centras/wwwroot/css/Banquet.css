@@ -1,0 +1,77 @@
+﻿.banquet-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .banquet-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .banquet-container p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+.food-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.img-card{
+    width: 100%;
+    height:310px;
+    overflow:hidden;
+}
+
+.food-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+    .food-card:hover {
+        transform: scale(1.05);
+    }
+
+    .food-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .food-card h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        color: #444;
+    }
+
+    .food-card p {
+        padding: 0 10px 15px;
+        color: #555;
+    }
+
+.main-image-banner {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+    .main-image-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
