@@ -102,7 +102,6 @@ namespace Centras.Pages
             var customerEmail = Reservation.Email;
             var subject = "Rezervacijos patvirtinimas!";
             //add comment for breakfast +10e
-            //priesais centrini miesto fontana
             var ownerEmailData = new Dictionary<string, string>
             {
                 { "ReservationDate", DateTime.Now.ToString("yyyy/MM/dd") },
