@@ -296,7 +296,7 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
     <value>Komentaras</value>
   </data>
   <data name="AdditionalInfo" xml:space="preserve">
-    <value>Čia galite pateikti papildomą informaciją apie Jūsų užsakymą</value>
+    <value>Čia galite pateikti papildomą informaciją apie Jūsų užsakymą. </value>
   </data>
   <data name="descriptionRoom5" xml:space="preserve">
     <value>Jaukus kambarys su dvigule lova ir vaizdu į centrinę miesto aikštę su skambančiais varpais ir trykštančiu fontanu.</value>
@@ -328,5 +328,8 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
   </data>
   <data name="Available" xml:space="preserve">
     <value>Laisvi Kambariai</value>
+  </data>
+  <data name="BreakfastComment" xml:space="preserve">
+    <value>Jeigu pageidaujate pusryčių, galite tai nurodyti čia. (Pusryčių kaina 10e žmogui)</value>
   </data>
 </root>

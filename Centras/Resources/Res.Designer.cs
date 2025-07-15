@@ -599,14 +599,25 @@ namespace Centras.Resources {
                 return ResourceManager.GetString("SushiMenu", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Town.
         /// </summary>
-        public static string Town {
-            get {
+        public static string Town
+        {
+            get
+            {
                 return ResourceManager.GetString("Town", resourceCulture);
             }
         }
+
+        public static string BreakfastComment
+        {
+            get
+            {
+                return ResourceManager.GetString("BreakfastComment", resourceCulture);
+            }
+        }
+
     }
 }
