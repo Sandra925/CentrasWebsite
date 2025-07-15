@@ -133,8 +133,6 @@ body {
     border-radius: 10px;
 }
 
-
-
 footer {
     background-color: white;
 }
@@ -177,7 +175,6 @@ footer {
         width: 100%;
         text-align: center;
         padding: 0;
-        position:fixed;
     }
 
     .nav-item {
