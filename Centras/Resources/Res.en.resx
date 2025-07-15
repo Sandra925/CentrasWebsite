@@ -247,8 +247,8 @@ Every morning from 8 to 11 AM, guests can enjoy a warm, hearty breakfast made to
   <data name="PizzaMenu" xml:space="preserve">
     <value>Pizza Menu</value>
   </data>
-  <data name="SushiMenu" xml:space="preserve">
-    <value>Sushi Menu</value>
+  <data name="AlcoholDrinksMenu" xml:space="preserve">
+    <value>Alcohol Drinks Menu</value>
   </data>
   <data name="DrinkMenu" xml:space="preserve">
     <value>Drinks Menu</value>

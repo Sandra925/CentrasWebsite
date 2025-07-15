@@ -234,8 +234,8 @@
   <data name="PizzaMenu" xml:space="preserve">
     <value>PizzaMenu</value>
   </data>
-  <data name="SushiMenu" xml:space="preserve">
-    <value>SushiMenu</value>
+  <data name="AlcoholDrinksMenu" xml:space="preserve">
+    <value>AlcoholDrinksMenu</value>
   </data>
   <data name="DrinkMenu" xml:space="preserve">
     <value>DrinkMenu</value>

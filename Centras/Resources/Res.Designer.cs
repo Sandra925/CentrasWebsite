@@ -106,6 +106,15 @@ namespace Centras.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AlcoholDrinksMenu.
+        /// </summary>
+        public static string AlcoholDrinksMenu {
+            get {
+                return ResourceManager.GetString("AlcoholDrinksMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Available.
         /// </summary>
         public static string Available {
@@ -597,15 +606,6 @@ namespace Centras.Resources {
         public static string RoomsImages {
             get {
                 return ResourceManager.GetString("RoomsImages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SushiMenu.
-        /// </summary>
-        public static string SushiMenu {
-            get {
-                return ResourceManager.GetString("SushiMenu", resourceCulture);
             }
         }
         

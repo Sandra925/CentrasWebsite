@@ -251,8 +251,8 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
   <data name="PizzaMenu" xml:space="preserve">
     <value>Picų Meniu</value>
   </data>
-  <data name="SushiMenu" xml:space="preserve">
-    <value>Sušių Meniu</value>
+  <data name="AlcoholDrinksMenu" xml:space="preserve">
+    <value>Alkoholinių Gėrimų Meniu</value>
   </data>
   <data name="DrinkMenu" xml:space="preserve">
     <value>Gėrimų Meniu</value>
