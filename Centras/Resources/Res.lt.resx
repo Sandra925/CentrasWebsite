@@ -330,6 +330,6 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
     <value>Laisvi Kambariai</value>
   </data>
   <data name="BreakfastComment" xml:space="preserve">
-    <value>Jeigu pageidaujate pusryčių, galite tai nurodyti čia. (Pusryčių kaina 10e žmogui)</value>
+    <value>Jeigu pageidaujate pusryčių, galite tai nurodyti čia. (Pusryčių kaina 10€ žmogui)</value>
   </data>
 </root>
