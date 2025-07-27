@@ -9,7 +9,11 @@
     <div class="room-list">
         @foreach (var room in Model)
         {
-            <div class="room-card">
+            <div class="room-card @(room.RoomReservations.Any(reservation =>
+                (Convert.ToDateTime(TempData["CheckInDate"]) < reservation.CheckOut) &&
+                (Convert.ToDateTime(TempData["CheckOutDate"]) > reservation.CheckIn))
+                ? "unavailable" : "")">
+
                 @if (room.RoomImages.Any())
                 {
                     <img src="~/@room.RoomImages[0].ImagePath"
@@ -42,7 +46,9 @@
                     }
                     else
                     {
-                        <button class="btn btn-secondary" disabled>Užimta</button>
+
+                        <button class="btn btn-secondary">@Res.Unavailable</button>
+                        
                     }
                 </div>
             </div>

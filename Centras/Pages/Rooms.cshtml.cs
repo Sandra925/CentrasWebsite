@@ -10,7 +10,8 @@ namespace Centras.Pages
 {
     public class RoomsModel : PageModel
     {
-        public List<Room> Rooms { get; set; }
+        public List<Room> AllRooms { get; set; }
+        public List<Room> RoomsUnavailable { get; set; }
 
         [BindProperty]
         public List<RoomImage> AllRoomImages { get; set; }
@@ -19,7 +20,8 @@ namespace Centras.Pages
         public RoomsModel(CentrasContext context)
         {
             _context = context;
-            Rooms = new List<Room>();
+            AllRooms = new List<Room>();
+
         }
         [BindProperty]
         public int RoomId { get; set; }
@@ -50,7 +52,7 @@ namespace Centras.Pages
             if (!ModelState.IsValid)
             {
                 ErrorMessage = "Please fill in all required fields.";
-                return Partial("_RoomsPartial", Rooms);
+                return Partial("_RoomsPartial", AllRooms);
             }
 
             CheckInDate = Convert.ToDateTime(Request.Form["CheckInDate"]);
@@ -65,26 +67,32 @@ namespace Centras.Pages
             TempData["KidsNum"] = KidsNum;
             TempData.Keep();
 
+            
             // Get available rooms
-            Rooms = _context.Rooms
+            AllRooms = _context.Rooms
+                .Include(r => r.RoomImages)
+                .Include(r => r.RoomReservations)
+                .ToList();
+            /*AllRooms = _context.Rooms
                 .Include(r => r.RoomImages)
                 .Include(r => r.RoomReservations)
                 .Where(r => !r.RoomReservations.Any(reservation =>
-                    (CheckInDate < reservation.CheckOut) &&
-                    (CheckOutDate > reservation.CheckIn)))
-                .ToList();
+                      (CheckInDate < reservation.CheckOut) &&
+                      (CheckOutDate > reservation.CheckIn)))
+                .ToList();*/
 
-            foreach (var room in Rooms)
+            foreach (var room in AllRooms)
             {
                 room.CalculatedPrice = room.CalculateTotalPrice(AdultsNum, KidsNum);
             }
 
-            if (!Rooms.Any())
+            if (!AllRooms.Any())
             {
                 ErrorMessage = "Deja, nėra laisvų kambarių pasirinktam laikotarpiui.";
             }
 
-            return Partial("_RoomsPartial", Rooms);
+
+            return Partial("_RoomsPartial", AllRooms);
         }
         public IActionResult OnPostBookRoom(int RoomId, DateTime CheckInDate, DateTime CheckOutDate, int AdultsNum, int KidsNum)
         {
@@ -118,7 +126,7 @@ namespace Centras.Pages
         public void OnGet()
         {
 
-            Rooms = _context.Rooms
+            AllRooms = _context.Rooms
         .Include(r => r.RoomImages)
         .Include(r => r.RoomReservations)
         .ToList();

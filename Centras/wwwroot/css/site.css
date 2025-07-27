@@ -422,7 +422,10 @@ footer {
             border-radius: 5px;
             cursor: pointer;
         }
-
+.unavailable {
+    opacity: 0.5 ;
+    pointer-events: none; /* if you want to disable clicks */
+}
     .room-info {
         flex: 1; /* Takes remaining space */
         padding: 0 15px;

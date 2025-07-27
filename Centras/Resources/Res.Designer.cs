@@ -617,5 +617,14 @@ namespace Centras.Resources {
                 return ResourceManager.GetString("Town", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unavailable.
+        /// </summary>
+        public static string Unavailable {
+            get {
+                return ResourceManager.GetString("Unavailable", resourceCulture);
+            }
+        }
     }
 }

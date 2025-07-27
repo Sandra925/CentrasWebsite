@@ -330,4 +330,7 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
   <data name="BreakfastComment" xml:space="preserve">
     <value>Jeigu pageidaujate pusryčių, galite tai nurodyti čia. (Pusryčių kaina 10€ žmogui)</value>
   </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Užimta</value>
+  </data>
 </root>

@@ -316,4 +316,7 @@ Every morning from 8 to 11 AM, guests can enjoy a warm, hearty breakfast made to
   <data name="BreakfastComment" xml:space="preserve">
     <value>If you would like breakfast, you can indicate it here. (The price for breakfast is 10€ per person)</value>
   </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
 </root>

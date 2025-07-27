@@ -303,4 +303,7 @@
   <data name="BreakfastComment" xml:space="preserve">
     <value>BreakfastComment</value>
   </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
 </root>
