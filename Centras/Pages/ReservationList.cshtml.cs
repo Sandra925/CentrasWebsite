@@ -4,9 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Centras.Migrations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Centras.Pages
 {
+    [Authorize(Roles = "Administratorius")]
+
     public class ReservationListModel : PageModel
     {
         private readonly CentrasContext _context;
