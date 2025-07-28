@@ -2,5 +2,120 @@
 @model Centras.Pages.AdminReservationModel
 @{
     ViewData["Title"] = "Admin Reservation";
-
 }
+<div class="container-admin-reservation">
+    <h1 class="admin-reservation-title">Administratoriaus rezervacijos forma</h1>
+    <form method="post" id="admin-reservation-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="admin-reservation-form-group">
+            <label for="admin-reservation-firstname">Vardas</label>
+            <input asp-for="Reservation.Name" id="admin-reservation-firstname" name="Reservation.Name" required>
+        </div>
+
+        <div class="admin-reservation-form-group">
+            <label for="admin-reservation-lastname">Pavardė</label>
+            <input asp-for="Reservation.LastName" id="admin-reservation-lastname" name="Reservation.LastName" required>
+        </div>
+
+        <div class="admin-reservation-form-group">
+            <label for="admin-reservation-arrival">Atvykimo data</label>
+            <input asp-for="Reservation.CheckIn"
+                   type="date"
+                   id="admin-reservation-arrival"
+                   name="Reservation.CheckIn"
+                   class="form-control"
+                   value="@(Model.Reservation.CheckIn == DateTime.MinValue ? "" : Model.Reservation.CheckIn.ToString("yyyy-MM-dd"))"
+                   required>
+
+        </div>
+
+        <div class="admin-reservation-form-group">
+            <label for="admin-reservation-departure">Išvykimo data</label>
+            <input asp-for="Reservation.CheckOut"
+                   type="date"
+                   id="admin-reservation-departure"
+                   name="Reservation.CheckOut"
+                   class="form-control"
+                   value="@(Model.Reservation.CheckOut == DateTime.MinValue ? "" : Model.Reservation.CheckOut.ToString("yyyy-MM-dd"))"
+                   required>
+
+        </div>
+
+        <div class="admin-reservation-form-group">
+            <label for="admin-reservation-room">Kambario numeris</label>
+            <select asp-for="Reservation.RoomId" id="admin-reservation-room" name="Reservation.RoomId" required>
+                <option value="">Pasirinkite...</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+
+        <button type="submit" class="admin-reservation-btn" id="admin-reservation-btn">Išsaugoti rezervaciją</button>
+    </form>
+</div>
+
+
+<script src="~/js/roomAdmin.js" asp-append-version="true"></script>
+
+<style>
+    .container-admin-reservation {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        width: 400px;
+        margin: auto;
+    }
+
+    .admin-reservation-title {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2d3436;
+        font-size: 22px;
+    }
+
+    .admin-reservation-form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .admin-reservation-form-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .admin-reservation-form-group input,
+        .admin-reservation-form-group select {
+            padding: 10px;
+            border: 1px solid #dcdde1;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+            .admin-reservation-form-group input:focus,
+            .admin-reservation-form-group select:focus {
+                border-color: #0984e3;
+                outline: none;
+            }
+
+    .admin-reservation-btn {
+        width: 100%;
+        background: #0984e3;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        .admin-reservation-btn:hover {
+            background: #74b9ff;
+        }
+</style>
