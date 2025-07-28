@@ -234,10 +234,10 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
     <value>Išvykimas</value>
   </data>
   <data name="Adults" xml:space="preserve">
-    <value>Suaugusių Sk.</value>
+    <value>Suaugusieji</value>
   </data>
   <data name="Children" xml:space="preserve">
-    <value>Vaikų Sk.</value>
+    <value>Vaikai</value>
   </data>
   <data name="FindRoom" xml:space="preserve">
     <value>Rasti Kambarį</value>
