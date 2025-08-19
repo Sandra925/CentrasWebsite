@@ -319,4 +319,7 @@ Every morning from 8 to 11 AM, guests can enjoy a warm, hearty breakfast made to
   <data name="Unavailable" xml:space="preserve">
     <value>Unavailable</value>
   </data>
+  <data name="Banquet" xml:space="preserve">
+    <value>Banquets</value>
+  </data>
 </root>

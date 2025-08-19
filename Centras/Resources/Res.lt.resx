@@ -333,4 +333,7 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
   <data name="Unavailable" xml:space="preserve">
     <value>Užimta</value>
   </data>
+  <data name="Banquet" xml:space="preserve">
+    <value>Banketai</value>
+  </data>
 </root>

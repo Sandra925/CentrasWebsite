@@ -306,4 +306,7 @@
   <data name="Unavailable" xml:space="preserve">
     <value>Unavailable</value>
   </data>
+  <data name="Banquet" xml:space="preserve">
+    <value>Banquet</value>
+  </data>
 </root>

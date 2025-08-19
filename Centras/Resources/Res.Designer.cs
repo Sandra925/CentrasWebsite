@@ -124,6 +124,15 @@ namespace Centras.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Banquet.
+        /// </summary>
+        public static string Banquet {
+            get {
+                return ResourceManager.GetString("Banquet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Book.
         /// </summary>
         public static string Book {
