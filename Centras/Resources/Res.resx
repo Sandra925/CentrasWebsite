@@ -309,4 +309,7 @@
   <data name="Banquet" xml:space="preserve">
     <value>Banquet</value>
   </data>
+  <data name="WorkingHours" xml:space="preserve">
+    <value>WorkingHours</value>
+  </data>
 </root>

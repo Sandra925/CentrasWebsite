@@ -322,4 +322,7 @@ Every morning from 8 to 11 AM, guests can enjoy a warm, hearty breakfast made to
   <data name="Banquet" xml:space="preserve">
     <value>Banquets</value>
   </data>
+  <data name="WorkingHours" xml:space="preserve">
+    <value>Working Hours</value>
+  </data>
 </root>

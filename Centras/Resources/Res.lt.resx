@@ -336,4 +336,7 @@ Kiekvienas, norintis, ryte nuo 8 iki 11 valandos gali mėgautis pagal savo pasir
   <data name="Banquet" xml:space="preserve">
     <value>Banketai</value>
   </data>
+  <data name="WorkingHours" xml:space="preserve">
+    <value>Darbo Laikas</value>
+  </data>
 </root>

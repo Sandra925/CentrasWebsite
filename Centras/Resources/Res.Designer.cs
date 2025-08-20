@@ -635,5 +635,14 @@ namespace Centras.Resources {
                 return ResourceManager.GetString("Unavailable", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WorkingHours.
+        /// </summary>
+        public static string WorkingHours {
+            get {
+                return ResourceManager.GetString("WorkingHours", resourceCulture);
+            }
+        }
     }
 }
