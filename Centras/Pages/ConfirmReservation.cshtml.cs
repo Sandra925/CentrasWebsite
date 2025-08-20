@@ -98,7 +98,7 @@ namespace Centras.Pages
             var totalCost = daysStaying * Reservation.TotalPrice;
 
             // Send email to the owner
-            var ownerEmail = "mika925d@gmail.com";
+            var ownerEmail = "hotelcentras@gmail.com";
             var customerEmail = Reservation.Email;
             var subject = "Rezervacijos patvirtinimas!";
             //add comment for breakfast +10e
