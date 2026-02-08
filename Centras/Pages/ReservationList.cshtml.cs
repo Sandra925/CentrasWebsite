@@ -25,6 +25,7 @@ namespace Centras.Pages
         {
             Reservations = _context.RoomReservations
                 .Include(r => r.Room)
+                .OrderByDescending(r => r.Id)
                 .ToList();
         }
 
